@@ -23,7 +23,7 @@ spring.datasource:
 
 # mybatis framework setting
 mybatis:
-  type-aliases-package: com.kbstar.dto
+  type-aliases-package: com.example.demo.dto
   mapper-locations: /mybatis/*.xml
   configuration:
     map_underscore_to_camel_case: true
