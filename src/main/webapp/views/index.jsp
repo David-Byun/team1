@@ -17,12 +17,12 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="/assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
 
 
@@ -30,10 +30,10 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="assets/lib/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet">
-    <link href="assets/lib/unicons/css/unicons.css" rel="stylesheet">
-    <link href="assets/lib/loaders.css/loaders.min.css" rel="stylesheet">
-    <link href="assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/lib/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet">
+    <link href="/assets/lib/unicons/css/unicons.css" rel="stylesheet">
+    <link href="/assets/lib/loaders.css/loaders.min.css" rel="stylesheet">
+    <link href="/assets/css/theme.css" rel="stylesheet">
 
   </head>
 
@@ -680,16 +680,16 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/lib/is/is.min.js"></script>
-    <script src="assets/lib/stickyfilljs/stickyfill.min.js"></script>
-    <script src="assets/lib/sticky-kit/sticky-kit.min.js"></script>
-    <script src="assets/lib/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/lib/is/is.min.js"></script>
+    <script src="/assets/lib/stickyfilljs/stickyfill.min.js"></script>
+    <script src="/assets/lib/sticky-kit/sticky-kit.min.js"></script>
+    <script src="/assets/lib/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARdVcREeBK44lIWnv5-iPijKqvlSAVwbw&callback=initMap" async></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="/assets/js/theme.js"></script>
 
   </body>
 
