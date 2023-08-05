@@ -52,7 +52,7 @@
           <div></div>
         </div>
       </div>
-      <nav class="navbar navbar-expand-lg navbar-light navbar-top bg-light fs--1 fixed-top py-0 pl-0"><a class="navbar-brand navbar-brand-custom" href="index.html">
+      <nav class="navbar navbar-expand-lg navbar-light navbar-top bg-light fs--1 fixed-top py-0 pl-0"><a class="navbar-brand navbar-brand-custom" href="/">
           <div class="logo-icon"><span class="uil uil-apps text-light fs--1" aria-hidden="true"></span></div><span class="text-light ml-2 fs-1"><strong>Grid</strong>Works</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-vertical-collapse" aria-controls="navbar-vertical-collapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -139,7 +139,7 @@
               </div>
             </form>
             <ul class="navbar-nav navbar-nav-vertical flex-row">
-              <li class="nav-item"><a class="nav-link" href="index.html"><span class="icons fs-3 uil uil-home-alt"></span><span class="fs--1"> Home</span></a>
+              <li class="nav-item"><a class="nav-link" href="/"><span class="icons fs-3 uil uil-home-alt"></span><span class="fs--1"> Home</span></a>
               </li>
               <li class="nav-item"><a class="nav-link" href="#modal-services" data-toggle="modal"><span class="icons fs-3 uil uil-bolt"></span><span class="fs--1"> Services</span></a>
               </li>

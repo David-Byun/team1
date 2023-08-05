@@ -16,10 +16,10 @@ logging:
     root: info
 
 spring.datasource:
-  username: TEAM
+  username: TEAM01
   password: 111111
   driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-  url: jdbc:log4jdbc:oracle:thin:@localhost:1521/xe
+  url: jdbc:log4jdbc:oracle:thin:@49.50.174.248:1521/xe
 
 # mybatis framework setting
 mybatis:
