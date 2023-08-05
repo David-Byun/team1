@@ -1,83 +1,91 @@
-CREATE TABLE follow (
-    follow_id   NUMBER(19) NOT NULL,
-    follower_id NUMBER(19) NOT NULL,
-    following_id NUMBER(19) NOT NULL
-);
-
 CREATE TABLE member (
-    member_id     NUMBER(19) NOT NULL,
-    password      VARCHAR2(50),
-    gender        CHAR(1),
-    name          VARCHAR2(10),
-    nickname      VARCHAR2(20),
-    profile_image VARCHAR2(50)
+                        member_id INT,
+                        password VARCHAR(50),
+                        name VARCHAR(10),
+                        nickname VARCHAR(20),
+                        point INT,
+                        company VARCHAR(50)
 );
 
 CREATE TABLE post (
-    post_id    NUMBER(19) NOT NULL,
-    content    VARCHAR2(200),
-    location   VARCHAR2(30),
-    gender     CHAR(1),
-    member_id  NUMBER(19) NOT NULL
+                      post_id INT,
+                      content VARCHAR(200),
+                      location VARCHAR(30),
+                      member_id INT,
+                      marketing INT,
+                      plan INT,
+                      design INT,
+                      front INT,
+                      server INT,
+                      refLink VARCHAR(200)
 );
 
-CREATE TABLE post_hashtag (
-    id         NUMBER(19) NOT NULL,
-    post_id    NUMBER(19) NOT NULL,
-    hashtag_id NUMBER(19) NOT NULL
+CREATE TABLE post_skilltag (
+                               id INT,
+                               post_id INT,
+                               hashtag_id INT
 );
 
-CREATE TABLE hashtag (
-    hashtag_id NUMBER(19) NOT NULL,
-    hashtag    VARCHAR2(30)
+CREATE TABLE skilltag (
+                          hashtag_id INT,
+                          hashtag VARCHAR(30)
 );
 
 CREATE TABLE image (
-    image_id  NUMBER(19) NOT NULL,
-    file_name VARCHAR2(100),
-    post_id   NUMBER(19) NOT NULL
+                       image_id INT,
+                       file_name VARCHAR(200),
+                       post_id INT
 );
 
-CREATE TABLE user_post_tag (
-    member_post_tag_id NUMBER(19) NOT NULL,
-    member_id          NUMBER(19) NOT NULL,
-    post_id            NUMBER(19) NOT NULL
+CREATE TABLE applicant (
+                           applicant_id INT,
+                           member_id INT,
+                           post_id INT,
+                           apply_part INT
 );
 
 CREATE TABLE user_post_like (
-    member_post_like_id NUMBER(19) NOT NULL,
-    member_id           NUMBER(19) NOT NULL,
-    post_id             NUMBER(19) NOT NULL
+                                member_post_like_id INT,
+                                member_id INT,
+                                post_id INT
+);
+
+CREATE TABLE question (
+                          question_id INT,
+                          content VARCHAR(200),
+                          post_id INT,
+                          member_id INT
 );
 
 CREATE TABLE review (
-    review_id NUMBER(19) NOT NULL,
-    parent_id NUMBER(19),
-    content   VARCHAR2(200),
-    post_id   NUMBER(19) NOT NULL,
-    member_id NUMBER(19) NOT NULL
+                        question_id INT,
+                        content VARCHAR(200),
+                        member_id INT
 );
 
-CREATE TABLE user_review_like (
-    member_review_like_id NUMBER(19) NOT NULL,
-    review_id             NUMBER(19) NOT NULL,
-    member_id             NUMBER(19) NOT NULL
+CREATE TABLE team (
+                      team_id INT,
+                      post_id INT,
+                      member_id VARCHAR(255)
 );
 
-CREATE TABLE user_comment_tag (
-    member_review_tag NUMBER(19) NOT NULL,
-    member_id         NUMBER(19) NOT NULL,
-    review_id         NUMBER(19) NOT NULL
+CREATE TABLE skill (
+                       member_skill_id INT,
+                       member_id INT,
+                       hashtag_id INT
 );
 
-ALTER TABLE follow ADD CONSTRAINT PK_FOLLOW PRIMARY KEY (follow_id);
-ALTER TABLE member ADD CONSTRAINT PK_MEMBER PRIMARY KEY (member_id);
-ALTER TABLE post ADD CONSTRAINT PK_POST PRIMARY KEY (post_id);
-ALTER TABLE post_hashtag ADD CONSTRAINT PK_POST_HASHTAG PRIMARY KEY (id);
-ALTER TABLE hashtag ADD CONSTRAINT PK_HASHTAG PRIMARY KEY (hashtag_id);
-ALTER TABLE image ADD CONSTRAINT PK_IMAGE PRIMARY KEY (image_id);
-ALTER TABLE user_post_tag ADD CONSTRAINT PK_USER_POST_TAG PRIMARY KEY (member_post_tag_id);
-ALTER TABLE user_post_like ADD CONSTRAINT PK_USER_POST_LIKE PRIMARY KEY (member_post_like_id);
-ALTER TABLE review ADD CONSTRAINT PK_REVIEW PRIMARY KEY (review_id);
-ALTER TABLE user_review_like ADD CONSTRAINT PK_USER_REVIEW_LIKE PRIMARY KEY (member_review_like_id);
-ALTER TABLE user_comment_tag ADD CmainONSTRAINT PK_USER_COMMENT_TAG PRIMARY KEY (member_review_tag);
+CREATE TABLE post (
+                      post_id INT,
+                      content VARCHAR(200),
+                      location VARCHAR(30),
+                      member_id INT,
+                      marketing INT,
+                      plan INT,
+                      design INT,
+                      front INT,
+                      server INT,
+                      refLink VARCHAR(200),
+                      finished INT
+);
+
