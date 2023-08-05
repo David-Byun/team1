@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 
@@ -20,10 +19,10 @@ public class MemberController {
 
     @PostMapping("/login")
     public String login(MemberLoginDto memberLoginDto, HttpSession session) {
-        log.info("===== memberLoginDto : {} =====", memberLoginDto);
+
         Member foundMember = memberService.findUserById(memberLoginDto.getMemberId());
-        log.info("===== foundMember : {} =====", foundMember);
         if (foundMember.getPassword().equals(memberLoginDto.getPassword())) {
+            session.setAttribute("loginmember", foundMember);
             return "redirect:/";
         }
         return "/login";
