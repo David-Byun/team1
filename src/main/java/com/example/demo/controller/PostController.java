@@ -16,8 +16,8 @@ public class PostController {
     private final PostService postService;
     @RequestMapping("/")
     public String index(Model model) {
-        List<Post> posts = postService.selectAllPost();
-        model.addAttribute("posts", posts);
+//        List<Post> posts = postService.selectAllPost();
+//        model.addAttribute("posts", posts);
         return "index";
     }
 }
