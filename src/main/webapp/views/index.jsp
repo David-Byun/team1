@@ -6,13 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>Grid</title>
-
+    <title>KB SidePJ</title>
 
     <!-- ===============================================-->
     <!--    Favicons-->
@@ -25,7 +22,6 @@
     <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
 
-
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
@@ -36,8 +32,6 @@
     <link href="/assets/css/theme.css" rel="stylesheet">
 
   </head>
-
-
   <body>
 
     <!-- ===============================================-->
@@ -481,12 +475,6 @@
                       <p class="text-500">We are active on various social media platforms. Like, share and follow to get updates.</p><a class="mt-2 text-400" href="#"><span class="uil uil-twitter fs-2"></span></a><a class="mt-2 text-400" href="#"><span class="uil uil-facebook-f fs-2"></span></a><a class="mt-2 text-400" href="#"><span class="uil uil-instagram-alt fs-2"></span></a><a class="mt-2 text-400" href="#"><span class="uil uil-google-drive fs-2"></span></a>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="googlemap min-vh-50" data-latlng="48.8583701,2.2922873,17" data-scrollwheel="false" data-icon="assets/img/icons/map-marker.png" data-zoom="17" data-theme="Default">
-                <div class="marker-content py-3 pl-4">
-                  <h5>Eiffel Tower</h5>
-                  <p></p>Gustave Eiffel's iconic, wrought-iron 1889 tower,<br />with steps and elevators to observation decks.
                 </div>
               </div>
             </div>
