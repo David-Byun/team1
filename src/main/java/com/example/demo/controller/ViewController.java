@@ -25,4 +25,9 @@ public class ViewController {
 	public String form() {
 		return "form";
 	}
+
+	@RequestMapping("/page")
+	public String page() {
+		return "page";
+	}
 }
