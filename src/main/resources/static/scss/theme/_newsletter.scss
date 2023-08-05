@@ -1,0 +1,16 @@
+
+.hr-sect {
+	width: 100%;
+	margin: 1.5rem 0rem 1.5rem;
+	position: relative;
+}
+.hr-sect:before {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	background: #e1e1e1;
+	content: '';
+	width: 100%;
+	height: 0.125rem;
+}

@@ -1,0 +1,26 @@
+.close.btn-close{
+    border-radius:50%;
+    height: 2.625rem;
+    width: 2.625rem;
+    background: #fefeff;
+    position: absolute;
+    color: #2b2b2b;
+    right: 0;
+    top: 0;
+    margin-top: map_get($spacers, 3);
+    margin-right: map_get($spacers, 3);
+    font-size: 1.75rem;
+    z-index: 1;
+    @include hover-focus{
+        opacity: 1;    
+    }
+   
+}
+.scroll-modal-height {
+    max-height: 91vh;
+    overflow-y: auto;
+}
+
+
+
+

@@ -1,0 +1,40 @@
+/*-----------------------------------------------
+|   Navbar
+-----------------------------------------------*/
+.navbar{
+  .dropdown-menu.dropdown-menu-right{ right: -.5625rem; }
+}
+
+.navbar-brand-custom {
+  background-color: $primary;
+  width: 14rem;
+  padding: map_get($spacers, 3);
+  margin-right: map_get($spacers, 2);
+  display: flex;
+  align-items: center;
+}
+.l-icon{ margin-top: map_get($spacers,1); }
+.logo-icon{
+  height: 2rem;
+  width: 2rem;
+  background-color: rgba(21, 71, 222, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+//- CSS for Avatar
+.avatar{
+  position: relative;
+  display: inline-block;
+}
+.avatar-xl{
+  height: 2rem;
+  width: 2rem;
+}
+//- Use for topnav avatar
+
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  float: none;
+}

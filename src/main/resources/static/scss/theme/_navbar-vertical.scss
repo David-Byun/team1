@@ -1,0 +1,114 @@
+
+/*-----------------------------------------------
+|   Navbar vertical
+-----------------------------------------------*/
+.navbar-vertical{  
+  position: fixed;
+  max-width: 100%;
+  padding: 0;
+  display: block;
+  top: $top-nav-height;
+  z-index: 1020;
+  .navbar-collapse{ 
+    max-height: calc(100vh - #{$top-nav-height});
+    overflow-y: auto; 
+    padding: 0 map_get($spacers,3) 0 map_get($spacers,3);
+  }
+  .navbar-social-icons{
+    display: inline-flex;
+    flex-direction: row;
+  }
+ 
+  .navbar-nav-vertical{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: - map_get($spacers, 1);
+    margin-right: - map_get($spacers, 1);
+    
+    .nav-item{ 
+      height: 6.5625rem;
+      width: 7.25rem;
+      flex-grow: 1; 
+      margin:  0 map_get($spacers,1) map_get($spacers,2) map_get($spacers,1);
+    }
+    .nav-link {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      transition: $transition-base;
+      background-color: $gray-100;
+      border-radius: 0.625rem;
+      @include hover-focus{
+        color: $primary;
+        background-color: $gray-200;
+      }
+     
+    } 
+  }
+ 
+}
+
+.content {
+  margin-top: $top-nav-height;
+  padding: map_get($spacers, 3) map_get($spacers, 3) 0 map_get($spacers, 3);
+}
+
+@each $breakpoint, $container-max-width in $container-max-widths {
+  @include media-breakpoint-up($breakpoint){
+
+    .navbar-top.navbar-expand-#{$breakpoint}{
+      .navbar-brand-custom{  width: 15.5rem; }
+      .dropdown-center{
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 7px 14px 0 rgba(59,65,94,.1), 0 3px 6px 0 rgba(0,0,0,.07);
+      }
+      
+      + .navbar-vertical{
+        width: $navbar-vertical-width;
+        .navbar-nav-vertical{
+          margin: 0;
+          .nav-item{ flex-grow: 0; }
+         
+
+        }
+        .navbar-collapse{ 
+          padding-left: .25rem;
+          padding-right: 0;
+          padding-top: 0;
+          display: block; 
+          height: calc(100vh - #{$top-nav-height});
+        }
+        .navbar-social-icons,.navbar-email-form{
+          display:none;
+        }
+        .footer-text {
+          padding-left: map_get($spacers, 1);
+        }
+        
+        + .content{ 
+          margin-left: $navbar-vertical-width;
+          padding-right: map_get($spacers, 3);
+          padding-left: map_get($spacers, 1);
+          
+        }
+      }
+    }
+  }
+}
+
+//-- Footer 
+.footer-text {
+  font-size: map_get($font-sizes, '-1');
+  display: flex;
+  color: $gray-600;
+  align-items: center;
+
+  @include hover-focus{
+    color: $primary !important;
+    text-decoration: none;
+  }
+}

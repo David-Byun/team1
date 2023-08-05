@@ -1,0 +1,18 @@
+/*-----------------------------------------------
+|   Email box
+-----------------------------------------------*/
+.input-group-icon{
+  position: relative;
+  .input-box{
+    padding-left: 2.2rem;
+    vertical-align: middle;
+  }
+  .input-box-icon{
+    position: absolute;
+    color: $gray-500;
+    top:50%;
+    left: .48rem;
+    transform: translateY(-50%);
+  }
+}
+
