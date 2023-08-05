@@ -69,9 +69,9 @@
                   <a class="dropdown-item font-weight-bold text-primary" href="#!"><span>Purchage Now</span></a>
 
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#!">Set status</a>
-                  <a class="dropdown-item" href="#!">Profile &amp; account</a>
-                  <a class="dropdown-item" href="#!">Feedback</a>
+                  <a class="dropdown-item" href="/login">Login</a>
+                  <a class="dropdown-item" href="/account">Profile &amp; account</a>
+                  <a class="dropdown-item" href="/form">등록</a>
 
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#!">Settings</a>

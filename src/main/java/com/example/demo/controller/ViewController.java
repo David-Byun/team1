@@ -15,4 +15,14 @@ public class ViewController {
 	public String login() {
 		return "login";
 	}
+
+	@RequestMapping("/account")
+	public String account() {
+		return "account";
+	}
+
+	@RequestMapping("/form")
+	public String form() {
+		return "form";
+	}
 }
