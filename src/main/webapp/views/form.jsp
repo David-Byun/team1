@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <!-- =========================================================
@@ -13,7 +15,7 @@
  -->
 <!-- beautify ignore:start -->
 <html
-  lang="en"
+  lang="ko"
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
@@ -21,6 +23,7 @@
   data-template="vertical-menu-template-free"
 >
   <head>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -30,7 +33,6 @@
     <title>Vertical Layouts - Forms | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
     <meta name="description" content="" />
-
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
 
@@ -64,6 +66,49 @@
   </head>
 
   <body>
+  <script>
+    function readImage(input) {
+      // 인풋 태그에 파일이 있는 경우
+      if(input.files && input.files[0]) {
+
+        // FileReader 인스턴스 생성
+        const reader = new FileReader()
+        // 이미지가 로드가 된 경우
+        reader.onload = e => {
+          const previewImage = document.getElementById("preview")
+          previewImage.src = e.target.result
+        }
+        // reader가 이미지 읽도록 하기
+        reader.readAsDataURL(input.files[0])
+      }
+    }
+    let postReg = {
+      init : function () {
+        $('#update_btn').click(function () {
+          postReg.send();
+        });
+        $('#delete_btn').click(function () {
+          let c = confirm("삭제하시겠습니까?");
+          if (c == true) {
+
+          }
+        })
+      },
+      send : function () {
+        $('#register_form').attr({
+          method:'post',
+          action:'/post',
+          enctype: 'multipart/form-data'
+        });
+        $('#register_form').submit();
+      }
+    };
+    $(function () {
+      $('#imgname').on("change", e => {
+        readImage(e.target)
+      })
+    });
+  </script>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -501,8 +546,7 @@
                     data-size="large"
                     data-show-count="true"
                     aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                    >Star</a
-                  >
+                    >Star</a>
                 </li>
 
                 <!-- User -->
@@ -575,21 +619,101 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Vertical Layouts</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">프로젝트 모집</span> 프로젝트 모집</h4>
 
               <!-- Basic Layout -->
               <div class="row">
                 <div class="col-xl">
                   <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">Basic Layout</h5>
+                      <h5 class="mb-0">모집글 작성</h5>
                       <small class="text-muted float-end">Default label</small>
                     </div>
                     <div class="card-body">
-                      <form>
+                      <form action="/post" method="post" enctype="multipart/form-data">
+                        <input name="memberId" type="hidden" value="${loginmember.memberId}" />
+                        <div class="mb-3">
+                          <label class="form-label" for="basic-default-title">제목</label>
+                          <input
+                                  id="basic-default-title"
+                                  class="form-control"
+                                  name="title"
+                                  placeholder="프로젝트 상세 내용을 작성해주세요"
+                          ></input>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="basic-default-message">내용</label>
+                          <textarea
+                                  id="basic-default-message"
+                                  class="form-control"
+                                  name="content"
+                                  placeholder="프로젝트 상세 내용을 작성해주세요"
+                          ></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="imgname">이미지</label>
+                          <c:choose>
+                            <c:when test="${post.img == null || post.img == ''}">
+                              <input class="d-none mt-5 ml-5" type="file" name="imgName" style="display: none" id="imgname">
+                              <a href="javascript:void(0);" onclick="$('#imgname').trigger('click')">
+                                <img src="/assets/img/group/pic-1.png" width="100px"
+                                     alt="Generic placeholder image" class="img-fluid img-thumbnail mb-3"
+                                     style="width: 100%; z-index: 1; height:30%" id="preview">
+                              </a>
+                            </c:when>
+                            <c:otherwise>
+                              <input class="d-none mt-5 ml-5" type="file" name="imgName" style="display: none" id="imgname">
+                              <a href="javascript:void(0);" onclick="$('#imgname').trigger('click')">
+                                <img src="/uimg/${post.img}" id="preview"
+                                     alt="Generic placeholder image" class="img-fluid img-thumbnail mb-3"
+                                     style="width: 100%; z-index: 1; height:20%">
+                              </a>
+                            </c:otherwise>
+                          </c:choose>
+                        </div>
+                        <div class="mb-3">
+                          <div class="form-group"> <label for="design">디자인</label>
+                            <select name="design" id="design" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                              <option selected="selected">1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                          </div> <!-- /.form-group -->
+                        </div>
+                        <div class="mb-3">
+                          <div class="form-group"> <label for="plan">기획</label>
+                            <select name="plan" id="plan" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                              <option selected="selected">1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                          </div> <!-- /.form-group -->
+                        </div>
+                        <div class="mb-3">
+                          <div class="form-group"> <label for="front">프런트</label>
+                            <select name="front" id="front" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                              <option selected="selected">1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                          </div> <!-- /.form-group -->
+                        </div>
+                        <div class="mb-3">
+                          <div class="form-group"> <label for="server">백엔드</label>
+                            <select name="server" id="server" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                              <option selected="selected">1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                          </div> <!-- /.form-group -->
+                        </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Full Name</label>
-                          <input type="text" class="form-control" id="basic-default-fullname" placeholder="John Doe" />
+                          <input type="text" class="form-control" id="basic-default-fullname" />
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-company">Company</label>
@@ -606,120 +730,14 @@
                               aria-label="john.doe"
                               aria-describedby="basic-default-email2"
                             />
-                            <span class="input-group-text" id="basic-default-email2">@example.com</span>
+                            <span class="input-group-text" id="basic-default-email2">@kbfg.com</span>
                           </div>
                           <div class="form-text">You can use letters, numbers & periods</div>
+
+
                         </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-phone">Phone No</label>
-                          <input
-                            type="text"
-                            id="basic-default-phone"
-                            class="form-control phone-mask"
-                            placeholder="658 799 8941"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-message">Message</label>
-                          <textarea
-                            id="basic-default-message"
-                            class="form-control"
-                            placeholder="Hi, Do you have a moment to talk Joe?"
-                          ></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send</button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl">
-                  <div class="card mb-4">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">Basic with Icons</h5>
-                      <small class="text-muted float-end">Merged input group</small>
-                    </div>
-                    <div class="card-body">
-                      <form>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
-                          <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-fullname2" class="input-group-text"
-                              ><i class="bx bx-user"></i
-                            ></span>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="basic-icon-default-fullname"
-                              placeholder="John Doe"
-                              aria-label="John Doe"
-                              aria-describedby="basic-icon-default-fullname2"
-                            />
-                          </div>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-icon-default-company">Company</label>
-                          <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-company2" class="input-group-text"
-                              ><i class="bx bx-buildings"></i
-                            ></span>
-                            <input
-                              type="text"
-                              id="basic-icon-default-company"
-                              class="form-control"
-                              placeholder="ACME Inc."
-                              aria-label="ACME Inc."
-                              aria-describedby="basic-icon-default-company2"
-                            />
-                          </div>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-icon-default-email">Email</label>
-                          <div class="input-group input-group-merge">
-                            <span class="input-group-text"><i class="bx bx-envelope"></i></span>
-                            <input
-                              type="text"
-                              id="basic-icon-default-email"
-                              class="form-control"
-                              placeholder="john.doe"
-                              aria-label="john.doe"
-                              aria-describedby="basic-icon-default-email2"
-                            />
-                            <span id="basic-icon-default-email2" class="input-group-text">@example.com</span>
-                          </div>
-                          <div class="form-text">You can use letters, numbers & periods</div>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-icon-default-phone">Phone No</label>
-                          <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-phone2" class="input-group-text"
-                              ><i class="bx bx-phone"></i
-                            ></span>
-                            <input
-                              type="text"
-                              id="basic-icon-default-phone"
-                              class="form-control phone-mask"
-                              placeholder="658 799 8941"
-                              aria-label="658 799 8941"
-                              aria-describedby="basic-icon-default-phone2"
-                            />
-                          </div>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-icon-default-message">Message</label>
-                          <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-message2" class="input-group-text"
-                              ><i class="bx bx-comment"></i
-                            ></span>
-                            <textarea
-                              id="basic-icon-default-message"
-                              class="form-control"
-                              placeholder="Hi, Do you have a moment to talk Joe?"
-                              aria-label="Hi, Do you have a moment to talk Joe?"
-                              aria-describedby="basic-icon-default-message2"
-                            ></textarea>
-                          </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send</button>
+
+                        <button type="submit" class="btn btn-primary">프로젝트 등록</button>
                       </form>
                     </div>
                   </div>

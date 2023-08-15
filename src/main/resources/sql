@@ -89,3 +89,15 @@ CREATE TABLE post (
                       finished INT
 );
 
+INSERT INTO Post (postId, title, member_id, marketing, plan, design, front, server, refLink, process, rdate)
+VALUES
+    (postSeq.NEXTVAL, 'Sample Title 1', 1, 1, 1, 1, 1, 1, 'RefLink1', 'Process1', SYSDATE),
+    (postSeq.NEXTVAL, 'Sample Title 2', 2, 2, 2, 2, 2, 2, 'RefLink2', 'Process2', SYSDATE),
+    (postSeq.NEXTVAL, 'Sample Title 3', 3, 3, 3, 3, 3, 3, 'RefLink3', 'Process3', SYSDATE),
+    (postSeq.NEXTVAL, 'Sample Title 4', 1, 1, 1, 1, 1, 1, 'RefLink4', 'Process4', SYSDATE),
+    (postSeq.NEXTVAL, 'Sample Title 5', 2, 2, 2, 2, 2, 2, 'RefLink5', 'Process5', SYSDATE),
+    (postSeq.NEXTVAL, 'Sample Title 6', 3, 3, 3, 3, 3, 3, 'RefLink6', 'Process6', SYSDATE),
+    (postSeq.NEXTVAL, 'Sample Title 7', 1, 1, 1, 1, 1, 1, 'RefLink7', 'Process7', SYSDATE),
+    (postSeq.NEXTVAL, 'Sample Title 8', 2, 2, 2, 2, 2, 2, 'RefLink8', 'Process8', SYSDATE),
+    (postSeq.NEXTVAL, 'Sample Title 9', 3, 3, 3, 3, 3, 3, 'RefLink9', 'Process9', SYSDATE),
+    (postSeq.NEXTVAL, 'Sample Title 10', 1, 1, 1, 1, 1, 1, 'RefLink10', 'Process10', SYSDATE);
