@@ -1,24 +1,56 @@
-CREATE TABLE member (
-                        member_id INT,
-                        password VARCHAR(50),
-                        name VARCHAR(10),
-                        nickname VARCHAR(20),
-                        point INT,
-                        company VARCHAR(50)
-);
+-- DROP TABLE
+DROP TABLE member CASCADE CONSTRAINTS;
+DROP TABLE post CASCADE CONSTRAINTS;
+DROP TABLE post_skilltag CASCADE CONSTRAINTS;
+DROP TABLE hashtag CASCADE CONSTRAINTS;
+DROP TABLE image CASCADE CONSTRAINTS;
+DROP TABLE applicant CASCADE CONSTRAINTS;
+DROP TABLE user_post_like CASCADE CONSTRAINTS;
+DROP TABLE question CASCADE CONSTRAINTS;
+DROP TABLE answer CASCADE CONSTRAINTS;
+DROP TABLE team CASCADE CONSTRAINTS;
+DROP TABLE skill CASCADE CONSTRAINTS;
 
+-- DROP SEQUENCE
+DROP SEQUENCE post_seq;
+DROP SEQUENCE post_skilltag_seq;
+DROP SEQUENCE hashtag_seq;
+DROP SEQUENCE image_seq;
+DROP SEQUENCE applicant_id_seq;
+DROP SEQUENCE user_post_like_seq;
+DROP SEQUENCE question_seq;
+DROP SEQUENCE answer_seq;
+DROP SEQUENCE team_seq;
+DROP SEQUENCE skill_seq;
+
+--CREATE TABLE
+CREATE TABLE member (
+            member_id VARCHAR(30),
+            password VARCHAR(50),
+            name VARCHAR(10),
+            nickname VARCHAR(20),
+            point INT,
+            company VARCHAR(50),
+    memo VARCHAR(200),
+            img VARCHAR(200),
+            rdate date
+);
 CREATE TABLE post (
                       post_id INT,
+                      title VARCHAR(100),
                       content VARCHAR(200),
-                      location VARCHAR(30),
-                      member_id INT,
+                      member_id VARCHAR(30),
                       marketing INT,
                       plan INT,
                       design INT,
                       front INT,
                       server INT,
-                      refLink VARCHAR(200)
+                      ref_link VARCHAR(200),
+                      process INT,
+                      rdate date,
+                      img VARCHAR(200)
 );
+
 
 CREATE TABLE post_skilltag (
                                id INT,
@@ -26,7 +58,7 @@ CREATE TABLE post_skilltag (
                                hashtag_id INT
 );
 
-CREATE TABLE skilltag (
+CREATE TABLE hashtag (
                           hashtag_id INT,
                           hashtag VARCHAR(30)
 );
@@ -39,14 +71,17 @@ CREATE TABLE image (
 
 CREATE TABLE applicant (
                            applicant_id INT,
-                           member_id INT,
+                           member_id VARCHAR(30),
                            post_id INT,
-                           apply_part INT
+                           apply_part INT,
+                           pf CHAR(2),
+                           rdate date
 );
+
 
 CREATE TABLE user_post_like (
                                 member_post_like_id INT,
-                                member_id INT,
+                                member_id VARCHAR(30),
                                 post_id INT
 );
 
@@ -54,50 +89,88 @@ CREATE TABLE question (
                           question_id INT,
                           content VARCHAR(200),
                           post_id INT,
-                          member_id INT
+                          member_id VARCHAR(30),
+                          rdate date
 );
 
-CREATE TABLE review (
-                        question_id INT,
+CREATE TABLE answer (
+                        answer_id INT,
                         content VARCHAR(200),
-                        member_id INT
+                        member_id VARCHAR(30),
+                        question_id INT,
+                        rdate date
 );
+
 
 CREATE TABLE team (
                       team_id INT,
                       post_id INT,
-                      member_id VARCHAR(255)
+                      member_id VARCHAR(30),
+                      role VARCHAR(20),
+                      progress INT,
+                      score VARCHAR(10),
+                      upvote VARCHAR(10)
 );
 
 CREATE TABLE skill (
                        member_skill_id INT,
-                       member_id INT,
+                       member_id VARCHAR(30),
                        hashtag_id INT
 );
 
-CREATE TABLE post (
-                      post_id INT,
-                      content VARCHAR(200),
-                      location VARCHAR(30),
-                      member_id INT,
-                      marketing INT,
-                      plan INT,
-                      design INT,
-                      front INT,
-                      server INT,
-                      refLink VARCHAR(200),
-                      finished INT
-);
 
-INSERT INTO Post (postId, title, member_id, marketing, plan, design, front, server, refLink, process, rdate)
-VALUES
-    (postSeq.NEXTVAL, 'Sample Title 1', 1, 1, 1, 1, 1, 1, 'RefLink1', 'Process1', SYSDATE),
-    (postSeq.NEXTVAL, 'Sample Title 2', 2, 2, 2, 2, 2, 2, 'RefLink2', 'Process2', SYSDATE),
-    (postSeq.NEXTVAL, 'Sample Title 3', 3, 3, 3, 3, 3, 3, 'RefLink3', 'Process3', SYSDATE),
-    (postSeq.NEXTVAL, 'Sample Title 4', 1, 1, 1, 1, 1, 1, 'RefLink4', 'Process4', SYSDATE),
-    (postSeq.NEXTVAL, 'Sample Title 5', 2, 2, 2, 2, 2, 2, 'RefLink5', 'Process5', SYSDATE),
-    (postSeq.NEXTVAL, 'Sample Title 6', 3, 3, 3, 3, 3, 3, 'RefLink6', 'Process6', SYSDATE),
-    (postSeq.NEXTVAL, 'Sample Title 7', 1, 1, 1, 1, 1, 1, 'RefLink7', 'Process7', SYSDATE),
-    (postSeq.NEXTVAL, 'Sample Title 8', 2, 2, 2, 2, 2, 2, 'RefLink8', 'Process8', SYSDATE),
-    (postSeq.NEXTVAL, 'Sample Title 9', 3, 3, 3, 3, 3, 3, 'RefLink9', 'Process9', SYSDATE),
-    (postSeq.NEXTVAL, 'Sample Title 10', 1, 1, 1, 1, 1, 1, 'RefLink10', 'Process10', SYSDATE);
+-- CREATE SEQUENCE
+CREATE SEQUENCE post_seq
+    INCREMENT BY 1
+    START WITH 1;
+
+CREATE SEQUENCE post_skilltag_seq
+    INCREMENT BY 1
+    START WITH 1;
+
+CREATE SEQUENCE hashtag_seq
+    INCREMENT BY 1
+    START WITH 1;
+
+CREATE SEQUENCE image_seq
+    INCREMENT BY 1
+    START WITH 1;
+
+CREATE SEQUENCE applicant_id_seq
+    INCREMENT BY 1
+    START WITH 1;
+
+CREATE SEQUENCE user_post_like_seq
+    INCREMENT BY 1
+    START WITH 1;
+
+CREATE SEQUENCE question_seq
+    INCREMENT BY 1
+    START WITH 1;
+
+CREATE SEQUENCE answer_seq
+    INCREMENT BY 1
+    START WITH 1;
+
+CREATE SEQUENCE team_seq
+    INCREMENT BY 1
+    START WITH 1;
+
+CREATE SEQUENCE skill_seq
+    INCREMENT BY 1
+    START WITH 1;
+
+
+-- insert
+--INSERT INTO Post (postId, title, member_id, marketing, plan, design, front, server, refLink, process, rdate)
+--VALUES
+--    (post_seq.NEXTVAL, 'Sample Title 1', 1, 1, 1, 1, 1, 1, 'RefLink1', 'Process1', SYSDATE),
+--    (post_seq.NEXTVAL, 'Sample Title 2', 2, 2, 2, 2, 2, 2, 'RefLink2', 'Process2', SYSDATE),
+--     (post_seq.NEXTVAL, 'Sample Title 3', 3, 3, 3, 3, 3, 3, 'RefLink3', 'Process3', SYSDATE),
+--     (post_seq.NEXTVAL, 'Sample Title 4', 1, 1, 1, 1, 1, 1, 'RefLink4', 'Process4', SYSDATE),
+--     (post_seq.NEXTVAL, 'Sample Title 5', 2, 2, 2, 2, 2, 2, 'RefLink5', 'Process5', SYSDATE),
+--     (post_seq.NEXTVAL, 'Sample Title 6', 3, 3, 3, 3, 3, 3, 'RefLink6', 'Process6', SYSDATE),
+--     (post_seq.NEXTVAL, 'Sample Title 7', 1, 1, 1, 1, 1, 1, 'RefLink7', 'Process7', SYSDATE),
+--     (post_seq.NEXTVAL, 'Sample Title 8', 2, 2, 2, 2, 2, 2, 'RefLink8', 'Process8', SYSDATE),
+--     (post_seq.NEXTVAL, 'Sample Title 9', 3, 3, 3, 3, 3, 3, 'RefLink9', 'Process9', SYSDATE),
+--     (postSeq.NEXTVAL, 'Sample Title 10', 1, 1, 1, 1, 1, 1, 'RefLink10', 'Process10', SYSDATE);

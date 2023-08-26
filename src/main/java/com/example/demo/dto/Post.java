@@ -9,17 +9,17 @@ import java.time.LocalDate;
 public class Post {
     private int postId;
     private String title;
+    private String content;
     private String memberId;
     private int marketing;
     private int plan;
     private int design;
     private int front;
     private int server;
-    private String img;
     private String refLink;
     private int process;
-    private String content;
     private LocalDate rdate;
+    private String img;
 
     private MultipartFile imgName;
 }
