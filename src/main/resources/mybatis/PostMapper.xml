@@ -13,8 +13,8 @@
         Where post_id = #{postId}
     </select>
     <insert id="insert" parameterType="Post">
-        INSERT INTO Post (post_id, title, content, member_id, marketing, plan, design, front, server, refLink, process, rdate)
-        VALUES (postSeq.NEXTVAL, #{title}, #{content}, #{memberId}, #{marketing}, #{plan}, #{design}, #{front}, #{server}, null, 0, sysdate)
+        INSERT INTO Post (post_id, title, content, member_id, marketing, plan, design, front, server, ref_link, process, rdate, image)
+        VALUES (postSeq.NEXTVAL, #{title}, #{content}, #{memberId}, #{marketing}, #{plan}, #{design}, #{front}, #{server}, null, 0, sysdate, null)
     </insert>
     <update id="update" parameterType="Post">
         UPDATE Post
@@ -26,8 +26,9 @@
         design = #{design},
         front = #{front},
         server = #{server},
-        refLink = #{refLink},
-        process = #{process}
+        ref_link = #{refLink},
+        process = #{process},
+        img = #{img}
         WHERE
         post_id = #{postId}
     </update>

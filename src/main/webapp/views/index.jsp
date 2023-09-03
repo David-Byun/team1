@@ -7,7 +7,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
 
     <!-- ===============================================-->
     <!--    Document Title-->
@@ -25,7 +29,8 @@
     <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
 
-
+    <%--jquery와 부트스트랩--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
@@ -37,6 +42,116 @@
 
   </head>
 
+  <script>
+    $(function () {
+      let web = null;
+      function getBrowserName ()
+      {
+        //agent에 브라우저 종류 삽입
+        var agent = navigator.userAgent.toLowerCase();
+        if(  (navigator.appName == 'Netscape'
+                && navigator.userAgent.search('Trident') != -1
+                || (agent.indexOf("msie") != -1)  )){
+
+          return "ie";
+        } else if ( agent.indexOf("chrome") != -1 ) {
+
+          return "chrome";
+        } else if ( agent.indexOf("safari") != -1 ) {
+
+          return "safari";
+        } else if ( agent.indexOf("firefox") != -1 ) {
+
+          return "firefox";
+        }
+      }
+      let firebaseConfig = {
+        //cloud 게시시 키 변수 셋팅으로 진행 예정
+        <%--apiKey: "<c:out value='${apiKey}' />",--%>
+        <%--authDomain: "<c:out value='${authDomain}' />",--%>
+        <%--projectId: "<c:out value='${projectId}' />",--%>
+        <%--storageBucket: "<c:out value='${storageBucket}' />",--%>
+        <%--messagingSenderId: "<c:out value='${messagingSenderId}' />",--%>
+        <%--appId: "<c:out value='${appId}' />",--%>
+        <%--measurementId: "<c:out value='${measurementId}' />"--%>
+        apiKey: "AIzaSyCfchQsojha5qRfexQ7faKMa0p4ebjH260",
+        authDomain: "nwitter-4c3ea.firebaseapp.com",
+        projectId: "nwitter-4c3ea",
+        storageBucket: "nwitter-4c3ea.appspot.com",
+        messagingSenderId: "613082594223",
+        appId: "1:613082594223:web:54d455061bff28bb9c0d5a",
+        measurementId: "G-KH0RN141KL"
+      };
+      web = getBrowserName();
+      console.log(web);
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Show Notification
+      // 메시지 기능 활성화를 알림
+      const messaging = firebase.messaging();
+      // RequestPermission 첫 어플 시작 시 알림 허용 or 불허를 사용자에게 안내합니다.
+      // 허용하지 않을 시 알람 메시지는 가지 않습니다.
+      messaging.requestPermission()
+              .then(function () {
+                // 알람이 허용되었을 때 토큰을 반환합니다.
+                // 해당 토큰을 통해 FCM 특정 사용자에게 메시지를 보낼 수 있습니다.
+                return messaging.getToken();
+              })
+              .then(async function (token) {
+                console.log(token);
+                $.ajax({
+                  method:'post',
+                  url:'/token',
+                  data : {token : token, web : web}
+                })
+                // 해당 onMessage는 데이터메시지로, 포그라운드인 상태에서
+                // FCM 메시지를 전송하는 경우 콘솔에 표기하도록 작성된 코드입니다.
+
+                //************************//
+                // messaging.onMessage(payload => {
+                //     Swal.fire({
+                //         title: payload.notification.title,
+                //         text: payload.notification.body,
+                //         imageUrl : 'https://help.miricanvas.com/hc/article_attachments/4403560627353/_____________4_.png',
+                //         // imageUrl: 'https://unsplash.it/400/200',
+                //         imageWidth: 400,
+                //         imageHeight: 200,
+                //         imageAlt: 'Custom image',
+                //         showClass: {
+                //             popup: 'animate__animated animate__fadeInDown'
+                //         },
+                //         hideClass: {
+                //             popup: 'animate__animated animate__fadeOutUp'
+                //         }
+                //     })
+                // })
+                //************************//
+
+                messaging.onMessage(payload => {
+                  Swal.fire({
+                    title: payload.notification.title,
+                    text: payload.notification.body,
+                    imageUrl: 'https://i.pinimg.com/564x/c3/6d/be/c36dbeb5a48f92d986cdd78927c9c5ff.jpg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 5000,
+                    timerProgressBar: true,
+                    showClass: {
+                      popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate__animated animate__fadeOutUp'
+                    }
+                  });
+                });
+              })
+    });
+  </script>
 
   <body>
 
