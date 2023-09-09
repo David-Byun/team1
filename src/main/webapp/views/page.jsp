@@ -185,39 +185,166 @@
                                 </div>
                             </div>
                             <div class="px-4 px-sm-6 pt-4 pt-sm-4">
-                                <h3 class="text-800">Thiel spends 6 months writing down everything he knows about business. His book sells for $10 on Amazon.</h3>
-                                <p class="dropcap dropcap-lg">
-                                    Adam Wathan and Steve Schoger spend 6 months writing down everything they know about design. Their “book” sells for $79 online.Believe it or not, both prices make perfect sense.Thiel is selling to the masses and the masses are sensitive to price changes (price elastic). If he raises the price to $30 they wouldn’t think twice before substituting his book for one of the many cheaper alternatives on Amazon.</p><img class="rounded img-fluid" src="assets/img/group/pic-9.jpg" alt="" />
-                                <h3 class="text-800 pt-3">8 UI design trends for 2020</h3>
-                                <h6 class="mb-2 text-muted">Dawid Tomczyk</h6>
-                                <p class="dropcap">The rapid growth of technology influences design trends every year. As designers we need be aware of the existing and upcoming design trends, constantly learning, improving and expanding our design toolkit in order to be up to date on the current market. Based on my research, experience and observations I’ve selected very carefully 8 UI/UX design trends that you should watch in 2020. Let’s get started then! :)</p>
-                                <p>Adam Wathan and Steve Schoger spend
-                                    <mark>6 months </mark>writing down everything they know about design. Their “book” sells for
-                                    Adam Wathan and Steve Schoger spend 6 months writing down everything they know about design. Their “book” sells for <a href="#">$79 online.</a>Believe it or not, both prices make perfect sense.
-                                </p>
-                                <h3 class="text-800">10 quotes from a bad UX designer</h3>
-                                <p class="mb-4">Illustrations have been in digital product design for a long time. Their evolution in the last years is very impressive. Illustrations as very popular design elements add natural feel and “human touch” to overall UX of our products. Illustrations are also very strong attention grabbers: at the top of that by applying motion to these illustrations we might bring our products to the life and make them stand out— adding extra details and personality.</p>
-                                <div class="mb-4"> <img class="rounded img-fluid" src="assets/img/group/pic-10.jpg" alt="" /></div>
-                                <p class="mb-4">Microinteractions exist pretty much in every single app or website. You see them every time when you’re opening your favourite app —for instance Facebook has tons of different microinteractions and I assume that the “Like” feature is just the perfect example. Sometimes we are not even aware of existence, because they are so so obvious, natural and “blended” into user interfaces. Altough, If you remove them from your product you will notice very quickly that something really important is missing.</p>
-                                <div class="mb-4"> <img class="rounded img-fluid" src="assets/img/group/pic-11.jpg" alt="" /></div>
-                                <p class="mb-4">
-                                    3D graphic exist pretty much everywhere — in movies, video games, adverts on the streets. 3D graphic has been introduced few decades ago and since then has improved and evolved dramatically. Mobile and web technology is also growing rapidly fast. New web browser capabilities have opened the door for 3D graphic allowing us as designers to create and implement amazing 3D graphics into modern web and mobile interfaces.</p>
-                                <div class="mb-4"> <img class="rounded img-fluid" src="assets/img/group/pic-12.jpg" alt="" /></div>
-                                <div class="jumbotron">
-                                    <h3 class="text-800">Why learn? 3 ways SQL basics can boost agency</h3>
-                                    <p>Microinteractions exist pretty much in every single app or website. </p>
-                                    <hr class="my-4" />
-                                    <p>The query I got from our data scientist returned writers who had published within the last 2 days.The real value of these tools is their data. Luckily, most of these tool providers allow you to export their raw data in one way or another. </p><a class="btn btn-light btn-lg border-primary" href="#" role="button">Learn more</a>
+                                <h3 class="text-800">모집현황</h3>
+                                <hr/>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="box">
+                                                <p>UI/UX 기획</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-2">
+                                            <div class="box">
+                                                <p>0/1</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-2">
+                                            <div class="box">
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">지원</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="box">
+                                                <p>웹프론트엔드</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="box">
+                                                <p>0/1</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="box">
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">지원</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="box">
+                                                <p>네이티브</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="box">
+                                                <p>0/1</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="box">
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">지원</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="box">
+                                                <p>백엔드</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="box">
+                                                <p>0/1</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="box">
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">지원</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-800 mt-5" >1. 프로젝트의 시작 동기</h3>
+                                <hr/>
+                                <h6 class="mb-2 text-muted">작성자 성명</h6>
+                                <p>프로젝트 컨텐츠 내용1</p>
+                                <p>프로젝트 컨텐츠 내용2</p>
+                                <img class="rounded img-fluid" src="assets/img/group/pic-9.jpg" alt="" />
+                                <h3 class="text-800 mt-5">프로젝트 정보</h3>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="col">모임 조회수</th>
+                                        </tr>
+                                        <tr>
+                                            <th>1</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">모임 기간</th>
+                                        </tr>
+                                        <tr>
+                                            <th>23.08.18 ~ 24.02.18</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">모임 분야</th>
+                                        </tr>
+                                        <tr>
+                                            <th>O2O</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">리더 응답률</th>
+                                        </tr>
+                                        <tr>
+                                            <th>0% (2건, 평균 13일 21시간) </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h3 class="text-800 pt-2">이 모임을 함께하는 렛플인</h3>
+                                <hr/>
+                                <div class="row">
+                                    <div class="col-md-6 mt-3">
+                                        <div class="text-center">
+                                            <img src="https://i.imgur.com/bDLhJiP.jpg" width="100" class="rounded-circle">
+                                        </div>
+                                        <div class="text-center mt-1">
+                                            <span class="bg-secondary p-1 px-4 rounded text-white">Pro</span>
+                                            <h5 class="mt-2 mb-0">변다윗</h5>
+                                            <span>UI/UX Designer</span>
+                                            <div class="px-4 mt-1">
+                                                <p class="fonts">리브플랫폼부 근무중</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <div class="text-center">
+                                            <img src="https://i.imgur.com/bDLhJiP.jpg" width="100" class="rounded-circle">
+                                        </div>
+                                        <div class="text-center mt-1">
+                                            <span class="bg-secondary p-1 px-4 rounded text-white">Pro</span>
+                                            <h5 class="mt-2 mb-0">변다윗</h5>
+                                            <span>UI/UX Designer</span>
+                                            <div class="px-4 mt-1">
+                                                <p class="fonts">리브플랫폼부 근무중</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="text-800 pt-2">기술/언어</h3>
+                                <hr/>
+                                <div class="mt-4">
+                                    <div class="avatar avatar-xl mr-3">
+                                        <img class="rounded-circle" style="width:50px; height:50px;" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/java_original_wordmark_logo_icon_146459.png" alt="" />
+                                    </div>
+                                    <div class="avatar avatar-xl mr-3">
+                                        <img class="rounded-circle" style="width:50px; height:50px;" src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-1024.png" alt="" />
+                                    </div>
+                                    <div class="avatar avatar-xl mr-3">
+                                        <img class="rounded-circle" style="width:50px; height:50px;" src="https://developer.apple.com/assets/elements/icons/swift-playgrounds/swift-playgrounds-96x96_2x.png" alt="" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="px-4 px-sm-6 px-md-8 pb-6">
+
+                                <div class="px-4 px-sm-6 px-md-8 pb-6">
                                 <div class="hr-sect d-flex justify-content-center">
                                     <div class="bg-white text-center d-flex align-items-center z-index-1 px-3"><span class="py-0 py-sm-1 font-weight-bold text-1000 ml-2">Share</span>
                                         <div> <a class="fs-4 text-decoration-none uil uil-facebook" href="#"> </a><a class="fs-4 text-decoration-none uil uil-blogger" href="#"></a><a class="fs-4 text-decoration-none uil uil-linkedin" href="#"></a></div>
                                     </div>
                                 </div>
-                                <h3 class="text-center text-800">Subscribe To Our Newsletter</h3>
-                                <p class="text-center text-600">Join 10,943 marketers getting 2 case studies <br class="d-none d-sm-block d-md-none" />every Tuesday and Friday </p>
+                                <h3 class="text-center text-800">리더에게 문의해 보세요</h3>
+                                <p class="text-center text-600">매일 9시부터 18시까지 응답해드릴 수 있어요</p>
                                 <form class="mailbluster-subscribe">
                                     <div class="mailbluster-feedback"></div>
                                     <input type="hidden" value="Thank you so much for subscribing!" />
