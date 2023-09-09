@@ -132,7 +132,7 @@
                   Swal.fire({
                     title: payload.notification.title,
                     text: payload.notification.body,
-                    imageUrl: 'https://i.pinimg.com/564x/c3/6d/be/c36dbeb5a48f92d986cdd78927c9c5ff.jpg',
+                    imageUrl: 'https://thumbs.dreamstime.com/z/projects-concept-black-chalkboard-d-rendering-handwritten-top-view-office-desk-lot-business-office-supplies-79906734.jpg?w=1200',
                     imageWidth: 400,
                     imageHeight: 200,
                     imageAlt: 'Custom image',
@@ -305,6 +305,7 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/popper.min.js"></script>
     <script src="/assets/js/bootstrap.js"></script>
