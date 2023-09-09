@@ -2,7 +2,7 @@
 
 <div class="content">
     <div class="row mx-n2" style="padding: 20px; font-size: xx-large;">
-        모집중인 프로젝트
+        HOT 프로젝트
     </div>
     <div id="projectList" class="row mx-n2">
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-3">

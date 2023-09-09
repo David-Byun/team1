@@ -168,7 +168,7 @@
         </div>
       </div>
       <nav class="navbar navbar-expand-lg navbar-light navbar-top bg-light fs--1 fixed-top py-0 pl-0"><a class="navbar-brand navbar-brand-custom" href="/">
-          <div class="logo-icon"><span class="uil uil-apps text-light fs--1" aria-hidden="true"></span></div><span class="text-light ml-2 fs-1"><strong>Grid</strong>Works</span>
+          <div class="logo-icon"><span class="uil uil-apps text-light fs--1" aria-hidden="true"></span></div><span class="text-light ml-2 fs-1"><strong>KB</strong> 마에스트로</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-vertical-collapse" aria-controls="navbar-vertical-collapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse align-items-center py-2" id="topnav">
@@ -254,35 +254,20 @@
               </div>
             </form>
             <ul class="navbar-nav navbar-nav-vertical flex-row">
-              <li class="nav-item"><a class="nav-link" href="/"><span class="icons fs-3 uil uil-home-alt"></span><span class="fs--1"> Home</span></a>
+              <li class="nav-item"><a class="nav-link" href="/"><span class="icons fs-3 uil uil-home-alt"></span><span class="fs--1"> 메인</span></a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-services" data-toggle="modal"><span class="icons fs-3 uil uil-bolt"></span><span class="fs--1"> Services</span></a>
+              <li class="nav-item"><a class="nav-link" href="#modal-contacts" data-toggle="modal"><span class="icons fs-3 uil uil-phone"></span><span class="fs--1">모집중 Project</span></a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-contacts" data-toggle="modal"><span class="icons fs-3 uil uil-phone"></span><span class="fs--1"> Contacts</span></a>
+              <li class="nav-item"><a class="nav-link" href="#modal-utilities" data-toggle="modal"><span class="icons fs-3 uil uil-wrench"></span><span class="fs--1"> KB마에</span></a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-components" data-toggle="modal"><span class="icons fs-3 uil uil-cog"></span><span class="fs--1"> Components</span></a>
+              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-fire"></span><span class="fs--1"> KB러닝</span></a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-utilities" data-toggle="modal"><span class="icons fs-3 uil uil-wrench"></span><span class="fs--1"> Utilities</span></a>
+              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-pen"></span><span class="fs--1"> 질문하기</span></a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-documentation" data-toggle="modal"><span class="icons fs-3 uil uil-clipboard-notes"></span><span class="fs--1"> Documentation</span></a>
+              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-swatchbook"></span><span class="fs--1"> 기타</span></a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-fire"></span><span class="fs--1"> Features</span></a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-shopping-bag"></span><span class="fs--1"> Cart</span></a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-pen"></span><span class="fs--1"> Blog</span></a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-flower"></span><span class="fs--1"> About</span></a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-swatchbook"></span><span class="fs--1"> Portfolio</span></a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-usd-circle"></span><span class="fs--1"> Pricing</span></a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-unlock"></span><span class="fs--1"> Terms</span></a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-comment-dots"></span><span class="fs--1"> Support</span></a>
-              </li>
-            </ul><a class="footer-text order-2 order-md-0" href="https://themewagon.com/">Made with <span class="uil uil-heart-alt fs-1 text-info"></span>by ThemeWagon </a>
+            </ul>
+            <a class="footer-text order-2 order-md-0" href="/" style="justify-content: center;">Made with <span class="uil uil-heart-alt fs-1 text-info"></span>by No.1조</a>
           </div>
         </div>
       </nav>
