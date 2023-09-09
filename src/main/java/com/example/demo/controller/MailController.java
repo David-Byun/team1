@@ -27,9 +27,6 @@ public class MailController {
     @RequestMapping("/sendEmail")
     public String sendEmail(HttpServletRequest request, HttpServletResponse response, Question question) throws Exception{
 
-        System.out.println("mail = " + mail);
-        System.out.println("pwd = " + pwd);
-
         //메일 관련 정보
         String host = "smtp.naver.com";
         final String username = mail; //네이버 이메일 주소중 @ naver.com 앞주소만 작성
@@ -38,7 +35,7 @@ public class MailController {
 
         //메일 내용
         String recipient = mail; //메일을 발송할 이메일 주소를 기재해 줍니다.
-        String subject = question.getName();    //메일 발송시 제목을 작성
+        String subject = question.getName() + " : 관련 문의 드립니다.";    //메일 발송시 제목을 작성
         String body = question.getMsg(); //메일 발송시 내용 작성
 
         Properties props = System.getProperties();
