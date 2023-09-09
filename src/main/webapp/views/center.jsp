@@ -8,9 +8,10 @@
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-3">
             <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/pic-1.png" alt="" />
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-white">프로젝트1</h5>
+                    <h5 class="card-title text-white">간편송금 개발</h5>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <div><span class="uil fs-3 text-300 align-middle uil-lightbulb-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">Reffering Workspace</span></div><a class="badge badge-pill stretched-link ml-2 badge-success" href="/page">Entrepreneurship</a>
+                        <div><span class="uil fs-3 text-300 align-middle uil-lightbulb-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">#JS #JAVA #SPRING</span></div>
+                        <a class="badge badge-pill stretched-link ml-2 badge-success" href="/page">15영업일</a>
                     </div>
                 </div>
             </div>
@@ -18,9 +19,10 @@
         <div class="px-2  col-sm-6 col-lg-4 col-xxl-3">
             <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/pic-2.png" alt="" />
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-white">프로젝트2</h5>
+                    <h5 class="card-title text-white">와이즈넷 배너 신규</h5>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <div><span class="uil fs-3 text-300 align-middle uil-brain"></span><span class="text-white fs--1 mb-0 d-inline-block">Define Your Vision</span></div><a class="badge badge-pill stretched-link ml-2 badge-warning" href="/page">Startups Weekly</a>
+                        <div><span class="uil fs-3 text-300 align-middle uil-brain"></span><span class="text-white fs--1 mb-0 d-inline-block">#REACT #JS #CSS</span></div>
+                        <a class="badge badge-pill stretched-link ml-2 badge-warning" href="/page">17영업일</a>
                     </div>
                 </div>
             </div>
@@ -28,9 +30,10 @@
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-3">
             <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/pic-3.png" alt="" />
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-white">프로젝트3</h5>
+                    <h5 class="card-title text-white">HR시스템 급여조회 유지보수</h5>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <div><span class="uil fs-3 text-300 align-middle uil-question-circle"></span><span class="text-white fs--1 mb-0 d-inline-block">Solve Specific Problem</span></div><a class="badge badge-pill stretched-link ml-2 badge-light" href="/page">Week in Review</a>
+                        <div><span class="uil fs-3 text-300 align-middle uil-question-circle"></span><span class="text-white fs--1 mb-0 d-inline-block">#JAVA</span></div>
+                        <a class="badge badge-pill stretched-link ml-2 badge-light" href="/page">5영업일</a>
                     </div>
                 </div>
             </div>
@@ -38,9 +41,10 @@
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-3">
             <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/pic-4.png" alt="" />
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-white">프로젝트4</h5>
+                    <h5 class="card-title text-white">부코핀 여신시스템 구축</h5>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <div><span class="uil fs-3 text-300 align-middle uil-map-pin-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">Define your Space</span></div><a class="badge badge-pill stretched-link ml-2 badge-danger" href="/page">Creativity</a>
+                        <div><span class="uil fs-3 text-300 align-middle uil-map-pin-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">#JAVA #SPRING #SQL</span></div>
+                        <a class="badge badge-pill stretched-link ml-2 badge-danger" href="/page">해외장기파견</a>
                     </div>
                 </div>
             </div>
@@ -50,7 +54,8 @@
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
                     <h5 class="card-title text-white">프로젝트5</h5>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <div><span class="uil fs-3 text-300 align-middle uil-list-ui-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">List Your Business Goals</span></div><a class="badge badge-pill stretched-link ml-2 badge-info" href="/page">Motivation</a>
+                        <div><span class="uil fs-3 text-300 align-middle uil-list-ui-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">List Your Business Goals</span></div>
+                        <a class="badge badge-pill stretched-link ml-2 badge-info" href="/page">Motivation</a>
                     </div>
                 </div>
             </div>
@@ -60,7 +65,8 @@
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
                     <h5 class="card-title text-white">프로젝트6</h5>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <div><span class="uil fs-3 text-300 align-middle uil-list-ui-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">List Your Business Goals</span></div><a class="badge badge-pill stretched-link ml-2 badge-info" href="/page">Motivation</a>
+                        <div><span class="uil fs-3 text-300 align-middle uil-list-ui-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">List Your Business Goals</span></div>
+                        <a class="badge badge-pill stretched-link ml-2 badge-info" href="/page">Motivation</a>
                     </div>
                 </div>
             </div>
@@ -106,7 +112,7 @@
     <div class="row mx-n2" style="padding: 20px; font-size: xx-large;">
         참여후기
     </div>
-    <div id="kbmaeList" class="row mx-n2">
+    <div id="review" class="row mx-n2">
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-4">
             <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/pic-6.png" alt="" />
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
