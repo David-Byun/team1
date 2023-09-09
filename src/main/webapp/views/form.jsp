@@ -104,6 +104,33 @@
       }
     };
     $(function () {
+
+      $('#role_add').click(function(e){
+        e.preventDefault();
+        alert('추가할거임');
+        // 새로운 add Div 생성
+        let newDiv = $('<div style="display:flex;">');
+        // 새로운 select 요소 생성
+        let newSelect = $('<select class="form-control select2 select2-hidden-accessible" style="width: 50%;" tabindex="-1" aria-hidden="true">');
+
+        // select 요소에 옵션 추가
+        newSelect.append("<option value='option1'>프론트엔드</option>");
+        newSelect.append("<option value='option1'>백엔드</option>");
+        newSelect.append("<option value='option2'>웹서버</option>");
+        newSelect.append("<option value='option3'>UX/UI디자인</option>");
+        newSelect.append("<option value='option3'>기획</option>");
+        newSelect.append("<option value='option3'>마케팅</option>");
+
+        // 새로운 input 생성
+        let newInput = $("<input type='number' class='form-control border-0 shadow-none' style='width: 50%;' value='1'/>");
+
+        newDiv.append(newSelect);
+        newDiv.append(newInput);
+
+        // 생성한 select 요소를 컨테이너에 추가
+        $("#role_apply").append(newDiv);
+
+      });
       $('#imgname').on("change", e => {
         readImage(e.target)
       })
@@ -631,7 +658,16 @@
                     </div>
                     <div class="card-body">
                       <form action="/post" method="post" enctype="multipart/form-data">
+                        <div id="role_apply">
+
+                        </div>
                         <input name="memberId" type="hidden" value="${loginmember.memberId}" />
+
+                        <div class="mb-3">
+                          <button id="role_add" class="btn btn-primary">추가</button>
+                          <button id="role_del" class="btn btn-secondary">삭제</button>
+                        </div>
+
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-title">제목</label>
                           <input
