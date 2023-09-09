@@ -36,7 +36,7 @@ CREATE TABLE member (
             rdate date
 );
 CREATE TABLE post (
-                      post_id INT,
+                      project_id INT,
                       title VARCHAR(100),
                       content VARCHAR(200),
                       member_id VARCHAR(30),
@@ -70,12 +70,14 @@ CREATE TABLE image (
 );
 
 CREATE TABLE applicant (
-                           applicant_id INT,
                            member_id VARCHAR(30),
                            post_id INT,
                            apply_part INT,
                            pf CHAR(2),
-                           rdate date
+                           rdate date,
+                           progress INT,
+                           score VARCHAR(10),
+                           upvote VARCHAR(10)
 );
 
 
@@ -136,10 +138,6 @@ CREATE SEQUENCE image_seq
     INCREMENT BY 1
     START WITH 1;
 
-CREATE SEQUENCE applicant_id_seq
-    INCREMENT BY 1
-    START WITH 1;
-
 CREATE SEQUENCE user_post_like_seq
     INCREMENT BY 1
     START WITH 1;
@@ -152,16 +150,13 @@ CREATE SEQUENCE answer_seq
     INCREMENT BY 1
     START WITH 1;
 
-CREATE SEQUENCE team_seq
-    INCREMENT BY 1
-    START WITH 1;
-
 CREATE SEQUENCE skill_seq
     INCREMENT BY 1
     START WITH 1;
 
 
 -- insert
+
 --INSERT INTO Post (postId, title, member_id, marketing, plan, design, front, server, refLink, process, rdate)
 --VALUES
 --    (post_seq.NEXTVAL, 'Sample Title 1', 1, 1, 1, 1, 1, 1, 'RefLink1', 'Process1', SYSDATE),
