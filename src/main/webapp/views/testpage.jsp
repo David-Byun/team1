@@ -180,7 +180,7 @@
                                     <button class="close btn-close" type="button" style="display:none;" data-dismiss="modal" aria-label="Close"><span class="uil uil-times" aria-hidden="true"></span></button>
                                     <h1 class="card-title text-white mt-3">프로젝트 제목 🤘</h1>
                                     <div class="d-flex flex-wrap align-items-center justify-content-between mt-6">
-                                        <div><span class="uil fs-3 text-300 align-middle uil-lightbulb-alt"></span><span class="text-white fs--1">Reffering Workspace</span></div><span class="my-3 mx-3 mx-lg-2 badge badge-pill badge-info">프로젝트 배지</span>
+                                        <div><span class="uil fs-3 text-300 align-middle uil-lightbulb-alt"></span><span class="text-white fs--1">Reffering Workspace</span></div><span class="my-3 mx-3 mx-lg-2 badge badge-pill badge-info">Sample Badge          </span>
                                     </div>
                                 </div>
                             </div>
