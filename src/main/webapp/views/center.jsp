@@ -8,7 +8,7 @@
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-3">
             <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/pic-1.png" alt="" />
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-white">간편송금 개발</h5>
+                    <h5 class="card-title text-white">스타뱅킹 간편송금 개발</h5>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
                         <div><span class="uil fs-3 text-300 align-middle uil-lightbulb-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">#JS #JAVA #SPRING</span></div>
                         <a class="badge badge-pill stretched-link ml-2 badge-success" href="/page">15영업일</a>
@@ -52,10 +52,10 @@
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-4">
             <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/pic-5.png" alt="" />
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-white">프로젝트5</h5>
+                    <h5 class="card-title text-white">스타뱅킹 모바일신분증 인증 구축</h5>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <div><span class="uil fs-3 text-300 align-middle uil-list-ui-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">List Your Business Goals</span></div>
-                        <a class="badge badge-pill stretched-link ml-2 badge-info" href="/page">Motivation</a>
+                        <div><span class="uil fs-3 text-300 align-middle uil-list-ui-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">#KOTLIN #JS # SQL</span></div>
+                        <a class="badge badge-pill stretched-link ml-2 badge-info" href="/page">20영업일</a>
                     </div>
                 </div>
             </div>
@@ -63,10 +63,10 @@
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-4">
             <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/pic-5.png" alt="" />
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-white">프로젝트6</h5>
+                    <h5 class="card-title text-white">CIB시스템 구축 TFT</h5>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <div><span class="uil fs-3 text-300 align-middle uil-list-ui-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">List Your Business Goals</span></div>
-                        <a class="badge badge-pill stretched-link ml-2 badge-info" href="/page">Motivation</a>
+                        <div><span class="uil fs-3 text-300 align-middle uil-list-ui-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">#JAVA #JS # SQL</span></div>
+                        <a class="badge badge-pill stretched-link ml-2 badge-danger" href="/page">장기파견</a>
                     </div>
                 </div>
             </div>
