@@ -106,7 +106,7 @@
     <div class="row mx-n2" style="padding: 20px; font-size: xx-large;">
         참여후기
     </div>
-    <div id="kbmaeList" class="row mx-n2">
+    <div id="review" class="row mx-n2">
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-4">
             <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/pic-6.png" alt="" />
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
