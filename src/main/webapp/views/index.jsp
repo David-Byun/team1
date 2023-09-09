@@ -16,15 +16,17 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>KB SidePJ</title>
+    <title>KB Maestro</title>
+
+    <link rel="icon" sizes="180x180"  href="/assets/img/logos/kbmlogo.png"/>
 
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
+<%--    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">--%>
+<%--    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">--%>
+<%--    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">--%>
+<%--    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">--%>
     <link rel="manifest" href="/assets/img/favicons/manifest.json">
     <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
@@ -175,7 +177,7 @@
           <ul class="navbar-nav align-items-center">
             <li class="dropdown nav-item mr-2"><a class="nav-link" href="#" id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl">
-                  <img class="rounded-circle" src="assets/img/icons/user-icon.png" alt="" />
+                  <img class="rounded-circle" src="assets/img/icons/user-icon.jpg" alt="user-icon" />
 
                 </div>
               </a>
@@ -199,6 +201,10 @@
             <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-instagram-alt fs-2"> </span></a></li>
             <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-google-drive fs-2">     </span></a></li>
           </ul>
+
+
+          <img src="assets/img/icons/row.png" alt="img" />
+
           <form class="mailbluster-subscribe form-inline ml-auto">
             <div class="mailbluster-feedback"></div>
             <input type="hidden" value="Thank you so much for subscribing!" />
