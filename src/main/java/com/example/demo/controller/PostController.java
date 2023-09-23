@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.Post;
+import com.example.demo.dto.PostDetail;
 import com.example.demo.service.PostService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +19,7 @@ import java.util.List;
 public class PostController {
 
     private final PostService postService;
+
     @GetMapping("/")
     public String index(Model model) {
         List<Post> posts = postService.getAllPosts();
@@ -26,11 +28,13 @@ public class PostController {
         return "index";
     }
 
-    @GetMapping("/post/{postId}")
-    public String postDetail(Model model, @PathVariable("postId") int postId) {
-        Post post = postService.getPost(postId);
+    @GetMapping("/post/{projectId}")
+    public String postDetail(Model model, @PathVariable("projectId") int projectId) {
+        Post post = postService.getPost(projectId);
+        PostDetail postDetail = postService.getPostDetail(projectId);
         model.addAttribute("post", post);
-        return "index";
+        model.addAttribute("postDetail", postDetail);
+        return "page";
     }
 
     @PostMapping("/post")

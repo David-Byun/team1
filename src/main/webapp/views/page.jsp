@@ -172,15 +172,15 @@
                     <div class="modal-content overflow-hidden border-0">
                         <div class="modal-body">
                             <div class="position-relative">
-                                <div class="bg-holder overlay overlay-gradient-1 rounded-top" style="background-image:url(assets/img/group/pic-1.png);">
+                                <div class="bg-holder overlay overlay-gradient-1 rounded-top" style="background-image:url(${post.img});">
                                 </div>
                                 <!--/.bg-holder-->
 
                                 <div class="position-relative pb-3 px-4 px-sm-6 pt-7">
                                     <button class="close btn-close" type="button" style="display:none;" data-dismiss="modal" aria-label="Close"><span class="uil uil-times" aria-hidden="true"></span></button>
-                                    <h1 class="card-title text-white mt-3">프로젝트 제목 🤘</h1>
+                                    <h1 class="card-title text-white mt-3">${post.title} 🤘</h1>
                                     <div class="d-flex flex-wrap align-items-center justify-content-between mt-6">
-                                        <div><span class="uil fs-3 text-300 align-middle uil-lightbulb-alt"></span><span class="text-white fs--1">Reffering Workspace</span></div><span class="my-3 mx-3 mx-lg-2 badge badge-pill badge-info">프로젝트 배지</span>
+                                        <div><span class="uil fs-3 text-300 align-middle uil-lightbulb-alt"></span><span class="text-white fs--1">해시태그</span></div><span class="my-3 mx-3 mx-lg-2 badge badge-pill badge-info">Project Manager : ${post.memberId}</span>
                                     </div>
                                 </div>
                             </div>
@@ -196,7 +196,7 @@
                                         </div>
                                         <div class="col-md-2 col-sm-2">
                                             <div class="box">
-                                                <p>0/1</p>
+                                                <p>${postDetail.plan}/${post.plan}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-sm-2">
@@ -213,7 +213,7 @@
                                         </div>
                                         <div class="col-md-2">
                                             <div class="box">
-                                                <p>0/1</p>
+                                                <p>${postDetail.front}/${post.front}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
@@ -225,12 +225,12 @@
                                     <div class="row">
                                         <div class="col-md-8">
                                             <div class="box">
-                                                <p>네이티브</p>
+                                                <p>디자인</p>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="box">
-                                                <p>0/1</p>
+                                                <p>${postDetail.design}/${post.design}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
@@ -247,7 +247,7 @@
                                         </div>
                                         <div class="col-md-2">
                                             <div class="box">
-                                                <p>0/1</p>
+                                                <p>${postDetail.server}/${post.server}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
@@ -257,11 +257,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h3 class="text-800 mt-5" >1. 프로젝트의 시작 동기</h3>
+                                <h3 class="text-800 mt-5" >${postDetail.subtitle1}</h3>
                                 <hr/>
-                                <h6 class="mb-2 text-muted">작성자 성명</h6>
-                                <p>프로젝트 컨텐츠 내용1</p>
-                                <p>프로젝트 컨텐츠 내용2</p>
+                                <h6 class="mb-2 text-muted">작성인 : ${post.memberId}</h6>
+                                <p>${postDetail.content1}</p>
+                                <h3 class="text-800 mt-5" >${postDetail.subtitle2}</h3>
+                                <hr/>
+                                <p>${postDetail.content2}</p>
+                                <h3 class="text-800 mt-5" >${postDetail.subtitle3}</h3>
+                                <hr/>
+                                <p>${postDetail.content3}</p>
                                 <img class="rounded img-fluid" src="assets/img/group/pic-9.jpg" alt="" />
                                 <h3 class="text-800 mt-5">프로젝트 정보</h3>
                                 <table class="table">
@@ -270,25 +275,19 @@
                                             <th scope="col">모임 조회수</th>
                                         </tr>
                                         <tr>
-                                            <th>1</th>
+                                            <th>${postDetail.viewCnt}</th>
                                         </tr>
                                         <tr>
                                             <th scope="col">모임 기간</th>
                                         </tr>
                                         <tr>
-                                            <th>23.08.18 ~ 24.02.18</th>
+                                            <th>${postDetail.pdate}</th>
                                         </tr>
                                         <tr>
                                             <th scope="col">모임 분야</th>
                                         </tr>
                                         <tr>
-                                            <th>O2O</th>
-                                        </tr>
-                                        <tr>
-                                            <th scope="col">리더 응답률</th>
-                                        </tr>
-                                        <tr>
-                                            <th>0% (2건, 평균 13일 21시간) </th>
+                                            <th>${postDetail.subject}</th>
                                         </tr>
                                     </tbody>
                                 </table>

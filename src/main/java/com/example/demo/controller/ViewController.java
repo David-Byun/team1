@@ -29,8 +29,4 @@ public class ViewController {
 		return "form";
 	}
 
-	@RequestMapping("/page")
-	public String page() {
-		return "page";
-	}
 }
