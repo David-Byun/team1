@@ -29,7 +29,6 @@
                             <div class="position-relative">
                                 <div class="bg-holder overlay overlay-gradient-1 rounded-top" style="background-image:url('/assets/img/group/${post.img}'); background-repeat: no-repeat; background-size: cover;" >
                                 </div>
-                                <!--/.bg-holder-->
 
                                 <div class="position-relative pb-3 px-4 px-sm-6 pt-7">
                                     <button class="close btn-close" type="button" style="display:none;" data-dismiss="modal" aria-label="Close"><span class="uil uil-times" aria-hidden="true"></span></button>

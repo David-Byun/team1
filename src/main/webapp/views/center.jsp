@@ -9,7 +9,7 @@
     <div id="projectList" class="row mx-n2">
         <c:forEach var="post" items="${posts}">
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-3">
-            <div class="card card-blog"><img class="card-img img-fluid" src="/assets/img/group/${post.img}" alt=""/>
+            <div class="card card-blog"><img class="card-img img-fluid" src="/assets/img/group/${post.img}" alt="" />
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
                     <h5 class="card-title text-white">${post.title}</h5>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
