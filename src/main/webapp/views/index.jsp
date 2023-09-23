@@ -181,7 +181,7 @@
           <ul class="navbar-nav align-items-center">
             <li class="dropdown nav-item mr-2"><a class="nav-link" href="#" id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl">
-                  <img class="rounded-circle" src="assets/img/icons/user-icon.jpg" alt="user-icon" />
+                  <img class="rounded-circle" src="assets/img/icons/user-icon.png" alt="user-icon" />
 
                 </div>
               </a>
@@ -200,15 +200,11 @@
                 </div>
               </div>
             </li>
-            <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-twitter fs-2"></span></a></li>
+            <li class="nav-item"><a class="nav-link px-0" href="#"><span claess="uil uil-twitter fs-2"></span></a></li>
             <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-facebook-f fs-2"></span></a></li>
             <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-instagram-alt fs-2"> </span></a></li>
             <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-google-drive fs-2">     </span></a></li>
           </ul>
-
-          <div>
-            <img src="assets/img/icons/row.png" alt="img" />
-          </div>
 
           <form class="mailbluster-subscribe form-inline ml-auto">
             <div class="mailbluster-feedback"></div>
@@ -226,7 +222,7 @@
             <ul class="navbar-nav align-items-center navbar-social-icons">
               <li class="dropdown nav-item mr-2"><a class="nav-link" href="#" id="navbarDropdownUserResponsive" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <div class="avatar avatar-xl">
-                    <img class="rounded-circle" src="assets/img/icons/user-icon.png" alt="" />
+                    <img class="rounded-circle" src="assets/img/icons/user-icon.png" alt="user-icon" />
 
                   </div>
                 </a>
@@ -567,6 +563,10 @@
           <jsp:include page="${center}.jsp"/>
         </c:otherwise>
       </c:choose>
+      <footer>
+      <div class="d-flex justify-content-center bg-200 mb-2">
+        <img src="assets/img/icons/row.png" alt="img" />
+      </div></footer>
     </main>
     <!-- ===============================================-->
     <!--    End of Main Content-->

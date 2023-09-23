@@ -20,8 +20,9 @@ public class ViewController {
 	}
 
 	@RequestMapping("/account")
-	public String account() {
-		return "account";
+	public String account(Model model) {
+		model.addAttribute("center","account");
+		return "index";
 	}
 
 	@RequestMapping("/form")
