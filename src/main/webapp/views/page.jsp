@@ -34,19 +34,20 @@
             window.location.href = 'https://192.168.0.157:3010/';
         });
     });
-    function apply(){
-        $('#apply').click(function(){
-            Swal.fire({
-                title: '프로젝트에 지원했어요!',
-                showClass: {
-                    popup: 'animate__animated animate__fadeInDown'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__fadeOutUp'
-                }
-            });
+
+    // ID 값을 증가시키는 함수
+    function apply(id, button) {
+        const element = document.getElementById(id);
+        const currentValue = parseInt(element.textContent);
+        element.textContent = currentValue + 1;
+        $.post("/your-server-url", { id: id, value : currentValue}, function(response) {
+            if (response.success) {
+                element.textContent = currentValue + 1;
+                button.disabled = true; // 버튼 비활성화
+            } else {
+                alert("지원에 실패했습니다.");
             }
-        )
+        });
     }
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -118,14 +119,19 @@
                                                 <p>UI/UX 기획</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-2 col-sm-2">
+                                        <div class="col-md-1 col-sm-1">
                                             <div class="box">
-                                                <p>${postDetail.plan}/${post.plan}</p>
+                                                <p id="plan">${postDetail.plan}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1">
+                                            <div class="box">
+                                                <p>/ ${post.plan}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-sm-2">
                                             <div class="box">
-                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply()">지원</button>
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('plan', this)">지원</button>
                                             </div>
                                         </div>
                                     </div>
@@ -135,14 +141,19 @@
                                                 <p>웹프론트엔드</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-1 col-sm-1">
                                             <div class="box">
-                                                <p>${postDetail.front}/${post.front}</p>
+                                                <p id="front">${postDetail.front}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1">
+                                            <div class="box">
+                                                <p>/ ${post.front}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="box">
-                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply()">지원</button>
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('front', this)">지원</button>
                                             </div>
                                         </div>
                                     </div>
@@ -152,14 +163,19 @@
                                                 <p>디자인</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-1 col-sm-1">
                                             <div class="box">
-                                                <p>${postDetail.design}/${post.design}</p>
+                                                <p id="design">${postDetail.design}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1">
+                                            <div class="box">
+                                                <p>/ ${post.design}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="box">
-                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply()">지원</button>
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('design', this)">지원</button>
                                             </div>
                                         </div>
                                     </div>
@@ -169,27 +185,26 @@
                                                 <p>백엔드</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-1 col-sm-1">
                                             <div class="box">
-                                                <p>${postDetail.server}/${post.server}</p>
+                                                <p id="server">${postDetail.server}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1">
+                                            <div class="box">
+                                                <p>/ ${post.server}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="box">
-                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply()">지원</button>
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('server', this)">지원</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <h3 class="text-800 mt-5" >${postDetail.subtitle1}</h3>
+                                <h3 class="text-800 mt-5" >${post.title}</h3>
                                 <hr/>
-                                <p>${postDetail.content1}</p>
-                                <h3 class="text-800 mt-5" >${postDetail.subtitle2}</h3>
-                                <hr/>
-                                <p>${postDetail.content2}</p>
-                                <h3 class="text-800 mt-5" >${postDetail.subtitle3}</h3>
-                                <hr/>
-                                <p>${postDetail.content3}</p>
+                                <p>${post.content}</p>
                                 <img class="rounded img-fluid" src="assets/img/group/pic-9.jpg" alt="" />
                                 <h3 class="text-800 mt-5">프로젝트 정보</h3>
                                 <table class="table">
