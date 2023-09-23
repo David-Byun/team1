@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Data
 public class Post {
-    private int postId;
+    private int projectId;
     private String title;
     private String content;
     private String memberId;

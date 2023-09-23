@@ -10,10 +10,10 @@
     <select id="select" parameterType="int" resultType="Post">
         SELECT *
         FROM Post
-        Where post_id = #{postId}
+        Where project_id = #{projectId}
     </select>
     <insert id="insert" parameterType="Post">
-        INSERT INTO Post (post_id, title, content, member_id, marketing, plan, design, front, server, ref_link, process, rdate, image)
+        INSERT INTO Post (project_id, title, content, member_id, marketing, plan, design, front, server, ref_link, process, rdate, image)
         VALUES (postSeq.NEXTVAL, #{title}, #{content}, #{memberId}, #{marketing}, #{plan}, #{design}, #{front}, #{server}, null, 0, sysdate, null)
     </insert>
     <update id="update" parameterType="Post">
@@ -30,6 +30,6 @@
         process = #{process},
         img = #{img}
         WHERE
-        post_id = #{postId}
+        project_id = #{projectId}
     </update>
 </mapper>

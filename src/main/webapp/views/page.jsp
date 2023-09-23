@@ -266,30 +266,30 @@
                                 <h3 class="text-800 mt-5">프로젝트 정보</h3>
                                 <table class="table">
                                     <tbody>
-                                        <tr>
-                                            <th scope="col">모임 조회수</th>
-                                        </tr>
-                                        <tr>
-                                            <th>1</th>
-                                        </tr>
-                                        <tr>
-                                            <th scope="col">모임 기간</th>
-                                        </tr>
-                                        <tr>
-                                            <th>23.08.18 ~ 24.02.18</th>
-                                        </tr>
-                                        <tr>
-                                            <th scope="col">모임 분야</th>
-                                        </tr>
-                                        <tr>
-                                            <th>O2O</th>
-                                        </tr>
-                                        <tr>
-                                            <th scope="col">리더 응답률</th>
-                                        </tr>
-                                        <tr>
-                                            <th>0% (2건, 평균 13일 21시간) </th>
-                                        </tr>
+                                    <tr>
+                                        <th scope="col">모임 조회수</th>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">모임 기간</th>
+                                    </tr>
+                                    <tr>
+                                        <th>23.08.18 ~ 24.02.18</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">모임 분야</th>
+                                    </tr>
+                                    <tr>
+                                        <th>O2O</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">리더 응답률</th>
+                                    </tr>
+                                    <tr>
+                                        <th>0% (2건, 평균 13일 21시간) </th>
+                                    </tr>
                                     </tbody>
                                 </table>
                                 <h3 class="text-800 pt-2">이 모임을 함께하는 렛플인</h3>
@@ -337,7 +337,7 @@
                                 </div>
                             </div>
 
-                                <div class="px-4 px-sm-6 px-md-8 pb-6">
+                            <div class="px-4 px-sm-6 px-md-8 pb-6">
                                 <div class="hr-sect d-flex justify-content-center">
                                     <div class="bg-white text-center d-flex align-items-center z-index-1 px-3"><span class="py-0 py-sm-1 font-weight-bold text-1000 ml-2">Share</span>
                                         <div> <a class="fs-4 text-decoration-none uil uil-facebook" href="#"> </a><a class="fs-4 text-decoration-none uil uil-blogger" href="#"></a><a class="fs-4 text-decoration-none uil uil-linkedin" href="#"></a></div>
