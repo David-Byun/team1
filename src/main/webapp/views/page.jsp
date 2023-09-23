@@ -1,9 +1,41 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
 <script type='text/javascript'>
+    $(document).ready(function() {
+        // "리더에게 문의하기" 버튼 클릭 이벤트 처리
+        $("#sendEmailButton").click(function() {
+            // 폼 데이터 가져오기
+            var formData = $("#emailForm").serialize();
+            if($('#msg').val() == '' || $('#msg').val() == null){
+                Swal.fire(
+                    '문의 내용을 입력해주세요!',
+                )
+                return;
+            }
+
+            // 서버로 데이터 전송
+            $.ajax({
+                type: "POST",
+                url: "/sendEmail",
+                data: formData,
+                success: function(response) {
+                    // 서버 응답 처리
+                    Swal.fire(
+                        '프로젝트 문의 메일을 발송했어요!',
+                    )
+                    $('#msg').val('');
+                }
+            });
+        });
+
+        // "프로젝트 미팅하기" 버튼 클릭 이벤트 처리
+        $("#meetingButton").click(function() {
+            // 원하는 동작 수행, 예: 다른 페이지로 이동
+            window.location.href = 'https://192.168.0.157:3010/';
+        });
+    });
     function apply(){
-        $('#apply').click(
+        $('#apply').click(function(){
             Swal.fire({
                 title: '프로젝트에 지원했어요!',
                 showClass: {
@@ -12,9 +44,11 @@
                 hideClass: {
                     popup: 'animate__animated animate__fadeOutUp'
                 }
-            })
+            });
+            }
         )
     }
+
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
 
@@ -44,6 +78,7 @@
         calendar.render();
     });
 </script>
+
 <style>
     #calendar{
         margin:auto;
@@ -227,13 +262,13 @@
                                 </div>
                                 <h3 class="text-center text-800">리더에게 문의해 보세요</h3>
                                 <p class="text-center text-600">매일 9시부터 18시까지 응답해드릴 수 있어요</p>
-                                <form class="mailbluster-subscribe">
-                                    <div class="mailbluster-feedback"></div>
-                                    <input type="hidden" value="Thank you so much for subscribing!" />
+                                <form method="post" action="/sendEmail" id="emailForm" >
                                     <div class="input-group-icon mb-2">
-                                        <input class="form-control form-control-lg input-box" type="email" placeholder="Email address" aria-label="Email" /><span class="uil uil-envelope fs-2 input-box-icon"> </span>
+                                        <input class="form-control form-control-lg input-box" name="msg" type="text" placeholder="문의 내용 발송" id="msg"/><span class="uil uil-envelope fs-2 input-box-icon"></span>
                                     </div>
-                                    <button class="btn btn-primary btn-block py-2" type="submit">Subscribe to our newsletter </button>
+                                    <input type="hidden" name="name" value="${applicant.name}">
+                                    <button id="sendEmailButton" class="btn btn-primary btn-block py-2" type="button">리더에게 문의하기</button>
+                                    <button class="btn btn-danger btn-block py-2" type="button" type="button">프로젝트 미팅하기</button>
                                 </form>
                             </div>
                         </div>
