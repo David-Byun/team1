@@ -18,6 +18,7 @@ public class Post {
     private int server;
     private int process;
     private LocalDate rdate;
+    private String content;
     private String img;
     private List<String> hashtag;
 
