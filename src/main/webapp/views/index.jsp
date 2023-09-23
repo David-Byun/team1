@@ -11,6 +11,7 @@
     <link href='/fullcalendar-5.1.0/lib/main.css' rel='stylesheet' />
     <script src='/fullcalendar-5.1.0/lib/main.js'></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
