@@ -34,10 +34,4 @@ public class ViewController {
 	public String form_org() {
 		return "form_org";
 	}
-
-
-	@RequestMapping("/page")
-	public String page() {
-		return "page";
-	}
 }

@@ -10,7 +10,7 @@
     <select id="select" parameterType="int" resultType="Post">
         SELECT *
         FROM Post
-        Where project_id = #{projectId}
+        Where project_id = #{projectid}
     </select>
     <insert id="insert" parameterType="Post">
         INSERT INTO Post (project_id, title, content, member_id, marketing, plan, design, front, server, ref_link, process, rdate, image)
