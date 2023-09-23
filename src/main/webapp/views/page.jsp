@@ -27,7 +27,7 @@
                     <div class="modal-content overflow-hidden border-0">
                         <div class="modal-body">
                             <div class="position-relative">
-                                <div class="bg-holder overlay overlay-gradient-1 rounded-top" style="background-image:url(${post.img}); background-repeat: no-repeat; background-size: cover;" >
+                                <div class="bg-holder overlay overlay-gradient-1 rounded-top" style="background-image:url('/assets/img/group/${post.img}'); background-repeat: no-repeat; background-size: cover;" >
                                 </div>
                                 <!--/.bg-holder-->
 
@@ -180,8 +180,8 @@
                                 <hr/>
                                 <div class="mt-4">
                                     <c:forEach var="item" items="${post.hashtag}">
-                                    <div class="avatar avatar-xl mr-4">
-                                        <img class="rounded-circle" style="width:60px; height:60px;" src="/assets/img/skill/${item}.png" alt="" />
+                                    <div class="avatar avatar-xl mr-2">
+                                        <img class="rounded-circle" style="width:30px; height:30px;" src="/assets/img/skill/${item}.png" alt="" />
                                     </div>
                                     </c:forEach>
                                 </div>
