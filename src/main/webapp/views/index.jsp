@@ -269,16 +269,18 @@
               </li>
               <li class="nav-item"><a class="nav-link" href="#modal-contacts" data-toggle="modal"><span class="icons fs-3 uil uil-phone"></span><span class="fs--1">모집중 Project</span></a>
               </li>
+              <li class="nav-item"><a class="nav-link" href="/form"><span class="icons fs-3 uil uil-pen"></span><span class="fs--1"> 모집글 작성</span></a>
+              </li>
               <li class="nav-item"><a class="nav-link" href="#modal-utilities" data-toggle="modal"><span class="icons fs-3 uil uil-wrench"></span><span class="fs--1"> KB마에</span></a>
               </li>
               <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-fire"></span><span class="fs--1"> KB러닝</span></a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-pen"></span><span class="fs--1"> 질문하기</span></a>
+              <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-comment-question"></span><span class="fs--1"> 질문하기</span></a>
               </li>
               <li class="nav-item"><a class="nav-link" href="#modal-demo" data-toggle="modal"><span class="icons fs-3 uil uil-swatchbook"></span><span class="fs--1"> 기타</span></a>
               </li>
             </ul>
-            <a class="footer-text order-2 order-md-0" href="/" style="justify-content: center;">Made with <span class="uil uil-heart-alt fs-1 text-info"></span>by No.1조</a>
+            <a class="footer-text justify-content-start text-secondary ml-1" href="javascript:void(0);" style="justify-content: center;">ⓒ 2023 KB마에</a>
           </div>
         </div>
       </nav>
