@@ -1,859 +1,316 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
 
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
 
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
- -->
-<!-- beautify ignore:start -->
-<html
-  lang="ko"
-  class="light-style layout-menu-fixed"
-  dir="ltr"
-  data-theme="theme-default"
-  data-assets-path="../assets/"
-  data-template="vertical-menu-template-free"
->
-  <head>
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-    />
-
-    <title>Vertical Layouts - Forms | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
-
-    <meta name="description" content="" />
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
-
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
-
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-
-    <!-- Page CSS -->
-
-    <!-- Helpers -->
-    <script src="../assets/vendor/js/helpers.js"></script>
-
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../assets/js/config.js"></script>
-  </head>
-
-  <body>
-  <script>
-    function readImage(input) {
-      // 인풋 태그에 파일이 있는 경우
-      if(input.files && input.files[0]) {
-
-        // FileReader 인스턴스 생성
-        const reader = new FileReader()
-        // 이미지가 로드가 된 경우
-        reader.onload = e => {
-          const previewImage = document.getElementById("preview")
-          previewImage.src = e.target.result
-        }
-        // reader가 이미지 읽도록 하기
-        reader.readAsDataURL(input.files[0])
-      }
-    }
-    let postReg = {
-      init : function () {
-        $('#update_btn').click(function () {
-          postReg.send();
-        });
-        $('#delete_btn').click(function () {
-          let c = confirm("삭제하시겠습니까?");
-          if (c == true) {
-
-          }
-        })
-      },
-      send : function () {
-        $('#register_form').attr({
-          method:'post',
-          action:'/post',
-          enctype: 'multipart/form-data'
-        });
-        $('#register_form').submit();
-      }
-    };
-    $(function () {
-
-      $('#role_add').click(function(e){
-        e.preventDefault();
-        alert('추가할거임');
-        // 새로운 add Div 생성
-        let newDiv = $('<div style="display:flex;">');
-        // 새로운 select 요소 생성
-        let newSelect = $('<select class="form-control select2 select2-hidden-accessible" style="width: 50%;" tabindex="-1" aria-hidden="true">');
-
-        // select 요소에 옵션 추가
-        newSelect.append("<option value='option1'>프론트엔드</option>");
-        newSelect.append("<option value='option1'>백엔드</option>");
-        newSelect.append("<option value='option2'>웹서버</option>");
-        newSelect.append("<option value='option3'>UX/UI디자인</option>");
-        newSelect.append("<option value='option3'>기획</option>");
-        newSelect.append("<option value='option3'>마케팅</option>");
-
-        // 새로운 input 생성
-        let newInput = $("<input type='number' class='form-control border-0 shadow-none' style='width: 50%;' value='1'/>");
-
-        newDiv.append(newSelect);
-        newDiv.append(newInput);
-
-        // 생성한 select 요소를 컨테이너에 추가
-        $("#role_apply").append(newDiv);
-
-      });
-      $('#imgname').on("change", e => {
-        readImage(e.target)
-      })
-    });
-  </script>
-    <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar">
-      <div class="layout-container">
-        <!-- Menu -->
-
-        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-          <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
-              <span class="app-brand-logo demo">
-                <svg
-                  width="25"
-                  viewBox="0 0 25 42"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs>
-                    <path
-                      d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z"
-                      id="path-1"
-                    ></path>
-                    <path
-                      d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z"
-                      id="path-3"
-                    ></path>
-                    <path
-                      d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z"
-                      id="path-4"
-                    ></path>
-                    <path
-                      d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z"
-                      id="path-5"
-                    ></path>
-                  </defs>
-                  <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
-                      <g id="Icon" transform="translate(27.000000, 15.000000)">
-                        <g id="Mask" transform="translate(0.000000, 8.000000)">
-                          <mask id="mask-2" fill="white">
-                            <use xlink:href="#path-1"></use>
-                          </mask>
-                          <use fill="#696cff" xlink:href="#path-1"></use>
-                          <g id="Path-3" mask="url(#mask-2)">
-                            <use fill="#696cff" xlink:href="#path-3"></use>
-                            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
-                          </g>
-                          <g id="Path-4" mask="url(#mask-2)">
-                            <use fill="#696cff" xlink:href="#path-4"></use>
-                            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
-                          </g>
-                        </g>
-                        <g
-                          id="Triangle"
-                          transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) "
-                        >
-                          <use fill="#696cff" xlink:href="#path-5"></use>
-                          <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
-            </a>
-
-            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-              <i class="bx bx-chevron-left bx-sm align-middle"></i>
-            </a>
-          </div>
-
-          <div class="menu-inner-shadow"></div>
-
-          <ul class="menu-inner py-1">
-            <!-- Dashboard -->
-            <li class="menu-item">
-              <a href="index.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard</div>
-              </a>
-            </li>
-
-            <!-- Layouts -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Layouts</div>
-              </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
-                    <div data-i18n="Without menu">Without menu</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
-                    <div data-i18n="Without navbar">Without navbar</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-container.html" class="menu-link">
-                    <div data-i18n="Container">Container</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-fluid.html" class="menu-link">
-                    <div data-i18n="Fluid">Fluid</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-blank.html" class="menu-link">
-                    <div data-i18n="Blank">Blank</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Pages</span>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Account Settings</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-notifications.html" class="menu-link">
-                    <div data-i18n="Notifications">Notifications</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-connections.html" class="menu-link">
-                    <div data-i18n="Connections">Connections</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                <div data-i18n="Authentications">Authentications</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="auth-login-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic">Login</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="auth-register-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic">Register</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic">Forgot Password</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-                <div data-i18n="Misc">Misc</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="pages-misc-error.html" class="menu-link">
-                    <div data-i18n="Error">Error</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-misc-under-maintenance.html" class="menu-link">
-                    <div data-i18n="Under Maintenance">Under Maintenance</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <!-- Components -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
-            <!-- Cards -->
-            <li class="menu-item">
-              <a href="cards-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Cards</div>
-              </a>
-            </li>
-            <!-- User interface -->
-            <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-box"></i>
-                <div data-i18n="User interface">User interface</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="ui-accordion.html" class="menu-link">
-                    <div data-i18n="Accordion">Accordion</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-alerts.html" class="menu-link">
-                    <div data-i18n="Alerts">Alerts</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-badges.html" class="menu-link">
-                    <div data-i18n="Badges">Badges</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-buttons.html" class="menu-link">
-                    <div data-i18n="Buttons">Buttons</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-carousel.html" class="menu-link">
-                    <div data-i18n="Carousel">Carousel</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-collapse.html" class="menu-link">
-                    <div data-i18n="Collapse">Collapse</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-dropdowns.html" class="menu-link">
-                    <div data-i18n="Dropdowns">Dropdowns</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-footer.html" class="menu-link">
-                    <div data-i18n="Footer">Footer</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-list-groups.html" class="menu-link">
-                    <div data-i18n="List Groups">List groups</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-modals.html" class="menu-link">
-                    <div data-i18n="Modals">Modals</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-navbar.html" class="menu-link">
-                    <div data-i18n="Navbar">Navbar</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-offcanvas.html" class="menu-link">
-                    <div data-i18n="Offcanvas">Offcanvas</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-pagination-breadcrumbs.html" class="menu-link">
-                    <div data-i18n="Pagination &amp; Breadcrumbs">Pagination &amp; Breadcrumbs</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-progress.html" class="menu-link">
-                    <div data-i18n="Progress">Progress</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-spinners.html" class="menu-link">
-                    <div data-i18n="Spinners">Spinners</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-tabs-pills.html" class="menu-link">
-                    <div data-i18n="Tabs &amp; Pills">Tabs &amp; Pills</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-toasts.html" class="menu-link">
-                    <div data-i18n="Toasts">Toasts</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-tooltips-popovers.html" class="menu-link">
-                    <div data-i18n="Tooltips & Popovers">Tooltips &amp; popovers</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-typography.html" class="menu-link">
-                    <div data-i18n="Typography">Typography</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <!-- Extended components -->
-            <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-copy"></i>
-                <div data-i18n="Extended UI">Extended UI</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
-                    <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="extended-ui-text-divider.html" class="menu-link">
-                    <div data-i18n="Text Divider">Text Divider</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="menu-item">
-              <a href="icons-boxicons.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-crown"></i>
-                <div data-i18n="Boxicons">Boxicons</div>
-              </a>
-            </li>
-
-            <!-- Forms & Tables -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
-            <!-- Forms -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Elements">Form Elements</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="forms-basic-inputs.html" class="menu-link">
-                    <div data-i18n="Basic Inputs">Basic Inputs</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="forms-input-groups.html" class="menu-link">
-                    <div data-i18n="Input groups">Input groups</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item active open">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Layouts">Form Layouts</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item active">
-                  <a href="form-layouts-vertical.html" class="menu-link">
-                    <div data-i18n="Vertical Form">Vertical Form</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="form-layouts-horizontal.html" class="menu-link">
-                    <div data-i18n="Horizontal Form">Horizontal Form</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <!-- Tables -->
-            <li class="menu-item">
-              <a href="tables-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-table"></i>
-                <div data-i18n="Tables">Tables</div>
-              </a>
-            </li>
-            <!-- Misc -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
-            <li class="menu-item">
-              <a
-                href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                target="_blank"
-                class="menu-link"
-              >
-                <i class="menu-icon tf-icons bx bx-support"></i>
-                <div data-i18n="Support">Support</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a
-                href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                target="_blank"
-                class="menu-link"
-              >
-                <i class="menu-icon tf-icons bx bx-file"></i>
-                <div data-i18n="Documentation">Documentation</div>
-              </a>
-            </li>
-          </ul>
-        </aside>
-        <!-- / Menu -->
-
-        <!-- Layout container -->
-        <div class="layout-page">
-          <!-- Navbar -->
-
-          <nav
-            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-            id="layout-navbar"
-          >
-            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-                <i class="bx bx-menu bx-sm"></i>
-              </a>
-            </div>
-
-            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              <!-- Search -->
-              <div class="navbar-nav align-items-center">
-                <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input
-                    type="text"
-                    class="form-control border-0 shadow-none"
-                    placeholder="Search..."
-                    aria-label="Search..."
-                  />
-                </div>
-              </div>
-              <!-- /Search -->
-
-              <ul class="navbar-nav flex-row align-items-center ms-auto">
-                <!-- Place this tag where you want the button to render. -->
-                <li class="nav-item lh-1 me-3">
-                  <a
-                    class="github-button"
-                    href="https://github.com/themeselection/sneat-html-admin-template-free"
-                    data-icon="octicon-star"
-                    data-size="large"
-                    data-show-count="true"
-                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                    >Star</a>
-                </li>
-
-                <!-- User -->
-                <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                    </div>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-3">
-                            <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+<div class="content">
+    <div class="row mx-n2 d-flex justify-content-center">
+        <div class="position-relative ">
+            <ul class="nav nav-pills " id="pill-myTab" role="tablist" style="margin-top: 5rem;">
+                <li class="nav-item"><a class="nav-link active" id="home-tab" data-toggle="tab" href="#tab-home" role="tab" aria-controls="tab-home" aria-selected="true">모집글 작성</a></li>
+            </ul>
+            <div class="tab-content border p-3 mt-3" id="pill-myTabContent">
+                <div class="tab-pane fade show active" id="tab-home" role="tabpanel" aria-labelledby="home-tab">
+                    <form id="study_update">
+                        <input name="memberId" type="hidden" value="${loginmember.memberId}"/>
+                        <div class="mt-3 mb-5">
+                            <h3><label class="form-label text-700" for="basic-default-title">프로젝트명</label></h3>
+                            <div class="mb-1">
+                                <span class='uil uil-smile-beam'></span>
+                                <small class="text-muted float-end">직관적인 프로젝트명을 사용하시면 클릭률이 올라갑니다.</small>
                             </div>
-                          </div>
-                          <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
-                            <small class="text-muted">Admin</small>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-user me-2"></i>
-                        <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-cog me-2"></i>
-                        <span class="align-middle">Settings</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
-                        <i class="bx bx-power-off me-2"></i>
-                        <span class="align-middle">Log Out</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <!--/ User -->
-              </ul>
-            </div>
-          </nav>
-
-          <!-- / Navbar -->
-
-          <!-- Content wrapper -->
-          <div class="content-wrapper">
-            <!-- Content -->
-
-            <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">프로젝트 모집</span> 프로젝트 모집</h4>
-
-              <!-- Basic Layout -->
-              <div class="row">
-                <div class="col-xl">
-                  <div class="card mb-4">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">모집글 작성</h5>
-                      <small class="text-muted float-end">Default label</small>
-                    </div>
-                    <div class="card-body">
-                      <form action="/post" method="post" enctype="multipart/form-data">
-                        <div id="role_apply">
-
-                        </div>
-                        <input name="memberId" type="hidden" value="${loginmember.memberId}" />
-
-                        <div class="mb-3">
-                          <button id="role_add" class="btn btn-primary">추가</button>
-                          <button id="role_del" class="btn btn-secondary">삭제</button>
-                        </div>
-
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-title">제목</label>
-                          <input
-                                  id="basic-default-title"
-                                  class="form-control"
-                                  name="title"
-                                  placeholder="프로젝트 상세 내용을 작성해주세요"
-                          ></input>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-message">내용</label>
-                          <textarea
-                                  id="basic-default-message"
-                                  class="form-control"
-                                  name="content"
-                                  placeholder="프로젝트 상세 내용을 작성해주세요"
-                          ></textarea>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="imgname">이미지</label>
-                          <c:choose>
-                            <c:when test="${post.img == null || post.img == ''}">
-                              <input class="d-none mt-5 ml-5" type="file" name="imgName" style="display: none" id="imgname">
-                              <a href="javascript:void(0);" onclick="$('#imgname').trigger('click')">
-                                <img src="/assets/img/group/pic-1.png" width="100px"
-                                     alt="Generic placeholder image" class="img-fluid img-thumbnail mb-3"
-                                     style="width: 100%; z-index: 1; height:30%" id="preview">
-                              </a>
-                            </c:when>
-                            <c:otherwise>
-                              <input class="d-none mt-5 ml-5" type="file" name="imgName" style="display: none" id="imgname">
-                              <a href="javascript:void(0);" onclick="$('#imgname').trigger('click')">
-                                <img src="/uimg/${post.img}" id="preview"
-                                     alt="Generic placeholder image" class="img-fluid img-thumbnail mb-3"
-                                     style="width: 100%; z-index: 1; height:20%">
-                              </a>
-                            </c:otherwise>
-                          </c:choose>
-                        </div>
-                        <div class="mb-3">
-                          <div class="form-group"> <label for="design">디자인</label>
-                            <select name="design" id="design" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                              <option selected="selected">1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                          </div> <!-- /.form-group -->
-                        </div>
-                        <div class="mb-3">
-                          <div class="form-group"> <label for="plan">기획</label>
-                            <select name="plan" id="plan" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                              <option selected="selected">1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                          </div> <!-- /.form-group -->
-                        </div>
-                        <div class="mb-3">
-                          <div class="form-group"> <label for="front">프런트</label>
-                            <select name="front" id="front" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                              <option selected="selected">1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                          </div> <!-- /.form-group -->
-                        </div>
-                        <div class="mb-3">
-                          <div class="form-group"> <label for="server">백엔드</label>
-                            <select name="server" id="server" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                              <option selected="selected">1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
-                          </div> <!-- /.form-group -->
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-fullname">Full Name</label>
-                          <input type="text" class="form-control" id="basic-default-fullname" />
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-company">Company</label>
-                          <input type="text" class="form-control" id="basic-default-company" placeholder="ACME Inc." />
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-email">Email</label>
-                          <div class="input-group input-group-merge">
                             <input
-                              type="text"
-                              id="basic-default-email"
-                              class="form-control"
-                              placeholder="john.doe"
-                              aria-label="john.doe"
-                              aria-describedby="basic-default-email2"
-                            />
-                            <span class="input-group-text" id="basic-default-email2">@kbfg.com</span>
-                          </div>
-                          <div class="form-text">You can use letters, numbers & periods</div>
-
-
+                                    id="basic-default-title"
+                                    class="form-control"
+                                    name="title"
+                                    placeholder="프로젝트 상세 내용을 작성해주세요"
+                            ></input>
                         </div>
+                        <div class="mb-5">
+                            <h3><label class="form-label text-700" for="subject_checkbox">프로젝트 분야</label></h3>
+                            <div class="mb-1">
+                                <span class='uil uil-smile-beam'></span>
+                                <small class="text-muted float-end">아래 분야 중에 한가지를 선택해주세요.</small>
+                            </div>
+                            <div class="form-group form-check" id="subject_checkbox">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="O2O" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="O2O">O2O</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="share_service" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="share_service">공유서비스</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="dating_service" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="dating_service">데이팅서비스</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="travel" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="travel">여행</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="social_network" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="social_network">소셜네트워크</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="beauty_fashion" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="beauty_fashion">뷰티/패션</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="ecommerce" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="ecommerce">이커머스</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="entertainment" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="entertainment">엔터테인먼트</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="game" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="game">게임</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="health_sports" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="health_sports">헬스/스포츠</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="news_information" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="news_information">뉴스/정보</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="utility" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="utility">유틸</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="finance" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="finance">금융</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="realestate_interior" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="realestate_interior">부동산/인테리어</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="religion" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="religion">종교</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="education_hr" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="education_hr">교육/HR</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="medi_hospital" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="medi_hospital">의료/병원</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="mobility" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="mobility">모빌리티(교통)</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="childcare_delivery" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="childcare_delivery">육아/출산</label>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <input class="form-check-input" id="universe" type="checkbox" name=""/>
+                                            <label class="form-check-label" for="universe">우주</label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <h3><label class="form-label text-700" for="kt_docs_ckeditor_document_toolbar">프로젝트 설명</label></h3>
+                            <div class="mb-1">
+                                <span class='uil uil-smile-beam'></span>
+                                <small class="text-muted float-end">설명이 풍부한 프로젝트는, 아닌 프로젝트에 비해 지원율이 50% 높습니다.</small>
+                            </div>
+                            <div class="rounded-soft border-secondary" id="kt_docs_ckeditor_document_toolbar">
 
-                        <button type="submit" class="btn btn-primary">프로젝트 등록</button>
-                      </form>
-                    </div>
-                  </div>
+                            </div>
+                            <div class="rounded-soft bg-200 border-0 my-3" id="kt_docs_ckeditor_document" contenteditable="true">
+                                <h3 style="margin-left: 3%;">1. 프로젝트의 시작 동기</h3>
+                                <h6 style="margin-left: 5%;">-왜 이 프로덕트를 만들고 싶은지 적어주세요</h6>
+                                <ul>
+                                    <li>(ex 국내 여행을 가려고 하는데 어떤 곳이 좋은지에 대한 경험이 없어서 어려웠습니다.
+                                        <br/>국내도 해외만큼이나 다양한 지역의 명소가 있는데, 이것이 잘 정리되어있지 않아 잊어버리기 일쑤입니다.
+                                        <br/>전국적인 행사정보와 국내 유명여행지를 모아보여준다면, 사람들이 많이 사용할 것 같습니다.)</li>
+                                </ul>
+
+                                <h6 style="margin-left: 5%;">-만들고자 하는 프로덕트에 대해 알려주세요 </h6>
+                                <ul>
+                                    <li>(ex 계절별/축제별 국내여행을 모아서 추천해주는 프로덕트를 만들고자합니다.
+                                        <br/>꽃이 피는 시기를 기준으로 , 꽃구경을 갈 수 있는 장소를, 월별로 축제가 있는 지역을 추천합니다.
+                                        <br/>추천시에는 블로그 리뷰 등을 묶어서 해당 부분을 참고할 수 있게 하고 , 이메일이나 앱 푸시등으로 사용자에게 주기적으로 안내합니다.)</li>
+                                </ul>
+                                <h3 style="margin-left: 3%;">2. 회의 진행/모임 방식</h3>
+                                <h6 style="margin-left: 5%;">-만들고자 하는 프로덕트에 대해 알려주세요 </h6>
+                                <h3 style="margin-left: 3%;">3. 그외 자유기재</h3>
+                                <h6 style="margin-left: 5%;">-자유로운 방법으로 프로젝트를 어필하세요 </h6>
+
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <h3><label class="form-label text-700" for="role_apply">모집 인원</label></h3>
+                            <div class="mb-1">
+                                <span class='uil uil-smile-beam'></span>
+                                <small class="text-muted float-end">각 분야 별 인원을 설정하세요! (추후 변경 가능)</small>
+                            </div>
+                            <div id="role_apply">
+                                <div id="role_1" style="display:flex; margin-bottom: 0.5%;">
+                                    <select class="form-control select2"
+                                            style="width: 50%; margin-right:0.5%;" tabindex="-1" aria-hidden="true">
+                                        <option value="">선택하세요</option>
+                                        <option value="프론트엔드">프론트엔드</option>
+                                        <option value="백엔드">백엔드</option>
+                                        <option value="웹서버">웹서버</option>
+                                        <option value='UX/UI디자인'>UX/UI디자인</option>
+                                        <option value="기획">기획</option>
+                                        <option value="마케팅">마케팅</option>
+                                    </select>
+                                    <input type='number' class='form-control' style='width: 50%;' value='1'/>
+                                </div>
+                            </div>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                최소한 <strong>한 명</strong> 이상의 구성원을 모집하세요!
+                                <button class="close" id="modal_close"><span class="font-weight-light" aria-hidden="true">×</span></button>
+                            </div>
+                            <div class="mb-3" style="text-align: right;">
+                                <button class="btn btn-warning rounded-capsule mr-1 mb-1 pt-1" id="role_add" type="button">
+                                    <span class="uil uil-plus" data-fa-transform="shrink-3"></span>추가
+                                </button>
+                                <button class="btn btn-secondary rounded-capsule mr-1 mb-1 pt-1" id="role_del" type="button">
+                                    <span class="uil uil-trash-alt" data-fa-transform="shrink-3"></span>삭제
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <h3><label class="form-label text-700" for="imgname">이미지</label></h3>
+                            <c:choose>
+                                <c:when test="${post.img == null || post.img == ''}">
+                                    <input class="d-none mt-5 ml-5" type="file" name="imgName" style="display: none"
+                                           id="imgname">
+                                    <a href="javascript:void(0);" onclick="$('#imgname').trigger('click')">
+                                        <img src="/assets/img/group/pic-1.png" width="100px"
+                                             alt="Generic placeholder image" class="img-fluid img-thumbnail mb-3"
+                                             style="width: 100%; z-index: 1; height:30%" id="preview">
+                                    </a>
+                                </c:when>
+                                <c:otherwise>
+                                    <input class="d-none mt-5 ml-5" type="file" name="imgName" style="display: none"
+                                           id="imgname">
+                                    <a href="javascript:void(0);" onclick="$('#imgname').trigger('click')">
+                                        <img src="/uimg/${post.img}" id="preview"
+                                             alt="Generic placeholder image" class="img-fluid img-thumbnail mb-3"
+                                             style="width: 100%; z-index: 1; height:20%">
+                                    </a>
+                                </c:otherwise>
+                            </c:choose>
+                        </div>
+                        <div class="d-flex float-end">
+                            <a href="javascript:void(0)" id="study_register_btn" class="btn btn-primary">등록</a>
+                        </div>
+                    </form>
                 </div>
-              </div>
             </div>
-            <!-- / Content -->
+<%--            <div class="card-body">--%>
 
-            <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                </div>
-                <div>
-                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                  <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Support</a
-                  >
-                </div>
-              </div>
-            </footer>
-            <!-- / Footer -->
-
-            <div class="content-backdrop fade"></div>
-          </div>
-          <!-- Content wrapper -->
+<%--            </div>--%>
         </div>
-        <!-- / Layout page -->
-      </div>
-
-      <!-- Overlay -->
-      <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-    <!-- / Layout wrapper -->
+</div>
 
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
+<!--CKEditor Build Bundles:: Only include the relevant bundles accordingly-->
+<script src="/assets/plugins/custom/ckeditor/ckeditor-document.bundle.js"></script>
 
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script>
+    DecoupledEditor
+        .create(document.querySelector('#kt_docs_ckeditor_document'))
+        .then(editor => {
+            const toolbarContainer = document.querySelector('#kt_docs_ckeditor_document_toolbar');
 
-    <script src="../assets/vendor/js/menu.js"></script>
-    <!-- endbuild -->
+            toolbarContainer.appendChild(editor.ui.view.toolbar.element);
+        })
+        .catch(error => {
+            console.error(error);
+        })
+</script>
+<script>
+    const myDropzone = new Dropzone("#kt_dropzonejs_example_1", {
+        url           : "study/addimpl",
+        paramName     : "file",
+        maxFiles      : 1,
+        maxFilesize   : 10, // MB
+        addRemoveLinks: true,
+        accept        : function (file, done) {
+            if (file) {
+                dropImg = file;
+            } else {
+                done();
+            }
+        }
+    });
+</script>
 
-    <!-- Vendors JS -->
 
-    <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+<script>
+    $(function () {
+        $('.alert').hide();
+        $('#modal_close').click(function(e){
+            e.preventDefault();
+            $('.alert').hide();
+        });
+        $('#role_add').click(function (e) {
+            e.preventDefault();
+            alert('추가할거임');
+            let recentId = $("#role_apply div:last").attr('id');
 
-    <!-- Page JS -->
 
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-  </body>
-</html>
+            alert(recentId);
+            let recentNo = parseInt(recentId.substring(5)) + 1;
+            alert(recentNo);
+
+            // 새로운 add Div 생성
+            let newDiv = $('<div id="role_' + recentNo + '"style="display:flex; margin-bottom: 0.5%;">');
+            // 새로운 select 요소 생성
+            let newSelect = $('<select class="form-control select2" style="width: 50%; margin-right:0.5%;" tabindex="-1" aria-hidden="true">');
+
+            // select 요소에 옵션 추가
+            newSelect.append("<option value=''>선택하세요</option>")
+            newSelect.append("<option value='프론트엔드'>프론트엔드</option>");
+            newSelect.append("<option value='백엔드'>백엔드</option>");
+            newSelect.append("<option value='웹서버'>웹서버</option>");
+            newSelect.append("<option value='UX/UI디자인'>UX/UI디자인</option>");
+            newSelect.append("<option value='기획'>기획</option>");
+            newSelect.append("<option value='마케팅'>마케팅</option>");
+
+            // 새로운 input 생성
+            let newInput = $("<input type='number' class='form-control' style='width: 50%;' value='1'/>");
+
+            newDiv.append(newSelect);
+            newDiv.append(newInput);
+
+            // 생성한 select 요소를 컨테이너에 추가
+            $("#role_apply").append(newDiv);
+        });
+
+        $('#role_del').click(function (e) {
+            e.preventDefault();
+            let recentId = $("#role_apply div:last").attr('id');
+            if(recentId=="role_1"){
+                $('.alert').show();
+                // alert('최소한 한 명 이상의 구성원을 모집하세요!');
+                return;
+            }
+            $("#" + recentId).remove();
+        });
+        $('#imgname').on("change", e => {
+            readImage(e.target)
+        })
+    });
+</script>

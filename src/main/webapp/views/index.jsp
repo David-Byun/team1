@@ -264,7 +264,7 @@
                 </div>
               </div>
             </form>
-            <ul class="navbar-nav navbar-nav-vertical flex-row">
+            <ul class="navbar-nav navbar-nav-vertical">
               <li class="nav-item"><a class="nav-link" href="/"><span class="icons fs-3 uil uil-home-alt"></span><span class="fs--1"> 메인</span></a>
               </li>
               <li class="nav-item"><a class="nav-link" href="#modal-contacts" data-toggle="modal"><span class="icons fs-3 uil uil-phone"></span><span class="fs--1">모집중 Project</span></a>
