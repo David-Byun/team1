@@ -13,7 +13,11 @@
                 <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
                     <h5 class="card-title text-white">${post.title}</h5>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <div><span class="uil fs-3 text-300 align-middle uil-lightbulb-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">#JS #JAVA #SPRING</span></div>
+                        <div><span class="uil fs-3 text-300 align-middle uil-lightbulb-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">
+                            <c:forEach var="item" items="${post.hashtag}">
+                            #${item}
+                            </c:forEach>
+                        </span></div>
                         <a class="badge badge-pill stretched-link ml-2 badge-success" href="/post/${post.projectId}">Project Manager : ${post.memberId}</a>
                     </div>
                 </div>

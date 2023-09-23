@@ -3,9 +3,25 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.PostMapper">
-    <select id="selectAll" parameterType="int" resultType="Post">
-        SELECT *
+    <select id="selectAll" resultType="Post">
+        SELECT project_id       as projectId
+            , title             as title
+            , member_id         as memberId
+            , marketing         as marketing
+            , plan              as plan
+            , design            as design
+            , front             as front
+            , server            as server
+            , process           as process
+            , rdate             as rdate
+            , img               as img
         FROM Post
+    </select>
+    <select id="findHashTagList" resultType="String">
+        SELECT hashtag
+        FROM hashtag a, post_skilltag b
+        WHERE a.hashtag_id = b.hashtag_id
+        AND b.project_id = #{project_id}
     </select>
     <select id="select" parameterType="int" resultType="Post">
         SELECT *
