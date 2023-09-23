@@ -336,7 +336,7 @@
                                 </div>
                             </div>
 
-                                <div class="px-4 px-sm-6 px-md-8 pb-6">
+                            <div class="px-4 px-sm-6 px-md-8 pb-6">
                                 <div class="hr-sect d-flex justify-content-center">
                                     <div class="bg-white text-center d-flex align-items-center z-index-1 px-3"><span class="py-0 py-sm-1 font-weight-bold text-1000 ml-2">Share</span>
                                         <div> <a class="fs-4 text-decoration-none uil uil-facebook" href="#"> </a><a class="fs-4 text-decoration-none uil uil-blogger" href="#"></a><a class="fs-4 text-decoration-none uil uil-linkedin" href="#"></a></div>
