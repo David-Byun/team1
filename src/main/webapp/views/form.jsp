@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <div class="content">
     <div class="row mx-n2 d-flex justify-content-center">
         <div class="position-relative ">
@@ -32,7 +31,7 @@
                                 <small class="text-muted float-end">아래 분야 중에 한가지를 선택해주세요.</small>
                             </div>
                             <div class="form-group form-check" id="subject_checkbox">
-                                <table style="width:100%;">
+                                <table class="ml-3" style="width:100%;">
                                     <tr>
                                         <td style="width:20%;">
                                             <input class="form-check-input" id="O2O" type="checkbox" name=""/>
@@ -133,7 +132,7 @@
                             <div class="rounded-soft border-secondary" id="kt_docs_ckeditor_document_toolbar">
 
                             </div>
-                            <div class="rounded-soft bg-200 border-0 my-3" id="kt_docs_ckeditor_document" contenteditable="true">
+                            <div class="rounded-soft bg-200 border-0 my-3" id="kt_docs_ckeditor_document" contenteditable="true" style="height: 500px;">
                                 <h3 style="margin-left: 3%;">1. 프로젝트의 시작 동기</h3>
                                 <h6 style="margin-left: 5%;">-왜 이 프로덕트를 만들고 싶은지 적어주세요</h6>
                                 <ul>
@@ -212,8 +211,8 @@
                                 </c:otherwise>
                             </c:choose>
                         </div>
-                        <div class="d-flex float-end">
-                            <a href="javascript:void(0)" id="study_register_btn" class="btn btn-primary">등록</a>
+                        <div class="mb-3" style="text-align: center;">
+                            <a href="javascript:void(0)" id="study_register_btn" class="btn btn-lg btn-warning rounded-capsule mr-1 mb-1">작성완료</a>
                         </div>
                     </form>
                 </div>
@@ -240,23 +239,6 @@
             console.error(error);
         })
 </script>
-<script>
-    const myDropzone = new Dropzone("#kt_dropzonejs_example_1", {
-        url           : "study/addimpl",
-        paramName     : "file",
-        maxFiles      : 1,
-        maxFilesize   : 10, // MB
-        addRemoveLinks: true,
-        accept        : function (file, done) {
-            if (file) {
-                dropImg = file;
-            } else {
-                done();
-            }
-        }
-    });
-</script>
-
 
 <script>
     $(function () {
