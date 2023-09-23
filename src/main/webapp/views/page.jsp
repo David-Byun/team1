@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<script>
+<script type='text/javascript'>
     function apply(){
         $('#apply').click(
             Swal.fire({
@@ -15,7 +15,40 @@
             })
         )
     }
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            googleCalendarApiKey: 'AIzaSyDjk_46V4EV_AHXb7MmJdON3zkiNt3WCQs',
+            eventSources: [
+                {
+                    googleCalendarId: 'kbdavid890414@gmail.com',
+                    className: '여의도나들이',
+                    color: '#be5683', //rgb,#ffffff 등의 형식으로 할 수 있어요.
+                    //textColor: 'black'
+                },
+                {
+                    googleCalendarId: 'kbdavid890414@gmail.com',
+                    className: '테스트',
+                    color: '#204051',
+                    //textColor: 'black'
+                },
+                {
+                    googleCalendarId: 'kbdavid890414@gmail.com',
+                    className: 'Tasks',
+                    color: '#3b6978',
+                    //textColor: 'black'
+                }
+            ]
+        });
+        calendar.render();
+    });
 </script>
+<style>
+    #calendar{
+        margin:auto;
+    }
+</style>
 <!-- ===============================================-->
 <!--    Main Content-->
 <!-- ===============================================-->
@@ -159,10 +192,7 @@
                                                 <c:otherwise>
                                                     <img src="/assets/img/avatars/${applicant.img}" width="100" height="100" class="rounded-circle">
                                                 </c:otherwise>
-
-
                                             </c:choose>
-
                                         </div>
                                         <div class="text-center mt-3">
                                             <span class="bg-black p-1 px-4 rounded text-white">Pro</span>
@@ -184,6 +214,9 @@
                                     </div>
                                     </c:forEach>
                                 </div>
+                                <h3 class="text-800 pt-5">프로젝트 캘린더</h3>
+                                <hr/>
+                                <div id='calendar'></div>
                             </div>
 
                             <div class="px-4 px-sm-6 px-md-8 pb-6">

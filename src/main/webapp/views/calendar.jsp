@@ -31,7 +31,7 @@
     <style>
         #calendar{
             width:60%;
-            margin:20px auto;
+            margin:200px auto;
         }
     </style>
 <div id='calendar'></div>
