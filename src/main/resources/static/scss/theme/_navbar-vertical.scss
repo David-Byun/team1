@@ -60,7 +60,7 @@
   @include media-breakpoint-up($breakpoint){
 
     .navbar-top.navbar-expand-#{$breakpoint}{
-      .navbar-brand-custom{  width: 15.5rem; }
+      .navbar-brand-custom{  width: 14rem; }
       .dropdown-center{
         left: 50%;
         transform: translateX(-50%);

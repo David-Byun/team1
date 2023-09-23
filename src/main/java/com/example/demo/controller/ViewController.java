@@ -25,8 +25,13 @@ public class ViewController {
 	}
 
 	@RequestMapping("/form")
-	public String form() {
-		return "form";
+	public String form(Model model){
+		model.addAttribute("center","form");
+		return "index";
 	}
 
+	@RequestMapping("/form_org")
+	public String form_org() {
+		return "form_org";
+	}
 }
