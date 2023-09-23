@@ -45,7 +45,7 @@
                 element.textContent = currentValue + 1;
                 button.disabled = true; // 버튼 비활성화
             } else {
-                alert("데이터 업데이트에 실패했습니다.");
+                alert("지원에 실패했습니다.");
             }
         });
     }
