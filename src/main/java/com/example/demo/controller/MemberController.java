@@ -3,12 +3,16 @@ package com.example.demo.controller;
 import com.example.demo.dto.Member;
 import com.example.demo.dto.MemberLoginDto;
 import com.example.demo.service.MemberService;
+import com.sun.mail.imap.protocol.Item;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -27,5 +31,20 @@ public class MemberController {
         }
         return "/login";
     }
+
+    @GetMapping("/kbmae")
+    public String kbmae(Model model) throws Exception {
+        List<Member> mlist = null;
+        mlist = memberService.getMemberList();
+        log.info("mlist={}", mlist);
+        model.addAttribute("kbmaelist", mlist);
+
+//        List<Member> slist = null;
+/*      slist = memberService.getSkillList();
+        model.addAttribute("skilllist", slist);
+        log.info("slist={}", slist);*/
+        model.addAttribute("center","kbmae");
+        return "index";
+    };
 
 }
