@@ -39,7 +39,7 @@ public class RestController {
     ApplicantService applicantService;
 
     @RequestMapping("/postaddimpl")
-    public String postaddimpl(Post post, String ref_link, String pdate, String subject, HttpSession session) throws Exception {
+    public String postaddimpl(Post post, String ref_link, String pdate, String subject) throws Exception {
 
         String re = "";
 

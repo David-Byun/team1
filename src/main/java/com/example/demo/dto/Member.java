@@ -17,11 +17,9 @@ public class Member {
     private String company;
     private String memo;
     private String img;
-    //sunmi rdate 없어서 추가
-    private LocalDate rdate;
-    //sunmi position 없어서 추가
-    private String position;
     private Date rdate;
     private String member_id;
+    //sunmi position 없어서 추가
+    private String position;
     private List<String> hashtagList;
 }
