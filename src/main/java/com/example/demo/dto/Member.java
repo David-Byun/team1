@@ -17,5 +17,7 @@ public class Member {
     private String img;
     private Date rdate;
     private String member_id;
+    //sunmi position 없어서 추가
+    private String position;
     private List<String> hashtagList;
 }
