@@ -11,10 +11,11 @@
             , plan              as plan
             , design            as design
             , front             as front
+             --sunmi process column삭제로 쿼리 수정--
             , server            as server
-            , process           as process
             , rdate             as rdate
             , img               as img
+            , content           as content
         FROM Post
     </select>
     <select id="findHashTagList" resultType="String">
@@ -28,9 +29,11 @@
         FROM Post
         Where project_id = #{projectid}
     </select>
+
+    <!--sunmi-->
     <insert id="insert" parameterType="Post">
-        INSERT INTO Post (project_id, title, content, member_id, marketing, plan, design, front, server, ref_link, process, rdate, image)
-        VALUES (postSeq.NEXTVAL, #{title}, #{content}, #{memberId}, #{marketing}, #{plan}, #{design}, #{front}, #{server}, null, 0, sysdate, null)
+        INSERT INTO Post (project_id, title, content, member_id, marketing, plan, design, front, server, rdate, img)
+        VALUES (post_seq.NEXTVAL, #{title}, #{content}, #{memberId}, #{marketing, jdbcType=NULL}, #{plan, jdbcType=NULL}, #{design, jdbcType=NULL}, #{front, jdbcType=NULL}, #{server, jdbcType=NULL}, sysdate, #{img})
     </insert>
     <update id="update" parameterType="Post">
         UPDATE Post
@@ -42,10 +45,15 @@
         design = #{design},
         front = #{front},
         server = #{server},
-        ref_link = #{refLink},
-        process = #{process},
-        img = #{img}
+        img = #{img},
+        content = #{content}
         WHERE
         project_id = #{projectId}
     </update>
+
+    <!--sunmi-->
+    <select id="getLastPostId" resultType="Integer">
+        SELECT post_seq.CURRVAL FROM dual
+    </select>
+
 </mapper>

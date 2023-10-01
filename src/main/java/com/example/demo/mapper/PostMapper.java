@@ -9,4 +9,7 @@ import java.util.List;
 @Mapper
 public interface PostMapper extends DemoMapper<Integer, Post> {
     List<String> findHashTagList(int projectId);
+
+    //sunmi
+    Integer getLastPostId() throws Exception;
 }

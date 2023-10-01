@@ -181,15 +181,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h3 class="text-800 mt-5" >${postDetail.subtitle1}</h3>
+                                <!--sunmi postDetail content 수정-->
+                                <h3 class="text-800 mt-5" >프로젝트 상세 내용</h3>
                                 <hr/>
-                                <p>${postDetail.content1}</p>
-                                <h3 class="text-800 mt-5" >${postDetail.subtitle2}</h3>
-                                <hr/>
-                                <p>${postDetail.content2}</p>
-                                <h3 class="text-800 mt-5" >${postDetail.subtitle3}</h3>
-                                <hr/>
-                                <p>${postDetail.content3}</p>
+                                <div class="container">
+                                    ${postDetail.content}
+                                </div>
                                 <img class="rounded img-fluid" src="assets/img/group/pic-9.jpg" alt="" />
                                 <h3 class="text-800 mt-5">프로젝트 정보</h3>
                                 <table class="table">

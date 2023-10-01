@@ -1,9 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.Applicant;
-import com.example.demo.dto.Member;
 import com.example.demo.mapper.ApplicantMapper;
-import com.example.demo.mapper.MemberMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,6 +17,14 @@ public class ApplicantService {
 
     public List<Applicant> getApplicantList(int projectId){
         return applicantMapper.findApplicantByProjectId(projectId);
+    }
+
+    public int regApplicant (Applicant applicant) throws Exception {
+        int result = applicantMapper.insert(applicant);
+        if (result == 0) {
+            throw new Exception("실패");
+        }
+        return result;
     }
 
 }
