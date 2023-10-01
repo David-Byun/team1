@@ -19,7 +19,6 @@ public class Post {
     private LocalDate rdate;
     private String content;
     private String img;
-    private String content;
     private List<String> hashtag;
 
     private MultipartFile imgFile;
