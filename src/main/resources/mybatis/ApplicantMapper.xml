@@ -5,15 +5,22 @@
 <mapper namespace="com.example.demo.mapper.ApplicantMapper">
     <select id="findApplicantByProjectId" parameterType="int" resultType="Applicant">
         SELECT a.member_id      as memberId
-                , a.post_id     as projectId
+                --//sunmi post_id => project_id로 오라클 칼럼명 변경함 --
+                , a.project_id     as projectId
                 , a.apply_part  as applyPart
                 , a.rdate
                 , b.name
                 , b.company
                 , b.img
         FROM Applicant a, Member b
-        WHERE a.post_id = #{projectId}
+        WHERE a.project_id = #{projectId}
         AND a.member_id = b.member_id
         AND a.success = 1
     </select>
+
+    <!--sunmi-->
+    <insert id="insert" parameterType="Applicant">
+        INSERT INTO applicant (member_id, project_id, apply_part, success, rdate, progress, score, upvote)
+        VALUES (#{memberId}, #{projectId}, #{applyPart}, #{success}, sysdate, 0, #{score, jdbcType=NULL}, #{upvote, jdbcType=NULL})
+    </insert>
 </mapper>

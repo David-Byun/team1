@@ -50,4 +50,9 @@ public class PostService {
     public int updatePost(Post post) {
         return postMapper.update(post);
     }
+
+    //sunmi
+    public Integer getLastPostId() throws Exception {
+        return postMapper.getLastPostId();
+    }
 }

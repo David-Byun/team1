@@ -46,7 +46,36 @@
     <link href="/assets/lib/loaders.css/loaders.min.css" rel="stylesheet">
     <link href="/assets/css/theme.css" rel="stylesheet">
 
+
+    <!--sunmi-->
+    <!--Dropzone-->
+    <link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css"/>
+    <link rel="canonical" href="https://preview.keenthemes.com/start-html-pro"/>
+    <!--FullCalendar-->
+    <link href="/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <%--    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">--%>
+    <%--    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">--%>
+    <%--    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">--%>
+    <%--    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">--%>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&family=Nanum+Gothic&family=Noto+Sans+KR:wght@300&display=swap"
+        rel="stylesheet">
+
   </head>
+
+  <style>
+      html body {
+          font-family: 'Gothic A1', sans-serif;
+          font-family: 'Nanum Gothic', sans-serif;
+          font-family: 'Noto Sans KR', sans-serif;
+      }
+      /*html body {*/
+      /*    font-family: 'IBM Plex Sans KR', sans-serif;*/
+      /*}*/
+  </style>
 
   <script>
     $(function () {
@@ -181,7 +210,7 @@
           <ul class="navbar-nav align-items-center">
             <li class="dropdown nav-item mr-2"><a class="nav-link" href="#" id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl">
-                  <img class="rounded-circle" src="assets/img/icons/user-icon.png" alt="user-icon" />
+                  <img class="rounded-circle" src="assets/img/icons/user-icon.jpg" alt="user-icon" />
 
                 </div>
               </a>
@@ -200,7 +229,7 @@
                 </div>
               </div>
             </li>
-            <li class="nav-item"><a class="nav-link px-0" href="#"><span claess="uil uil-twitter fs-2"></span></a></li>
+            <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-twitter fs-2"></span></a></li>
             <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-facebook-f fs-2"></span></a></li>
             <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-instagram-alt fs-2"> </span></a></li>
             <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-google-drive fs-2">     </span></a></li>
@@ -563,10 +592,6 @@
           <jsp:include page="${center}.jsp"/>
         </c:otherwise>
       </c:choose>
-      <footer>
-      <div class="d-flex justify-content-center bg-200 mb-2">
-        <img src="assets/img/icons/row.png" alt="img" />
-      </div></footer>
     </main>
     <!-- ===============================================-->
     <!--    End of Main Content-->

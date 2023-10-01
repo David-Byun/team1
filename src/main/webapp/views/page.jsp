@@ -141,19 +141,14 @@
                                                 <p>웹프론트엔드</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-1 col-sm-1">
+                                        <div class="col-md-2">
                                             <div class="box">
-                                                <p id="front">${postDetail.front}</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-1 col-sm-1">
-                                            <div class="box">
-                                                <p>/ ${post.front}</p>
+                                                <p>${postDetail.front}/${post.front}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="box">
-                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('front', this)">지원</button>
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply()">지원</button>
                                             </div>
                                         </div>
                                     </div>
@@ -202,8 +197,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--sunmi postDetail content 수정-->
+                                <h3 class="text-800 mt-5" >프로젝트 상세 내용</h3>
                                 <h3 class="text-800 mt-5" >${post.title}</h3>
                                 <hr/>
+                                <div class="container">
+                                    ${postDetail.content}
+                                </div>
                                 <p>${post.content}</p>
                                 <img class="rounded img-fluid" src="assets/img/group/pic-9.jpg" alt="" />
                                 <h3 class="text-800 mt-5">프로젝트 정보</h3>

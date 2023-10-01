@@ -8,4 +8,10 @@
         FROM project_detail
         Where project_id = #{projectId}
     </select>
+
+    <!--sunmi-->
+    <insert id="insert" parameterType="PostDetail">
+        INSERT INTO project_detail (detail_id, project_id, marketing, plan, design, front, server, ref_link, process, view_cnt, pdate, subject, content)
+        VALUES (detail_seq.NEXTVAL, #{projectId}, #{marketing}, #{plan}, #{design}, #{front}, #{server}, #{refLink}, 0, 0, #{pdate}, #{subject}, #{content})
+    </insert>
 </mapper>

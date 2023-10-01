@@ -16,11 +16,11 @@ public class Post {
     private int design;
     private int front;
     private int server;
-    private int process;
     private LocalDate rdate;
     private String content;
     private String img;
+    private String content;
     private List<String> hashtag;
 
-    private MultipartFile imgName;
+    private MultipartFile imgFile;
 }

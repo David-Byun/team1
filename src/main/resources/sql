@@ -1,26 +1,24 @@
+-- 2023.10.01 erd & oracle & dto 반영하여 수정 (sunmi)
+
 -- DROP TABLE
 DROP TABLE member CASCADE CONSTRAINTS;
 DROP TABLE post CASCADE CONSTRAINTS;
+DROP TABLE project_detail CASCADE CONSTRAINTS;
 DROP TABLE post_skilltag CASCADE CONSTRAINTS;
 DROP TABLE hashtag CASCADE CONSTRAINTS;
-DROP TABLE image CASCADE CONSTRAINTS;
 DROP TABLE applicant CASCADE CONSTRAINTS;
 DROP TABLE user_post_like CASCADE CONSTRAINTS;
 DROP TABLE question CASCADE CONSTRAINTS;
 DROP TABLE answer CASCADE CONSTRAINTS;
-DROP TABLE team CASCADE CONSTRAINTS;
 DROP TABLE skill CASCADE CONSTRAINTS;
 
 -- DROP SEQUENCE
 DROP SEQUENCE post_seq;
-DROP SEQUENCE post_skilltag_seq;
+DROP SEQUENCE detail_seq;
 DROP SEQUENCE hashtag_seq;
-DROP SEQUENCE image_seq;
-DROP SEQUENCE applicant_id_seq;
 DROP SEQUENCE user_post_like_seq;
 DROP SEQUENCE question_seq;
 DROP SEQUENCE answer_seq;
-DROP SEQUENCE team_seq;
 DROP SEQUENCE skill_seq;
 
 --CREATE TABLE
@@ -31,30 +29,42 @@ CREATE TABLE member (
             nickname VARCHAR(20),
             point INT,
             company VARCHAR(50),
-    memo VARCHAR(200),
+            memo VARCHAR(200),
             img VARCHAR(200),
-            rdate date
+            rdate date,
+            position VARCHAR2(50)
 );
 CREATE TABLE post (
                       project_id INT,
                       title VARCHAR(100),
-                      content VARCHAR(200),
                       member_id VARCHAR(30),
                       marketing INT,
                       plan INT,
                       design INT,
                       front INT,
                       server INT,
-                      ref_link VARCHAR(200),
-                      process INT,
                       rdate date,
-                      img VARCHAR(200)
+                      img VARCHAR(200),
+                      content VARCHAR(4000)
+);
+CREATE TABLE project_detail (
+                      detail_id INT,
+                      project_id INT,
+                      marketing INT,
+                      plan INT,
+                      design INT,
+                      front INT,
+                      server INT,
+                      ref_link VARCHAR2(100),
+                      process INT,
+                      view_cnt INT,
+                      pdate VARCHAR2(50),
+                      subject VARCHAR2(100),
+                      content VARCHAR2(3000)
 );
 
-
 CREATE TABLE post_skilltag (
-                               id INT,
-                               post_id INT,
+                               project_id INT,
                                hashtag_id INT
 );
 
@@ -63,17 +73,11 @@ CREATE TABLE hashtag (
                           hashtag VARCHAR(30)
 );
 
-CREATE TABLE image (
-                       image_id INT,
-                       file_name VARCHAR(200),
-                       post_id INT
-);
-
 CREATE TABLE applicant (
                            member_id VARCHAR(30),
-                           post_id INT,
+                           project_id INT,
                            apply_part INT,
-                           pf CHAR(2),
+                           success CHAR(2),
                            rdate date,
                            progress INT,
                            score VARCHAR(10),
@@ -84,13 +88,13 @@ CREATE TABLE applicant (
 CREATE TABLE user_post_like (
                                 member_post_like_id INT,
                                 member_id VARCHAR(30),
-                                post_id INT
+                                project_id INT
 );
 
 CREATE TABLE question (
                           question_id INT,
                           content VARCHAR(200),
-                          post_id INT,
+                          project_id INT,
                           member_id VARCHAR(30),
                           rdate date
 );
@@ -101,17 +105,6 @@ CREATE TABLE answer (
                         member_id VARCHAR(30),
                         question_id INT,
                         rdate date
-);
-
-
-CREATE TABLE team (
-                      team_id INT,
-                      post_id INT,
-                      member_id VARCHAR(30),
-                      role VARCHAR(20),
-                      progress INT,
-                      score VARCHAR(10),
-                      upvote VARCHAR(10)
 );
 
 CREATE TABLE skill (
@@ -126,15 +119,11 @@ CREATE SEQUENCE post_seq
     INCREMENT BY 1
     START WITH 1;
 
-CREATE SEQUENCE post_skilltag_seq
+CREATE SEQUENCE detail_seq
     INCREMENT BY 1
     START WITH 1;
 
 CREATE SEQUENCE hashtag_seq
-    INCREMENT BY 1
-    START WITH 1;
-
-CREATE SEQUENCE image_seq
     INCREMENT BY 1
     START WITH 1;
 

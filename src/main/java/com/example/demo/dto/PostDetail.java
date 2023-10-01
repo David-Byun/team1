@@ -11,16 +11,12 @@ public class PostDetail {
     private int design;
     private int front;
     private int server;
-    private int ref_link;
+    //sunmi refLink type 및 CamelCase 수정
+    private String refLink;
     private int process;
     private int viewCnt;
     private String pdate;
     private String subject;
-    private String subtitle1;
-    private String subtitle2;
-    private String subtitle3;
-    private String content1;
-    private String content2;
-    private String content3;
-    private String applicantId;
+    //sunmi subtitle123, content123, applicant_id 삭제 후 content 추가 (oracle수정 완)
+    private String content;
 }
