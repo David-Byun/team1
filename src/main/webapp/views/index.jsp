@@ -11,7 +11,6 @@
     <link href='/fullcalendar-5.1.0/lib/main.css' rel='stylesheet' />
     <script src='/fullcalendar-5.1.0/lib/main.js'></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
@@ -210,23 +209,35 @@
           <ul class="navbar-nav align-items-center">
             <li class="dropdown nav-item mr-2"><a class="nav-link" href="#" id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl">
-                  <img class="rounded-circle" src="assets/img/icons/user-icon.jpg" alt="user-icon" />
-
+<span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="33" height="33" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" d="M16.5 9C16.5 13.125 13.125 16.5 9 16.5C4.875 16.5 1.5 13.125 1.5 9C1.5 4.875 4.875 1.5 9 1.5C13.125 1.5 16.5 4.875 16.5 9Z" fill="currentColor"/>
+<path d="M9 16.5C10.95 16.5 12.75 15.75 14.025 14.55C13.425 12.675 11.4 11.25 9 11.25C6.6 11.25 4.57499 12.675 3.97499 14.55C5.24999 15.75 7.05 16.5 9 16.5Z" fill="currentColor"/>
+<rect x="7" y="6" width="4" height="4" rx="2" fill="currentColor"/>
+</svg>
+</span>
                 </div>
               </a>
               <div class="dropdown-menu dropdown-center py-0" aria-labelledby="navbarDropdownUser">
                 <div class="bg-white rounded-soft py-2">
-                  <a class="dropdown-item font-weight-bold text-primary" href="#!"><span>Purchage Now</span></a>
 
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/login">Login</a>
-                  <a class="dropdown-item" href="/account">Profile &amp; account</a>
-                  <a class="dropdown-item" href="/form">등록</a>
+                    <c:choose>
+                        <c:when test="${loginmember == null}">
+                            <a class="dropdown-item font-weight-bold text-primary" ><span>더 많은 기능을 위해 로그인해주세요</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/login">Login</a>
+                        </c:when>
+                        <c:otherwise>
+                            <a class="dropdown-item font-weight-bold text-primary" ><span>안녕하세요 ${loginmember.name}님!</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/account">Profile &amp; account</a>
+                            <a class="dropdown-item" href="/logout">Logout </a>
+                            <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#!">Settings</a>
+                                <a class="dropdown-item" href="/form">등록</a>
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
 
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#!">Settings</a>
-                  <a class="dropdown-item" href="#!">Logout </a>
-                </div>
               </div>
             </li>
             <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-twitter fs-2"></span></a></li>
@@ -234,6 +245,9 @@
             <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-instagram-alt fs-2"> </span></a></li>
             <li class="nav-item"><a class="nav-link px-0" href="#"><span class="uil uil-google-drive fs-2">     </span></a></li>
           </ul>
+
+
+
 
           <form class="mailbluster-subscribe form-inline ml-auto">
             <div class="mailbluster-feedback"></div>
@@ -251,7 +265,7 @@
             <ul class="navbar-nav align-items-center navbar-social-icons">
               <li class="dropdown nav-item mr-2"><a class="nav-link" href="#" id="navbarDropdownUserResponsive" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <div class="avatar avatar-xl">
-                    <img class="rounded-circle" src="assets/img/icons/user-icon.png" alt="user-icon" />
+                    <img class="rounded-circle" src="assets/img/icons/user-icon.png" alt="" />
 
                   </div>
                 </a>
@@ -592,7 +606,14 @@
           <jsp:include page="${center}.jsp"/>
         </c:otherwise>
       </c:choose>
+
     </main>
+    <footer>
+        <div class="d-flex justify-content-center bg-200 mb-2">
+            <img src="assets/img/icons/row.png" alt="img" />
+        </div>
+    </footer>
+
     <!-- ===============================================-->
     <!--    End of Main Content-->
     <!-- ===============================================-->

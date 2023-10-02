@@ -5,12 +5,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class ViewController {
 
-	@GetMapping	("/login")
-	public String login() {
-		return "login";
+	@RequestMapping	("/login")
+	public String login(Model model) {
+		model.addAttribute("center", "login");
+		return "index";
+	}
+	@GetMapping	("/logout")
+	public String logout( HttpSession session) {
+		if (session != null) {
+			session.invalidate();
+		}
+		return "redirect:/";
 	}
 
 	@RequestMapping("/services")

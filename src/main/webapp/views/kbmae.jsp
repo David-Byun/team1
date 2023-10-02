@@ -13,9 +13,9 @@
                     <h5 class="card-title text-white">${obj.name}[${obj.nickname}]</h5>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
                         <div><span class="uil fs-3 text-300 align-middle uil-users-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">${obj.company}</span></div>
-                        <a class="badge badge-pill stretched-link ml-2 badge-info" href="/page">${obj.memo}</a>
+                        <a class="badge badge-pill stretched-link ml-2 badge-info" href="/account?memberId=${obj.memberId}">${obj.memo}</a>
                            <c:forEach var="innerobj" items="${obj.hashtagList}">
-                                <a class="badge badge-pill stretched-link ml-2 badge-danger" href="/page">${innerobj}</a>
+                                <a class="badge badge-pill stretched-link ml-2 badge-danger" href="/account?memberId=${obj.memberId}">${innerobj}</a>
                           </c:forEach>
                     </div>
                 </div>

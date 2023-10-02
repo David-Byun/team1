@@ -22,14 +22,19 @@ public class MemberController {
     private final MemberService memberService;
 
     @PostMapping("/login")
-    public String login(MemberLoginDto memberLoginDto, HttpSession session) {
-
-        Member foundMember = memberService.findUserById(memberLoginDto.getMemberId());
-        if (foundMember.getPassword().equals(memberLoginDto.getPassword())) {
-            session.setAttribute("loginmember", foundMember);
-            return "redirect:/";
-        }
-        return "/login";
+    public String login(Model model,MemberLoginDto memberLoginDto, HttpSession session) {
+        try{
+            Member foundMember = memberService.findUserById(memberLoginDto.getMemberId());
+            if (foundMember.getPassword().equals(memberLoginDto.getPassword())) {
+                session.setAttribute("loginmember", foundMember);
+                model.addAttribute("center", "center");
+            }else {
+                model.addAttribute("center", "login");
+            }
+        }catch (Exception e){ //존재하지 않는 id 입력 시 white label 발생하여 try catch 사용
+            model.addAttribute("center", "login");
+        };
+        return "index";
     }
 
     @GetMapping("/kbmae")
