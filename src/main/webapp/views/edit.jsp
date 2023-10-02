@@ -325,11 +325,15 @@
             if (event.target.tagName === 'SELECT') {
                 let selectRole = event.target.value;
                 if (selectedRoleArray.includes(selectRole)) {
-                    e.target.value = '';
+                    event.target.value = '';
                     document.getElementById('warn_alert').style.display = 'block';
-                } else {
-                    selectedRoleArray.push(selectRole);
                 }
+
+                selectedRoleArray = [];
+                let selectElements = document.querySelectorAll('.select2');
+                selectElements.forEach(function (selectElement) {
+                    selectedRoleArray.push(selectElement.value);
+                });
             }
         });
     });
