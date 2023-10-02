@@ -16,11 +16,12 @@ public class Post {
     private int design;
     private int front;
     private int server;
-    private int process;
     private LocalDate rdate;
     private String content;
     private String img;
     private List<String> hashtag;
+    //sunmi
+    private List<Integer> tagNo;
 
-    private MultipartFile imgName;
+    private MultipartFile imgFile;
 }

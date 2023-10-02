@@ -11,41 +11,53 @@
             , plan              as plan
             , design            as design
             , front             as front
+             --sunmi process column삭제로 쿼리 수정--
             , server            as server
-            , process           as process
             , rdate             as rdate
             , img               as img
+            , content           as content
         FROM Post
     </select>
     <select id="findHashTagList" resultType="String">
         SELECT hashtag
         FROM hashtag a, post_skilltag b
         WHERE a.hashtag_id = b.hashtag_id
-        AND b.project_id = #{project_id}
+        AND b.project_id = #{projectId}
     </select>
     <select id="select" parameterType="int" resultType="Post">
         SELECT *
         FROM Post
-        Where project_id = #{projectid}
+        Where project_id = #{projectId}
     </select>
+    <!--sunmi-->
+    <select id="findTagNoList" resultType="Integer">
+        SELECT hashtag_id
+        FROM post_skilltag a
+        WHERE a.project_id = #{projectId}
+    </select>
+    <!--sunmi-->
     <insert id="insert" parameterType="Post">
-        INSERT INTO Post (project_id, title, content, member_id, marketing, plan, design, front, server, ref_link, process, rdate, image)
-        VALUES (postSeq.NEXTVAL, #{title}, #{content}, #{memberId}, #{marketing}, #{plan}, #{design}, #{front}, #{server}, null, 0, sysdate, null)
+        INSERT INTO Post (project_id, title, content, member_id, marketing, plan, design, front, server, rdate, img)
+        VALUES (post_seq.NEXTVAL, #{title}, #{content}, #{memberId}, #{marketing, jdbcType=NULL}, #{plan, jdbcType=NULL}, #{design, jdbcType=NULL}, #{front, jdbcType=NULL}, #{server, jdbcType=NULL}, sysdate, #{img})
     </insert>
     <update id="update" parameterType="Post">
         UPDATE Post
         SET
         title = #{title},
-        member_id = #{memberId},
         marketing = #{marketing},
         plan = #{plan},
         design = #{design},
         front = #{front},
         server = #{server},
-        ref_link = #{refLink},
-        process = #{process},
-        img = #{img}
+        img = #{img},
+        content = #{content}
         WHERE
         project_id = #{projectId}
     </update>
+
+    <!--sunmi-->
+    <select id="getLastPostId" resultType="Integer">
+        SELECT post_seq.CURRVAL FROM dual
+    </select>
+
 </mapper>

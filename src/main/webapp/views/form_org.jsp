@@ -691,7 +691,7 @@
                                   class="form-control"
                                   name="title"
                                   placeholder="프로젝트 상세 내용을 작성해주세요"
-                          ></input>
+                          >
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-message">내용</label>
