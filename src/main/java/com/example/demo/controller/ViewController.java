@@ -24,14 +24,9 @@ public class ViewController {
 		return "account";
 	}
 
-	@RequestMapping("/form")
+	@RequestMapping("/add")
 	public String form(Model model){
-		model.addAttribute("center","form");
+		model.addAttribute("center","add");
 		return "index";
-	}
-
-	@RequestMapping("/form_org")
-	public String form_org() {
-		return "form_org";
 	}
 }

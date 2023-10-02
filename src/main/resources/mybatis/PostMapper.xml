@@ -22,14 +22,19 @@
         SELECT hashtag
         FROM hashtag a, post_skilltag b
         WHERE a.hashtag_id = b.hashtag_id
-        AND b.project_id = #{project_id}
+        AND b.project_id = #{projectId}
     </select>
     <select id="select" parameterType="int" resultType="Post">
         SELECT *
         FROM Post
-        Where project_id = #{projectid}
+        Where project_id = #{projectId}
     </select>
-
+    <!--sunmi-->
+    <select id="findTagNoList" resultType="Integer">
+        SELECT hashtag_id
+        FROM post_skilltag a
+        WHERE a.project_id = #{projectId}
+    </select>
     <!--sunmi-->
     <insert id="insert" parameterType="Post">
         INSERT INTO Post (project_id, title, content, member_id, marketing, plan, design, front, server, rdate, img)
@@ -39,7 +44,6 @@
         UPDATE Post
         SET
         title = #{title},
-        member_id = #{memberId},
         marketing = #{marketing},
         plan = #{plan},
         design = #{design},

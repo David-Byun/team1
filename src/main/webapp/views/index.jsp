@@ -304,7 +304,7 @@
               </li>
               <li class="nav-item"><a class="nav-link" href="#modal-contacts" data-toggle="modal"><span class="icons fs-3 uil uil-phone"></span><span class="fs--1">모집중 Project</span></a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="/form"><span class="icons fs-3 uil uil-pen"></span><span class="fs--1"> 모집글 작성</span></a>
+              <li class="nav-item"><a class="nav-link" href="/add"><span class="icons fs-3 uil uil-pen"></span><span class="fs--1"> 모집글 작성</span></a>
               </li>
               <li class="nav-item"><a class="nav-link" href="/kbmae"><span class="icons fs-3 uil uil-wrench"></span><span class="fs--1"> KB마에</span></a>
               </li>
