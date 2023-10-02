@@ -930,14 +930,12 @@
     $(document).on('change', 'select', function(){
         let selectRole = $(this).val();
         if (selectedRoleArray.includes(selectRole)) {
-            let roleIndex = selectedRoleArray.indexOf(selectRole);
-            if(roleIndex !== -1){
-                selectedRoleArray.splice(roleIndex, 1);
-            }
             $(this).val('');
             $('#warn_alert').show();
-        } else {
-            selectedRoleArray.push(selectRole);
-        }
+        };
+        selectedRoleArray=[];
+        $('.select2').each(function () {
+            selectedRoleArray.push($(this).val());
+        });
     });
 </script>
