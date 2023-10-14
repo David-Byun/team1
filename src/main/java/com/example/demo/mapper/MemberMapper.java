@@ -14,4 +14,5 @@ public interface MemberMapper extends DemoMapper<Integer, Member> {
     List<Member> getMemberList();
 
     List<Member> getSkillList();
+
 }

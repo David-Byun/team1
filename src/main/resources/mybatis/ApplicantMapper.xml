@@ -10,8 +10,11 @@
                 , a.apply_part  as applyPart
                 , a.rdate
                 , b.name
+                , b.nickname
                 , b.company
+                , b.position
                 , b.img
+                , b.memo
         FROM Applicant a, Member b
         WHERE a.project_id = #{projectId}
         AND a.member_id = b.member_id
