@@ -478,19 +478,16 @@
     });
 </script>
 
-<div class="content" style="margin-left: 16.25rem;">
-    <div class="row mx-n2 d-flex justify-content-center">
-        <div class="position-relative" style="margin-top: 0.9rem;">
-            <div class="card text-white bg-success">
-                <div class="card-body">
-                    <div class="card-title" style="padding: 3% 2% 0% 2%;">
-                        <p class="text-white text-900" style="font-size: 1.5rem; font-weight: bolder;">프로젝트 생성
-                            <br/><span style="font-size: 0.9rem; font-weight: revert;">만들고 싶은 프로젝트가 있다면 KB Maestro와 같이 하나씩 정리해봐요!</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="card body p-3 pt-3">
+<div class="text-white bg-success" style="width: 100%; max-width: 100%;">
+    <div class="content col-xxl-9" style="padding: 6.5rem 0 2rem 0; width: 100%; max-width: 1200px; margin: 0 auto;">
+        <p class="text-white text-900" style="font-size: 1.5rem; font-weight: bolder;">프로젝트 수정
+            <br/><span style="font-size: 0.9rem; font-weight: revert;">더 많은 KB人의 PICK을 받을 수 있도록 수정해주세요!</span>
+        </p>
+    </div>
+</div>
+<div class="content col-xxl-9" style="margin: auto;">
+    <div style="margin-top: 0.9rem;">
+        <div class="card body p-3 pt-3">
                     <form id="project_register">
                         <input type="hidden" name="memberId" value="${post.memberId}" />
                         <input type="hidden" name="projectId" value="${post.projectId}" />
@@ -952,7 +949,6 @@
                             <a href="javascript:void(0)" id="post_register_btn" class="btn btn-lg btn-success rounded-capsule mr-1 mb-1">작성완료</a>
                         </div>
                     </form>
-            </div>
         </div>
     </div>
 </div>
