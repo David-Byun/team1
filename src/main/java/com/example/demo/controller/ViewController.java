@@ -25,6 +25,12 @@ public class ViewController {
 		return "index";
 	}
 
+	@RequestMapping("/product")
+	public String product(Model model){
+		model.addAttribute("center","product");
+		return "index";
+	}
+
 	@RequestMapping("/study1")
 	public String study1(Model model){
 		model.addAttribute("center","study1");

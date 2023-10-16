@@ -148,6 +148,7 @@
         };
         web = getBrowserName();
         console.log(web);
+
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
 
@@ -160,6 +161,7 @@
             .then(function () {
                 // 알람이 허용되었을 때 토큰을 반환합니다.
                 // 해당 토큰을 통해 FCM 특정 사용자에게 메시지를 보낼 수 있습니다.
+                console.log(messaging.getToken());
                 return messaging.getToken();
             })
             .then(async function (token) {
@@ -234,8 +236,8 @@
             <a class="navbar-brand" href="/"><img src="/assets/img/logos/logo_kor.png" alt="logo" style="width: 10rem;"/></a>
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link pl-7 px-3 pt-3 fs-0" href="#">프로젝트</a></li>
-                    <li class="nav-item"><a class="nav-link px-3 pt-3 fs-0" href="#">프로덕트</a></li>
+                    <li class="nav-item"><a class="nav-link pl-7 px-3 pt-3 fs-0" href="/">프로젝트</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 pt-3 fs-0" href="/product">프로덕트</a></li>
                     <li class="nav-item"><a class="nav-link px-3 pt-3 fs-0" href="/study">스터디/회의실</a></li>
                     <li class="nav-item"><a class="nav-link px-3 pt-3 fs-0" href="/kbmae">KB마에</a></li>
                 </ul>

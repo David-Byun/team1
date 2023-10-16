@@ -17,7 +17,6 @@ import java.util.Optional;
 public class FirebaseController {
     private final FirebaseService firebaseService;
 
-
     @PostMapping("/token")
     public void putToken(FirebaseToken firebaseToken) {
         Optional<FirebaseToken> byToken = firebaseService.findByToken(firebaseToken.getToken());
