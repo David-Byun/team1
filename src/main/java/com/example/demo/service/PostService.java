@@ -35,6 +35,9 @@ public class PostService {
         Post post = postMapper.select(projectId);
         List<String> hashtag = postMapper.findHashTagList(projectId);
         post.setHashtag(hashtag);
+        //sunmi
+        List<Integer> tagNo = postMapper.findTagNoList(projectId);
+        post.setTagNo(tagNo);
         return post;
     }
 
@@ -47,8 +50,13 @@ public class PostService {
         return result;
     }
 
-    public int updatePost(Post post) {
-        return postMapper.update(post);
+    public int updatePost(Post post) throws Exception{
+        //sunmi
+        int result = postMapper.update(post);
+        if (result == 0) {
+            throw new Exception("실패");
+        }
+        return result;
     }
 
     //sunmi

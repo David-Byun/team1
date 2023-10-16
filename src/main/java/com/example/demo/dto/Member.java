@@ -12,7 +12,7 @@ public class Member {
     private String memberId;
     private String password;
     private String name;
-    private String nickname;
+    private String gitaddress;
     private int point;
     private String company;
     private String memo;

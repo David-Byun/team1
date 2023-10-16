@@ -26,7 +26,7 @@ CREATE TABLE member (
             member_id VARCHAR(30),
             password VARCHAR(50),
             name VARCHAR(10),
-            nickname VARCHAR(20),
+            gitaddress VARCHAR(20),
             point INT,
             company VARCHAR(50),
             memo VARCHAR(200),

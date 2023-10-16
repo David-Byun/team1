@@ -37,3 +37,6 @@ password : ENC(zHycBZnxo1WWrt1md65+u0y18PKSzKIW)
 upload.path: C:/kbmaestro/
 # file down path
 down.path: C:/kbmaestro/
+
+# sunmi imgdir
+imgdir: file:///C:/kbmaestro/
