@@ -292,7 +292,7 @@
 </section>
 
 <section class="padding80 margin50">
-    <div><b class="font32">검색 시간 이용가능 스터디룸</b></div>
+    <div><b class="font32">KB금융그룹 가능 회의실</b></div>
     <ul class="items quarter">
         <a href="#">
             <li><img src="https://a0.muscache.com/im/pictures/a0316ecb-e49b-4b3a-b6b6-c2876b820e8c.jpg?im_w=480"

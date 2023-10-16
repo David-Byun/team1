@@ -78,6 +78,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.slack.api/slack-api-client -->
+		<dependency>
+			<groupId>com.slack.api</groupId>
+			<artifactId>slack-api-client</artifactId>
+			<version>1.32.1</version>
+		</dependency>
+
 		<!--        push 모듈-->
 		<dependency>
 			<groupId>com.google.firebase</groupId>
