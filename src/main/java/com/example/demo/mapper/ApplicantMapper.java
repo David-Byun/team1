@@ -9,4 +9,5 @@ import java.util.List;
 @Mapper
 public interface ApplicantMapper extends DemoMapper<Integer, Applicant> {
     List<Applicant> findApplicantByProjectId(int projectId);
+    int apply(String id);
 }

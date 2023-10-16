@@ -230,13 +230,13 @@
 <!-- ===============================================-->
 <main class="main" id="top">
     <div id="navBox" class="bg-white fixed-top navbar-nav" style="width: 100%; height: 8%; display: flex; justify-content: center;">
-        <nav class="navbar navbar-expand-lg fs--1 bg-white" style="width:100%; max-width: 1270px; height: 8%;margin: 0 auto; display: flex; display: flex;">
+        <nav class="navbar navbar-expand-lg fs--1 bg-white" style="width:100%; max-width: 1270px; height: 8%;margin: 0 auto; display: flex;">
             <a class="navbar-brand" href="/"><img src="/assets/img/logos/logo_kor.png" alt="logo" style="width: 10rem;"/></a>
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a class="nav-link pl-7 px-3 pt-3 fs-0" href="#">프로젝트</a></li>
                     <li class="nav-item"><a class="nav-link px-3 pt-3 fs-0" href="#">프로덕트</a></li>
-                    <li class="nav-item"><a class="nav-link px-3 pt-3 fs-0" href="#">회고</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 pt-3 fs-0" href="/study">스터디/회의실</a></li>
                     <li class="nav-item"><a class="nav-link px-3 pt-3 fs-0" href="/kbmae">KB마에</a></li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 pt-3">

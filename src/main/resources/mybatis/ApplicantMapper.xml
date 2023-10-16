@@ -10,7 +10,7 @@
                 , a.apply_part  as applyPart
                 , a.rdate
                 , b.name
-                , b.nickname
+                , b.gitaddress
                 , b.company
                 , b.position
                 , b.img
