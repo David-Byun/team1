@@ -14,7 +14,7 @@
         <id property="memberId" column="member_id"/>
         <id property="password" column="password"/>
         <id property="name" column="name"/>
-        <id property="nickname" column="nickname"/>
+        <id property="gitaddress" column="gitaddress"/>
         <id property="point" column="point"/>
         <id property="company" column="company"/>
         <id property="memo" column="memo"/>
@@ -24,7 +24,7 @@
     </resultMap>
 
     <select id="getMemberList" resultMap="ResultMap"> <!-- resultType="Member"은 위에 선언되었으므로 생략가능  -->
-        SELECT member_id, password, name,nickname,point,company,memo,img,rdate
+        SELECT member_id, password, name,gitaddress,point,company,memo,img,rdate
         FROM Member
         ORDER BY member_id desc
     </select>

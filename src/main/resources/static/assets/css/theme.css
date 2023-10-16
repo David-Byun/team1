@@ -168,7 +168,7 @@ a {
 
 a:hover {
   color: #143dba;
-  text-decoration: underline;
+  text-decoration-line: none;
 }
 
 a:not([href]) {
@@ -16957,16 +16957,8 @@ button.bg-linkedin:focus {
 
 .sticky-bottom {
   z-index: 1019;
-  position: -webkit-sticky;
   position: sticky;
   bottom: 0;
-}
-
-/*-----------------------------------------------
-|   Position
------------------------------------------------*/
-.container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
-  position: relative;
 }
 
 .t-0 {
