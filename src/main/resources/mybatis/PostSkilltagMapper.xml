@@ -8,4 +8,9 @@
         INSERT INTO post_skilltag (project_id, hashtag_id)
         VALUES (#{projectId}, #{hashtagId})
     </insert>
+
+    <!--sunmi-->
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM post_skilltag WHERE project_id=#{projectId}
+    </delete>
 </mapper>

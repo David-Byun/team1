@@ -9,13 +9,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebMvcConfig implements WebMvcConfigurer {
 
     //sunmi
-   @Value("${imgdir}")
-   String imgdir;
+    @Value("${imgdir}")
+    String imgdir;
 
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/team1/**").addResourceLocations(imgdir);
+        registry.addResourceHandler("/kbmaestro/**").addResourceLocations(imgdir);
     }
 
 }

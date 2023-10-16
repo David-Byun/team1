@@ -2,8 +2,6 @@ package com.example.demo.dto;
 
 import lombok.Data;
 
-import java.time.LocalDate;
-
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +16,6 @@ public class Member {
     private String memo;
     private String img;
     private Date rdate;
-    private String member_id;
     //sunmi position 없어서 추가
     private String position;
     private List<String> hashtagList;

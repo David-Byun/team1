@@ -24,4 +24,8 @@ public class PostSkilltagService {
         return result;
     }
 
+    public void remove(Integer projectId) throws Exception{
+        postSkilltagMapper.delete(projectId);
+    }
+
 }

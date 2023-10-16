@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -40,6 +41,16 @@ public class PostController {
         model.addAttribute("postDetail", postDetail);
         model.addAttribute("applicantList", applicantList);
         model.addAttribute("center", "page");
+        return "index";
+    }
+
+    @RequestMapping("/post/edit")
+    public String postEdit(Model model, int projectId) throws Exception {
+        Post post = postService.getPost(projectId);
+        PostDetail postDetail = postService.getPostDetail(projectId);
+        model.addAttribute("post",post);
+        model.addAttribute("postDetail",postDetail);
+        model.addAttribute("center", "edit");
         return "index";
     }
 

@@ -1,4 +1,4 @@
-95.<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&family=Nanum+Gothic&family=Noto+Sans+KR:wght@300&display=swap"
       rel="stylesheet">
@@ -325,11 +325,15 @@
             if (event.target.tagName === 'SELECT') {
                 let selectRole = event.target.value;
                 if (selectedRoleArray.includes(selectRole)) {
-                    e.target.value = '';
+                    event.target.value = '';
                     document.getElementById('warn_alert').style.display = 'block';
-                } else {
-                    selectedRoleArray.push(selectRole);
                 }
+
+                selectedRoleArray = [];
+                let selectElements = document.querySelectorAll('.select2');
+                selectElements.forEach(function (selectElement) {
+                    selectedRoleArray.push(selectElement.value);
+                });
             }
         });
     });

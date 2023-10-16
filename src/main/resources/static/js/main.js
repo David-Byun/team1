@@ -10,6 +10,7 @@ let menu, animate;
   // Initialize menu
   //-----------------
 
+
   let layoutMenuEl = document.querySelectorAll('#layout-menu');
   layoutMenuEl.forEach(function (element) {
     menu = new Menu(element, {
@@ -115,4 +116,5 @@ let menu, animate;
 
   // Auto update menu collapsed/expanded based on the themeConfig
   window.Helpers.setCollapsed(true, false);
+
 })();

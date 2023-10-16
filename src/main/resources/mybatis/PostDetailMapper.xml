@@ -14,4 +14,18 @@
         INSERT INTO project_detail (detail_id, project_id, marketing, plan, design, front, server, ref_link, process, view_cnt, pdate, subject, content)
         VALUES (detail_seq.NEXTVAL, #{projectId}, #{marketing}, #{plan}, #{design}, #{front}, #{server}, #{refLink}, 0, 0, #{pdate}, #{subject}, #{content})
     </insert>
+
+    <!--sunmi-->
+    <update id="update" parameterType="PostDetail">
+        UPDATE project_detail
+        SET
+            ref_link = #{refLink},
+            pdate = #{pdate},
+            content = #{content},
+            subject = #{subject},
+            process = #{process},
+            view_cnt = #{viewCnt}
+        WHERE
+            project_id = #{projectId}
+    </update>
 </mapper>

@@ -20,6 +20,8 @@ public class Post {
     private String content;
     private String img;
     private List<String> hashtag;
+    //sunmi
+    private List<Integer> tagNo;
 
     private MultipartFile imgFile;
 }

@@ -29,20 +29,33 @@ public class ViewController {
 		return "index";
 	}
 
+	@RequestMapping("/study")
+	public String study(Model model){
+		model.addAttribute("center","study");
+		return "index";
+	}
+
+	@RequestMapping("/product")
+	public String product(Model model){
+		model.addAttribute("center","product");
+		return "index";
+	}
+
+	@RequestMapping("/study1")
+	public String study1(Model model){
+		model.addAttribute("center","study1");
+		return "index";
+	}
+
 	@RequestMapping("/account")
 	public String account(Model model) {
 		model.addAttribute("center","account");
 		return "index";
 	}
 
-	@RequestMapping("/form")
+	@RequestMapping("/add")
 	public String form(Model model){
-		model.addAttribute("center","form");
+		model.addAttribute("center","add");
 		return "index";
-	}
-
-	@RequestMapping("/form_org")
-	public String form_org() {
-		return "form_org";
 	}
 }
