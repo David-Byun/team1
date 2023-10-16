@@ -16,7 +16,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Slf4j
@@ -81,6 +80,49 @@ public class RestController {
             }
         }catch (Exception e){
             throw new Exception( "모종의 이유로 인서트되지 아니 아니 아니되오!");
+        }
+        return re;
+    }
+
+    @RequestMapping("/posteditimpl")
+    public String posteditimpl(Post post, String ref_link, String pdate, String subject) throws Exception {
+
+        String re = "";
+        int result = 0;
+        int projectId = post.getProjectId();
+        try {
+            if (post.getImgFile()==null) {
+                result = postService.updatePost(post);
+            } else {
+                MultipartFile imgfile = post.getImgFile();
+                String img = imgfile.getOriginalFilename();
+                FileUpDownUtil.uploadFile(imgfile, uploadPath);
+                post.setImg(img);
+                result = postService.updatePost(post);
+            }
+
+            if (result == 1) {
+                PostDetail postDetail = postService.getPostDetail(projectId);
+                postDetail.setRefLink(ref_link);
+                postDetail.setPdate(pdate);
+                postDetail.setSubject(subject);
+                postDetail.setContent(post.getContent());
+                postDetailService.editPostDetail(postDetail);
+
+                postSkilltagService.remove(projectId);
+                List<String> list = post.getHashtag();
+                for (String hashtag : list) {
+                    int hashtagId = Integer.parseInt(hashtag);
+                    PostSkilltag postSkilltag = new PostSkilltag();
+                    postSkilltag.setProjectId(projectId);
+                    postSkilltag.setHashtagId(hashtagId);
+                    postSkilltagService.regPostSkilltag(postSkilltag);
+                }
+            } else {
+                re = "모종의 이유로 인서트되지 아니 아니 아니되오!";
+            }
+        } catch (Exception e){
+            throw new Exception("모종의 이유로 에딧되지 아니 아니 아니되오!");
         }
         return re;
     }
