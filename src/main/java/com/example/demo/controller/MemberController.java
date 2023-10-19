@@ -61,4 +61,14 @@ public class MemberController {
         return "index";
     };
 
+    @GetMapping("/mypage")
+    public String mypage(Model model) throws Exception {
+        model.addAttribute("center", "myPage");
+        return "index";
+    }
+    @GetMapping("/projectHistory")
+    public String projectHistory(Model model) throws Exception {
+        model.addAttribute("center", "projectHistory");
+        return "index";
+    }
 }

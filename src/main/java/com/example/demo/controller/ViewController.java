@@ -58,4 +58,5 @@ public class ViewController {
 		model.addAttribute("center","add");
 		return "index";
 	}
+
 }
