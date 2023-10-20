@@ -276,9 +276,9 @@
 
                                             <div class="dropdown-divider"></div>
                                             <a class="not-hover dropdown-item" href="#"><span class='uil uil-folder-heart'></span>내 프로젝트</a>
-                                            <a class="not-hover dropdown-item" href="#"><span class='uil uil-cog'></span>마이페이지</a>
+                                            <a class="not-hover dropdown-item" href="/account"><span class='uil uil-cog'></span>마이페이지</a>
                                             <a class="not-hover dropdown-item" href="#"><span class='uil uil-pen'></span>작성한 글</a>
-                                            <a class="not-hover dropdown-item" href="/account"><span class='uil uil-heart'></span>좋아요</a>
+                                            <a class="not-hover dropdown-item" href="#"><span class='uil uil-heart'></span>좋아요</a>
                                             <div class="dropdown-divider"></div>
                                             <div class="align-items-center" style="display: flex; padding: 0;">
                                                 <a class="not-hover dropdown-item" href="#"><span class='uil uil-question-circle'></span>문의</a>

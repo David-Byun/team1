@@ -50,11 +50,31 @@
             nextSlides();
         }
 
-        setInterval(autoSlide, 2000); // 2초마다 슬라이드 전환
+        setInterval(autoSlide, 5000); // 2초마다 슬라이드 전환
 
         showSlides(currentSlideIndex);
     });
 </script>
+<div class="carousel slide" id="carouselExampleControls" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li class="active" data-target="#carouselExampleControls" data-slide-to="0"></li>
+        <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+        <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner rounded"   style="padding-top: 4%;">
+        <div class="carousel-item active"><img class="d-block w-100" src="/assets/img/banner/banner_1.png" alt="First slide" /></div>
+        <div class="carousel-item"><img class="d-block w-100" src="/assets/img/banner/banner_2.png" alt="Second slide"/></div>
+        <div class="carousel-item"><img class="d-block w-100" src="/assets/img/banner/banner_3.png" alt="Third slide" /></div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
 <div class="content col-xxl-9" style="margin: auto; padding: 5% 0% 0% 0%">
     <div class="row mx-n2" style="padding: 20px; font-size: x-large; font-weight: bold;">
         HOT 프로젝트
