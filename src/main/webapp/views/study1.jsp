@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/assets/stylesheets/main.css" />
     <link rel="stylesheet" href="/assets/stylesheets/filter-popup.css" />
     <link rel="stylesheet" href="/assets/stylesheets/filter-popup-new.css" />
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <!-- iamport.payment.js -->
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 <script>
@@ -15,23 +17,62 @@
         $('#iamportPayment').click(function(){
             payment(); //버튼 클릭하면 호출
         });
+
+// '포인트 사용' 토글 상태 변경 시 실행되는 함수
+        function handleToggleChange() {
+            var toggleCheckbox = document.getElementById("toggle-3");
+            var totalPayment = 4000; // 기본 총 결제금액
+
+            console.log(toggleCheckbox)
+            if (toggleCheckbox.checked) {
+                // 토글이 켜진 경우
+                totalPayment = totalPayment - ${loginmember.point}
+                var formattedTotalPayment = totalPayment.toLocaleString();
+            }
+
+            console.log(totalPayment);
+
+            // 총 결제금액을 업데이트
+            var totalPaymentElement = document.querySelector(".filter-footer h3");
+            totalPaymentElement.textContent = "총 결제금액 : " + formattedTotalPayment + "원";
+            $('#pointh3').text("포인트 : 0원")
+        }
+
+        // '포인트 사용' 토글 변경 이벤트 리스너 등록
+        var toggleCheckbox = document.getElementById("toggle-3");
+        toggleCheckbox.addEventListener("change", handleToggleChange);
+
     })
+
+
 
     //버튼 클릭하면 실행
     function payment(data) {
-        IMP.init("INIBillTst");//아임포트 관리자 콘솔에서 확인한 '가맹점 식별코드' 입력
+        IMP.init("imp23257778");//아임포트 관리자 콘솔에서 확인한 '가맹점 식별코드' 입력
         IMP.request_pay({// param
-            pg: "KG이니시스-정기_일반 결제창", //pg사명 or pg사명.CID (잘못 입력할 경우, 기본 PG사가 띄워짐)
-            pay_method: "card", //지불 방법
-            merchant_uid: "iamport_test_id", //가맹점 주문번호 (아임포트를 사용하는 가맹점에서 중복되지 않은 임의의 문자열을 입력)
+            pg : "kcp",
+            pay_method : "card",
+            merchant_uid: "order_no_" + Math.floor(Math.random() * 1000000000),
             name: "도서", //결제창에 노출될 상품명
-            amount: 5, //금액
+            amount: $('.filter-footer h3').text(), //금액
             buyer_email : "testiamport@naver.com",
             buyer_name : "홍길동",
             buyer_tel : "01012341234"
         }, function (rsp) { // callback
             if (rsp.success) {
-                alert("완료 -> imp_uid : "+rsp.imp_uid+" / merchant_uid(orderKey) : " +rsp.merchant_uid);
+                Swal.fire({
+                    title : "결제 성공",
+                    text : '선택하신 스터디룸 예약이 완료되었어요!',
+                    backdrop: false, // 팝업 주변의 투명한 배경 비활성화
+                    showConfirmButton: true, // 확인 버튼 표시
+                    confirmButtonText: "홈으로 가기", // 확인 버튼 텍스트 설정
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // 확인 버튼이 클릭되면 이동할 URL을 설정하고 이동합니다.
+                        window.location.href = "/";
+                    }
+                });
+
             } else {
                 alert("실패 : 코드("+rsp.error_code+") / 메세지(" + rsp.error_msg + ")");
             }
@@ -476,7 +517,7 @@
 
                 <div class="price">
                     <h3 style="font-size: 20px">결제금액</h3>
-                    <p style="font-size: 20px">1시간 : 30,000원</p>
+                    <p style="font-size: 20px">1시간 : 4,000원</p>
                 </div>
 
                 <!-- place type selection  -->
@@ -537,7 +578,10 @@
 
                 </div>
                 <div class="booking-options">
-                    <h3 style="font-size: 20px" >포인트 : <fmt:formatNumber value="${loginmember.point}" pattern="#,###"/>원</h3>
+                    <h3 style="font-size: 20px" id="pointh3">포인트 : <c:choose>
+                        <c:when test="${loginmember != null}"><fmt:formatNumber value="${loginmember.point}" pattern="#,###"/>원</c:when>
+                        <c:otherwise>0원</c:otherwise>
+                    </c:choose></h3>
                     <div class="switch">
                         <div class="switch-text">
                             <p style="font-size: 20px">사용</p>
