@@ -32,13 +32,13 @@
     <select id="getSkillList" resultType="String">
         SELECT b.HASHTAG as hashtagList
         FROM Member a,
-            (
-            select C.member_id, c.hashtag_id,d.HASHTAG
-            FROM skill C,HASHTAG D
-            WHERE C.hashtag_id =D.hashtag_id
-            ) b
+             (
+                 select C.member_id, c.hashtag_id,d.HASHTAG
+                 FROM skill C,HASHTAG D
+                 WHERE C.hashtag_id =D.hashtag_id
+             ) b
         where b.member_id = a.member_id
-        and b.member_id = #{member_id}
+          and b.member_id = #{member_id}
         order by a.member_id desc
     </select>
 </mapper>
