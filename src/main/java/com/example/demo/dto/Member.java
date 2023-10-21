@@ -7,6 +7,7 @@ import java.util.List;
 
 @Data
 public class Member {
+    private String member_id;
     private String memberId;
     private String password;
     private String name;

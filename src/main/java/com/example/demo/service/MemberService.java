@@ -24,12 +24,8 @@ public class MemberService {
     public List<Member> getMemberList() throws Exception {
         return memberMapper.getMemberList();
     }
-    public List<Member> getSkillList() throws Exception {
-        return memberMapper.getSkillList();
-    }
 
-    public Page<Member> getFindKbmae(int pageNo, SearchKbmae searchKbmae) throws Exception {
-        PageHelper.startPage(pageNo, 3);
-        return null;
+    public List<Member> getFindKbmae(SearchKbmae searchKbmae) throws Exception {
+        return memberMapper.getFindKbmae(searchKbmae);
     }
 }

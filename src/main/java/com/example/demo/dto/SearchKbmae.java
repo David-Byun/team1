@@ -8,8 +8,5 @@ import lombok.*;
 @Getter
 @ToString
 public class SearchKbmae {
-    private String keyword1;
-    private String search1;
-    private String keyword2;
-    private String search2;
+    private String searchKbmae;
 }
