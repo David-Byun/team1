@@ -21,7 +21,7 @@ import java.util.Date;
 @Component
 public class GithubApi {
     GitHub github;
-    String token = "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";
+    String token = "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";
 
     public Object getOverview (String repository) throws IOException {
         try {
@@ -45,7 +45,7 @@ public class GithubApi {
         int commitCount = Math.min(commitsList.size(), 5);
         List<GHCommit> recentCommits = commitsList.subList(0, commitCount);
         int commitIndex = 1;
-        Map<String, Object> recCommits = new HashMap<>();
+        List<Object> recCommits = new ArrayList<>();
         for (GHCommit commit : recentCommits) {
             Map<String, String> recent = new HashMap<>();
             recent.put("author", commit.getCommitShortInfo().getAuthor().getName());
@@ -53,20 +53,20 @@ public class GithubApi {
             Date commitDate = commit.getCommitShortInfo().getAuthoredDate();
             String date = outputDateFormat.format(commitDate);
             recent.put("date", date);
-            recCommits.put("recent"+commitIndex, recent);
+            recCommits.add(recent);
             commitIndex++;
         }
-        Map<String, Object> branch = new HashMap<>();
+        List<Object> branch = new ArrayList<>();
         for(GHRepository.Contributor contributor : contributors){
             Map<String, String> map3 = new HashMap<>();
             map3.put("branch", contributor.getLogin());
             map3.put("contributions", contributor.getContributions()+"");
-            branch.put("branch"+index,map3);
+            branch.add(map3);
             sum2+=contributor.getContributions();
             index++;
         }
 
-        Map<String, Object> lang = (Map<String, Object>) getLanguage(repository);
+        List<Object> lang = (List<Object>) getLanguage(repository);
         map.put("recent", recCommits);
         map.put("branch", branch);
         map.put("lang", lang);
@@ -106,7 +106,7 @@ public class GithubApi {
     }
 
     private Object getLanguage(String repository) throws IOException {
-        Map<String, Object> langMap = new HashMap<>();
+        List<Object> langMap = new ArrayList<>();
         try {
             String lagUrl = "https://api.github.com/repos/" + repository + "/languages";
             URL url = new URL(lagUrl);
@@ -132,11 +132,11 @@ public class GithubApi {
                     long bytes = (long) jsonObject.get(key);
                     tmp.put("language", language);
                     tmp.put("bytes", bytes+"");
-                    langMap.put("lang"+langIndex, tmp);
+                    langMap.add(tmp);
                     langIndex++;
                 }
             } else {
-                langMap.put("ERROR", "언어 정보 접근 실패");
+                langMap.add("언어 정보 접근 실패");
             }
         }catch (IOException | ParseException e) {
             e.printStackTrace();

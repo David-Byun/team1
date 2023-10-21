@@ -16,6 +16,13 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
+    <!-- amCharts-->
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/material.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/lang/de_DE.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/geodata/germanyLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/fonts/notosans-sc.js"></script>
 
     <!-- ===============================================-->
     <!--    Document Title-->
