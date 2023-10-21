@@ -304,11 +304,12 @@
 </script>
 
 
-<div class="text-white bg-success" style="width: 100%; max-width: 100%;">
-    <div class="content col-xxl-9" style="padding: 6.5rem 0 2rem 0; width: 100%; max-width: 1200px; margin: 0 auto;">
-        <p class="text-white text-900" style="font-size: 1.5rem; font-weight: bolder;">프로젝트 생성
-            <br/><span style="font-size: 0.9rem; font-weight: revert;">만들고 싶은 프로젝트가 있다면 KB Maestro와 같이 하나씩 정리해봐요!</span>
-        </p>
+<div class="carousel slide" id="carouselExampleControls" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li class="active" data-target="#carouselExampleControls" data-slide-to="0"></li>
+    </ol>
+    <div class="carousel-inner rounded"   style="padding-top: 4%;">
+        <div class="carousel-item active"><img class="d-block w-100" src="/assets/img/banner/banner_4.png" alt="First slide" /></div>
     </div>
 </div>
 <div class="content col-xxl-9" style="margin: auto;">
@@ -359,15 +360,35 @@
                     <div id="chartdiv1"></div>
                 </div>
             </div>
-
-
-                <c:forEach var="recent" items="${recent}">
-                    <br/>${recent.date}
-                    <br/>${recent.author}
-                    <br/>${recent.message}
-                    <br/>---------------
-                </c:forEach>
-
+            <div class="mb-7" style="margin: auto 0;">
+                <h3>
+                    <span class="text-success" style="font-size: 0.8rem;">Git-Hub 연동</span><br/>
+                    <label class="form-label text-700" for="chartdiv">사용 언어 집계</label><br/>
+                    <span class="text-success"style="font-size: 0.7rem;">
+                            <span class="svg-icon svg-icon-danger svg-icon-2hx">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.89557 13.4982L7.79487 11.2651C7.26967 10.7068 6.38251 10.7068 5.85731 11.2651C5.37559
+                                    11.7772 5.37559 12.5757 5.85731 13.0878L9.74989 17.2257C10.1448 17.6455 10.8118 17.6455 11.2066
+                                    17.2257L18.1427 9.85252C18.6244 9.34044 18.6244 8.54191 18.1427 8.02984C17.6175 7.47154 16.7303
+                                    7.47154 16.2051 8.02984L11.061 13.4982C10.7451 13.834 10.2115 13.834 9.89557 13.4982Z" fill="currentColor"/>
+                                </svg>
+                            </span>
+                        프로젝트 정보에 등록된 GITHUB Repository의 코드 분석을 통한 사용 언어 통계를 확인하세요!</span><br/>
+                </h3>
+                <div class="mb-1" style="width: 70%; margin: auto 0;">
+                    <c:forEach var="recent" items="${recent}">
+                        <div style="display: flex; justify-content: center;">
+                            <div style="width: 60%;" >
+                                ${recent.author}
+                                <br/>${recent.message}
+                            </div>
+                            <div style="width: 10%;">
+                                ${recent.date}
+                             </div>
+                        </div>
+                    </c:forEach>
+                </div>
+            </div>
             </form>
         </div>
     </div>
