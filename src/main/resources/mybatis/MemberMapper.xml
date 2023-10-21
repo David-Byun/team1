@@ -14,7 +14,6 @@
         <id property="member_id" column="member_id"/>
         <id property="password" column="password"/>
         <id property="name" column="name"/>
-        <id property="nickname" column="nickname"/>
         <id property="point" column="point"/>
         <id property="company" column="company"/>
         <id property="memo" column="memo"/>
@@ -24,21 +23,34 @@
     </resultMap>
 
     <select id="getMemberList" resultMap="ResultMap"> <!-- resultType="Member"은 위에 선언되었으므로 생략가능  -->
-        SELECT member_id, password, name,nickname,point,company,memo,img,rdate
-        FROM Member
-        ORDER BY member_id desc
+            SELECT member_id, password, name, point, company, memo, img, rdate
+            FROM Member
+            ORDER BY member_id desc
     </select>
 
     <select id="getSkillList" resultType="String">
         SELECT b.HASHTAG as hashtagList
         FROM Member a,
              (
-                 select C.member_id, c.hashtag_id,d.HASHTAG
-                 FROM skill C,HASHTAG D
+                 select C.member_id, C.hashtag_id,D.HASHTAG
+                 FROM skill C, HASHTAG D
                  WHERE C.hashtag_id =D.hashtag_id
              ) b
         where b.member_id = a.member_id
           and b.member_id = #{member_id}
+        order by a.member_id desc
+    </select>
+
+<select id="getFindKbmae" resultMap="ResultMap" parameterType="SearchKbmae">
+        SELECT distinct(A.member_id) AS member_id, A.password AS password, A.name AS name, A.point AS point
+                      , A.company AS company, A.memo AS memo, A.img AS img, A.rdate AS rdate
+        FROM Member a,
+            (   select C.member_id, C.hashtag_id, D.HASHTAG
+                FROM skill C, HASHTAG D
+                WHERE C.hashtag_id =D.hashtag_id
+            ) b
+        where b.member_id = a.member_id
+          AND UPPER(B.HASHTAG) like (UPPER('%'||#{searchKbmae}||'%'))
         order by a.member_id desc
     </select>
 </mapper>

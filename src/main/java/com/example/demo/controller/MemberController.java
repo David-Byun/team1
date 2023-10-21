@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.Member;
 import com.example.demo.dto.MemberLoginDto;
+import com.example.demo.dto.SearchKbmae;
 import com.example.demo.service.MemberService;
 import com.sun.mail.imap.protocol.Item;
 import lombok.RequiredArgsConstructor;
@@ -41,17 +42,25 @@ public class MemberController {
         return "redirect:/";
     }
 
-    @GetMapping("/kbmae")
+    @RequestMapping("/kbmae")
     public String kbmae(Model model) throws Exception {
+
         List<Member> mlist = null;
         mlist = memberService.getMemberList();
         log.info("mlist={}", mlist);
-        model.addAttribute("kbmaelist", mlist);
 
-//        List<Member> slist = null;
-/*      slist = memberService.getSkillList();
-        model.addAttribute("skilllist", slist);
-        log.info("slist={}", slist);*/
+        model.addAttribute("kbmaelist", mlist);
+        model.addAttribute("center","kbmae");
+        return "index";
+    };
+
+   @GetMapping("/kbmae/findimpl")
+    public String findimpl(Model model, SearchKbmae searchKbmae) throws Exception {
+        List<Member> fingmlist = null;
+        fingmlist = memberService.getFindKbmae(searchKbmae);
+        log.info("mlist={}", fingmlist);
+
+        model.addAttribute("kbmaelist", fingmlist);
         model.addAttribute("center","kbmae");
         return "index";
     };
