@@ -173,7 +173,7 @@
     </div>
     <div id="review" class="row mx-n2">
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-4 review-1">
-            <div class="card card-blog"><img class="card-img img-fluid" src="assets/images/group/page.jpeg" alt="" />
+            <div class="card card-blog"><img class="card-img img-fluid" src="/assets/img/group/page.jpeg" alt="" />
                 <div class="card-img-overlay d-flex flex-column justify-content-between">
                     <h5 class="card-title text-black">KB국민은행 인재개발부 변다윗 대리</h5>
                     <div class="text-black">사이드 프로젝트를 진행하면서 팀원을 구하는데 큽MAESTRO를 많이 이용하고 있습니다. 개발자 이외에 디자이너, 기획 등 다양한 분야의 사람들을 만날 수 있는 유용한 사이트인 것 같습니다. 큽MAESTRO를 통해 좋은 사람들을 만나서 즐겁게 프로젝트 진행하고 있습니다.</div>
@@ -184,7 +184,7 @@
             </div>
         </div>
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-4 review-1">
-            <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/page.jpeg" alt="" />
+            <div class="card card-blog"><img class="card-img img-fluid" src="/assets/img/group/page.jpeg" alt="" />
                 <div class="card-img-overlay d-flex flex-column justify-content-between">
                     <h5 class="card-title text-black">KB국민은행 개인여신부(P) 이나은 계장</h5>
                     <div class="text-black">누구나에게 꿈은 있으리라 판단이 됩니다. 다만 현실과의 간극 때문에 이를 꿈으로만 남겨두는 경우가 다수인데요. 큽MAESTRO은 그 꿈을 현실로써 이룰 수 있는 가장 좋은 도구라 생각합니다. 나와 비슷한 상황에 내가 부족한 부분을 채워줄 수 있는 훌륭하신 분들이 많아 너무나 좋았습니다.</div>
@@ -195,7 +195,7 @@
             </div>
         </div>
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-4 review-1">
-            <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/page.jpeg" alt="" />
+            <div class="card card-blog"><img class="card-img img-fluid" src="/assets/img/group/page.jpeg" alt="" />
                 <div class="card-img-overlay d-flex flex-column justify-content-between">
                     <h5 class="card-title text-black">KB국민은행 스타뱅킹부(P) 유성진 과장</h5>
                     <div class="text-black">새로 팀원들을 구인하는데 우연한 계기로 사이드프로젝트에 대해서 알게 됐습니다. 생각보다 많은 분들이 지원해주셔서 놀랐고, 다른 사이트들보다 구성원들이 열의가 있어서 좋았습니다!!</div>
@@ -206,7 +206,7 @@
             </div>
         </div>
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-4 review-1">
-            <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/page.jpeg" alt="" />
+            <div class="card card-blog"><img class="card-img img-fluid" src="/assets/img/group/page.jpeg" alt="" />
                 <div class="card-img-overlay d-flex flex-column justify-content-between">
                     <h5 class="card-title text-black">KB국민은행 스타뱅킹부(P) 박선미 대리</h5>
                     <div class="text-black">새로 팀원들을 구인하는데 우연한 계기로 큽MAESTRO에 대해서 알게 됐습니다. 생각보다 많은 분들이 지원해주셔서 놀랐고, 다른 사이트들보다 구성원들이 열의가 있어서 좋았습니다!!</div>
