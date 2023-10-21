@@ -13,7 +13,9 @@
     <!-- main part of the page  -->
     <div>
         <!-- grid container for all listings  -->
+
         <main class="grid-container" style="margin-top: 10%;">
+
             <!-- individual listings  -->
             <div class="listing">
                 <img
@@ -26,13 +28,13 @@
                     <div class="picture-container">
                         <img
                                 class="picture"
-                                src="/assets/images/luxury_suite.webp"
+                                src="/assets/images/study1.jpeg"
                                 alt="listing-photo"
                         />
                     </div>
                     <div class="listing-text">
                         <div class="listing-summary">
-                            <h5 class="location" style="font-size: 15px;">Harlingen, Netherlands</h5>
+                            <h5 class="location" style="font-size: 15px;">서울 종로구</h5>
                             <div class="rating">
 
                                 <img
@@ -43,9 +45,8 @@
                             </div>
                         </div>
                         <div class="listing-details">
-                            <p style="font-size: 15px;">Professional Host</p>
-                            <p style="font-size: 15px;">2-7 Apr</p>
-                            <p style="font-size: 15px;">£1,790 total</p>
+                            <p style="font-size: 15px;">사직로 161</p>
+                            <p style="font-size: 15px;">1시간당 4,000원</p>
                         </div>
                     </div></a
                 >
@@ -61,13 +62,13 @@
                     <div class="picture-container">
                         <img
                                 class="picture"
-                                src="/assets/images/countryside.webp"
+                                src="/assets/images/study2.jpeg"
                                 alt="listing-photo"
                         />
                     </div>
                     <div class="listing-text">
                         <div class="listing-summary">
-                            <h5 class="location" style="font-size: 15px;">West Drayton, UK</h5>
+                            <h5 class="location" style="font-size: 15px;">서울 마포구</h5>
                             <div class="rating">
                                 <img
                                         class="star-icon"
@@ -77,9 +78,8 @@
                             </div>
                         </div>
                         <div class="listing-details">
-                            <p style="font-size: 15px;">Professional Host</p>
-                            <p style="font-size: 15px;">2-7 May</p>
-                            <p style="font-size: 15px;">£1,230 total</p>
+                            <p style="font-size: 15px;">와우산로 160-4</p>
+                            <p style="font-size: 15px;">1시간 3,000원</p>
                         </div>
                     </div></a
                 >
@@ -96,13 +96,13 @@
                     <div class="picture-container">
                         <img
                                 class="picture"
-                                src="/assets/images/castle.jpg"
+                                src="/assets/images/study3.jpeg"
                                 alt="listing-photo"
                         />
                     </div>
                     <div class="listing-text">
                         <div class="listing-summary">
-                            <h5 class="location" style="font-size: 15px;">Edinburgh, UK</h5>
+                            <h5 class="location" style="font-size: 15px;">서울 중구</h5>
                             <div class="rating">
                                 <img
                                         class="star-icon"
@@ -112,9 +112,8 @@
                             </div>
                         </div>
                         <div class="listing-details">
-                            <p style="font-size: 15px;">Professional Host</p>
-                            <p style="font-size: 15px;">12-17 Jun</p>
-                            <p style="font-size: 15px;">£2,100 total</p>
+                            <p style="font-size: 15px;">을지로 281</p>
+                            <p style="font-size: 15px;">1시간 5,000원</p>
                         </div>
                     </div></a
                 >
@@ -131,13 +130,13 @@
                     <div class="picture-container">
                         <img
                                 class="picture"
-                                src="/assets/images/cave.webp"
+                                src="/assets/images/study4.jpeg"
                                 alt="listing-photo"
                         />
                     </div>
                     <div class="listing-text">
                         <div class="listing-summary">
-                            <h5 class="location" style="font-size: 15px;">Sydney, Australia</h5>
+                            <h5 class="location" style="font-size: 15px;">서울 종로구</h5>
                             <div class="rating">
                                 <img
                                         class="star-icon"
@@ -147,9 +146,8 @@
                             </div>
                         </div>
                         <div class="listing-details">
-                            <p style="font-size: 15px;">Professional Host</p>
-                            <p style="font-size: 15px;">9-15 Apr</p>
-                            <p style="font-size: 15px;">£1,905 total</p>
+                            <p style="font-size: 15px;">자하문로 9길 28</p>
+                            <p style="font-size: 15px;">1시간 5,000원</p>
                         </div>
                     </div></a
                 >
@@ -166,13 +164,13 @@
                     <div class="picture-container">
                         <img
                                 class="picture"
-                                src="/assets/images/boat.webp"
+                                src="/assets/images/study5.jpeg"
                                 alt="listing-photo"
                         />
                     </div>
                     <div class="listing-text">
                         <div class="listing-summary">
-                            <h5 class="location" style="font-size: 15px;">Baku, Azerbaijan</h5>
+                            <h5 class="location" style="font-size: 15px;">서울 용산구</h5>
                             <div class="rating">
                                 <img
                                         class="star-icon"
@@ -182,9 +180,8 @@
                             </div>
                         </div>
                         <div class="listing-details">
-                            <p style="font-size: 15px;">Professional Host</p>
-                            <p style="font-size: 15px;">2-7 May</p>
-                            <p style="font-size: 15px;">£2,340 total</p>
+                            <p style="font-size: 15px;">남산공원길 105</p>
+                            <p style="font-size: 15px;">1시간 8,000원</p>
                         </div>
                     </div></a
                 >
@@ -201,13 +198,13 @@
                     <div class="picture-container">
                         <img
                                 class="picture"
-                                src="/assets/images/barn.webp"
+                                src="/assets/images/study6.jpeg"
                                 alt="listing-photo"
                         />
                     </div>
                     <div class="listing-text">
                         <div class="listing-summary">
-                            <h5 class="location" style="font-size: 15px;">Malmo, Sweden</h5>
+                            <h5 class="location" style="font-size: 15px;">서울 송파구</h5>
                             <div class="rating">
                                 <img
                                         class="star-icon"
@@ -217,9 +214,8 @@
                             </div>
                         </div>
                         <div class="listing-details">
-                            <p style="font-size: 15px;">Professional Host</p>
-                            <p style="font-size: 15px;">2-7 Apr</p>
-                            <p style="font-size: 15px;">£1,790 total</p>
+                            <p style="font-size: 15px;">올림픽로 300</p>
+                            <p style="font-size: 15px;">1시간 3,500원</p>
                         </div>
                     </div></a
                 >
@@ -236,13 +232,13 @@
                     <div class="picture-container">
                         <img
                                 class="picture"
-                                src="/assets/images/cool.webp"
+                                src="/assets/images/study7.jpeg"
                                 alt="listing-photo"
                         />
                     </div>
                     <div class="listing-text">
                         <div class="listing-summary">
-                            <h5 class="location" style="font-size: 15px;">Tbilisi, Georgia</h5>
+                            <h5 class="location" style="font-size: 15px;">서울 용산구</h5>
                             <div class="rating">
                                 <img
                                         class="star-icon"
@@ -252,9 +248,8 @@
                             </div>
                         </div>
                         <div class="listing-details">
-                            <p style="font-size: 15px;">Professional Host</p>
-                            <p style="font-size: 15px;">2-7 Aug</p>
-                            <p style="font-size: 15px;">£1,890 total</p>
+                            <p style="font-size: 15px;">이태원로 177</p>
+                            <p style="font-size: 15px;">1시간 5,000원</p>
                         </div>
                     </div></a
                 >
@@ -271,13 +266,13 @@
                     <div class="picture-container">
                         <img
                                 class="picture"
-                                src="/assets/images/crane.webp"
+                                src="/assets/images/study8.jpeg"
                                 alt="listing-photo"
                         />
                     </div>
                     <div class="listing-text">
                         <div class="listing-summary">
-                            <h5 class="location" style="font-size: 15px;">Barcelona, Spain</h5>
+                            <h5 class="location" style="font-size: 15px;">서울 종로구</h5>
                             <div class="rating">
                                 <img
                                         class="star-icon"
@@ -287,9 +282,8 @@
                             </div>
                         </div>
                         <div class="listing-details">
-                            <p style="font-size: 15px;">Professional Host</p>
-                            <p style="font-size: 15px;">2-7 Jun</p>
-                            <p style="font-size: 15px;">£1,490 total</p>
+                            <p style="font-size: 15px;">삼청로 137</p>
+                            <p style="font-size: 15px;">1시간 2,000원</p>
                         </div>
                     </div></a
                 >
@@ -306,13 +300,13 @@
                     <div class="picture-container">
                         <img
                                 class="picture"
-                                src="/assets/images/dome.webp"
+                                src="/assets/images/study9.jpeg"
                                 alt="listing-photo"
                         />
                     </div>
                     <div class="listing-text">
                         <div class="listing-summary">
-                            <h5 class="location" style="font-size: 15px;">Istanbul, Turkiye</h5>
+                            <h5 class="location" style="font-size: 15px;">서울 강남구</h5>
                             <div class="rating">
                                 <img
                                         class="star-icon"
@@ -322,9 +316,8 @@
                             </div>
                         </div>
                         <div class="listing-details">
-                            <p style="font-size: 15px;">Professional Host</p>
-                            <p style="font-size: 15px;">2-7 May</p>
-                            <p style="font-size: 15px;">£1,300 total</p>
+                            <p style="font-size: 15px;">봉은사로 531</p>
+                            <p style="font-size: 15px;">1시간 4,500원</p>
                         </div>
                     </div></a
                 >
@@ -341,13 +334,13 @@
                     <div class="picture-container">
                         <img
                                 class="picture"
-                                src="/assets/images/farm.jpeg"
+                                src="/assets/images/study10.jpeg"
                                 alt="listing-photo"
                         />
                     </div>
                     <div class="listing-text">
                         <div class="listing-summary">
-                            <h5 class="location" style="font-size: 15px;">Rabat, Morocco</h5>
+                            <h5 class="location" style="font-size: 15px;">서울 중구</h5>
                             <div class="rating">
                                 <img
                                         class="star-icon"
@@ -357,9 +350,8 @@
                             </div>
                         </div>
                         <div class="listing-details">
-                            <p style="font-size: 15px;">Professional Host</p>
-                            <p style="font-size: 15px;">2-7 Sep</p>
-                            <p style="font-size: 15px;">£1,380 total</p>
+                            <p style="font-size: 15px;">소월로 4길</p>
+                            <p style="font-size: 15px;">1시간 3,000원</p>
                         </div>
                     </div></a
                 >
@@ -376,13 +368,13 @@
                     <div class="picture-container">
                         <img
                                 class="picture"
-                                src="/assets/images/glamping.webp"
+                                src="/assets/images/study11.jpeg"
                                 alt="listing-photo"
                         />
                     </div>
                     <div class="listing-text">
                         <div class="listing-summary">
-                            <h5 class="location" style="font-size: 15px;">Florence, Italy</h5>
+                            <h5 class="location" style="font-size: 15px;">서울 강남구</h5>
                             <div class="rating">
                                 <img
                                         class="star-icon"
@@ -392,9 +384,8 @@
                             </div>
                         </div>
                         <div class="listing-details">
-                            <p style="font-size: 15px;">Professional Host</p>
-                            <p style="font-size: 15px;">2-7 Apr</p>
-                            <p style="font-size: 15px;">£1,600 total</p>
+                            <p style="font-size: 15px;">도산대로 562</p>
+                            <p style="font-size: 15px;">1시간 2,500원</p>
                         </div>
                     </div></a
                 >
@@ -411,13 +402,13 @@
                     <div class="picture-container">
                         <img
                                 class="picture"
-                                src="/assets/images/house1.jpg"
+                                src="/assets/images/study12.jpeg"
                                 alt="listing-photo"
                         />
                     </div>
                     <div class="listing-text">
                         <div class="listing-summary">
-                            <h5 class="location" style="font-size: 15px;">Johannesburg, South Africa</h5>
+                            <h5 class="location" style="font-size: 15px;">서울 종로구</h5>
                             <div class="rating">
                                 <img
                                         class="star-icon"
@@ -427,9 +418,8 @@
                             </div>
                         </div>
                         <div class="listing-details">
-                            <p style="font-size: 15px;">Professional Host</p>
-                            <p style="font-size: 15px;">2-7 Jun</p>
-                            <p style="font-size: 15px;">£1,390 total</p>
+                            <p style="font-size: 15px;">계동길</p>
+                            <p style="font-size: 15px;">1시간 5,000원</p>
                         </div>
                     </div></a
                 >
@@ -439,7 +429,7 @@
 </div>
 <!-- filter main body  -->
 <div>
-    <div class="filter-popup" id="filter-popup" style="margin-top: 80px">
+    <div class="filter-popup" id="filter-popup" style="margin-top: 40px">
         <div class="filter-menu">
             <form>
                 <div class="filter-heading" >
