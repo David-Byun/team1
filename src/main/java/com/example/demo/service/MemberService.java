@@ -30,6 +30,6 @@ public class MemberService {
 
     public Page<Member> getFindKbmae(int pageNo, SearchKbmae searchKbmae) throws Exception {
         PageHelper.startPage(pageNo, 3);
-        return memberMapper.getFindKbmae(searchKbmae);
+        return null;
     }
 }

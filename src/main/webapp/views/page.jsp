@@ -8,7 +8,14 @@
     }
 </style>
 <script type='text/javascript'>
+
     $(document).ready(function() {
+        // 버튼을 클릭했을 때 실행할 함수를 정의합니다.
+        document.getElementById("projectBtn").addEventListener("click", function() {
+            // 새로운 페이지를 열기 위해 window.open() 함수를 사용합니다.
+            // 지정된 URL("http://172.16.21.74:3010/")가 새 창 또는 탭에 열립니다.
+            window.open("http://172.16.21.74:3010/");
+        });
         // "리더에게 문의하기" 버튼 클릭 이벤트 처리
         $("#sendEmailButton").click(function() {
             // 폼 데이터 가져오기
@@ -33,6 +40,41 @@
                     $('#msg').val('');
                 }
             });
+        });
+
+        document.getElementById("slackBtn").addEventListener("click", function() {
+            var title = document.getElementById("title").value;
+            var messageKey = document.getElementById("messageKey").value;
+            var messageValue = document.getElementById("messageValue").value;
+
+            var data = new URLSearchParams();
+            data.append("title", title);
+            data.append("messageKey", messageKey);
+            data.append("messageValue", messageValue);
+
+            fetch("/slack/send", {
+                method: "POST",
+                body: data
+            })
+                .then(function(response) {
+                    if (response.status === 200) {
+                        Swal.fire(
+                            '슬랙 채널로 프로젝트 문의 했어요!',
+                        )
+                        $('#messageValue').val('');
+                    } else {
+                        throw new Error("요청 실패");
+                    }
+                })
+                .then(function(responseText) {
+                    Swal.fire(
+                        '슬랙 채널로 프로젝트 문의 했어요!',
+                    )
+                })
+                .catch(function(error) {
+                    // 요청 실패 시 수행할 작업
+                    console.error(error);
+                });
         });
 
         // "프로젝트 미팅하기" 버튼 클릭 이벤트 처리
@@ -66,21 +108,9 @@
                 {
                     googleCalendarId: 'kbdavid890414@gmail.com',
                     className: '여의도나들이',
-                    color: '#be5683', //rgb,#ffffff 등의 형식으로 할 수 있어요.
+                    color: '#305FEA', //rgb,#ffffff 등의 형식으로 할 수 있어요.
                     //textColor: 'black'
                 },
-                {
-                    googleCalendarId: 'kbdavid890414@gmail.com',
-                    className: '테스트',
-                    color: '#204051',
-                    //textColor: 'black'
-                },
-                {
-                    googleCalendarId: 'kbdavid890414@gmail.com',
-                    className: 'Tasks',
-                    color: '#3b6978',
-                    //textColor: 'black'
-                }
             ]
         });
         calendar.render();
@@ -311,7 +341,15 @@
                                     </div>
                                     <input type="hidden" name="name" value="${applicant.name}">
                                     <button id="sendEmailButton" class="btn btn-primary btn-block py-2" type="button">리더에게 문의하기</button>
-                                    <button class="btn btn-danger btn-block py-2" type="button" type="button">프로젝트 미팅하기</button>
+                                    <button class="btn btn-danger btn-block py-2" type="button" id="projectBtn">프로젝트 미팅하기</button>
+                                </form>
+                                <form id="slackForm" style="margin-top: 20px">
+                                    <div class="input-group-icon mb-2">
+                                        <input class="form-control form-control-lg input-box" name="messageValue" type="text" placeholder="슬랙 문의" id="messageValue"/><span class="uil uil-envelope fs-2 input-box-icon"></span>
+                                    </div>
+                                    <button class="btn btn-success btn-block py-2" type="button" id="slackBtn">슬랙으로 문의하기</button>
+                                    <input type="text" id="title" name="title" style="display: none" value="프로젝트 관련 문의드립니다."/><br />
+                                    <input type="text" id="messageKey" name="messageKey" style="display: none" value="프로젝트 관련 문의"/><br />
                                 </form>
                             </div>
                         </div>
