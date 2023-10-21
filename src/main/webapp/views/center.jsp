@@ -173,7 +173,7 @@
     </div>
     <div id="review" class="row mx-n2">
         <div class="px-2 col-sm-6 col-lg-4 col-xxl-4 review-1">
-            <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/page.jpeg" alt="" />
+            <div class="card card-blog"><img class="card-img img-fluid" src="assets/images/group/page.jpeg" alt="" />
                 <div class="card-img-overlay d-flex flex-column justify-content-between">
                     <h5 class="card-title text-black">KB국민은행 인재개발부 변다윗 대리</h5>
                     <div class="text-black">사이드 프로젝트를 진행하면서 팀원을 구하는데 큽MAESTRO를 많이 이용하고 있습니다. 개발자 이외에 디자이너, 기획 등 다양한 분야의 사람들을 만날 수 있는 유용한 사이트인 것 같습니다. 큽MAESTRO를 통해 좋은 사람들을 만나서 즐겁게 프로젝트 진행하고 있습니다.</div>

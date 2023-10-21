@@ -16,14 +16,17 @@
             // 지정된 URL("http://172.16.21.74:3010/")가 새 창 또는 탭에 열립니다.
             window.open("http://172.16.21.74:3010/");
         });
+
+
         // "리더에게 문의하기" 버튼 클릭 이벤트 처리
         $("#sendEmailButton").click(function() {
             // 폼 데이터 가져오기
             var formData = $("#emailForm").serialize();
             if($('#msg').val() == '' || $('#msg').val() == null){
-                Swal.fire(
-                    '문의 내용을 입력해주세요!',
-                )
+                Swal.fire({
+                    text :  '문의 내용을 입력해주세요!',
+                    backdrop: false // 팝업 주변의 투명한 배경 비활성화
+                })
                 return;
             }
 
@@ -33,10 +36,10 @@
                 url: "/sendEmail",
                 data: formData,
                 success: function(response) {
-                    // 서버 응답 처리
-                    Swal.fire(
-                        '프로젝트 문의 메일을 발송했어요!',
-                    )
+                    Swal.fire({
+                        text :  '프로젝트 문의 메일을 발송했어요!',
+                        backdrop: false // 팝업 주변의 투명한 배경 비활성화
+                    })
                     $('#msg').val('');
                 }
             });
@@ -58,9 +61,10 @@
             })
                 .then(function(response) {
                     if (response.status === 200) {
-                        Swal.fire(
-                            '슬랙 채널로 프로젝트 문의 했어요!',
-                        )
+                        Swal.fire({
+                            text :  '슬랙 채널로 프로젝트 문의 했어요!',
+                            backdrop: false // 팝업 주변의 투명한 배경 비활성화
+                        })
                         $('#messageValue').val('');
                     } else {
                         throw new Error("요청 실패");
@@ -87,12 +91,28 @@
     // ID 값을 증가시키는 함수
     function apply(id, button) {
         const element = document.getElementById(id);
+        // List of all role buttons
+        const roleButtons = ['plan', 'front', 'design', 'server'];
         const currentValue = parseInt(element.textContent);
         element.textContent = currentValue + 1;
+        // Loop through and disable other "지원" buttons
+        roleButtons.forEach(function (item) {
+            document.getElementById(item + 'ApplyButton').disabled = true;
+        });
+        button.classList.remove('btn-outline-primary');
+        button.classList.add('btn-success'); // Add the btn-success class to the clicked button
+        Swal.fire({
+            title : "지원 성공",
+            text : '해당 포지션에 지원하셨습니다!',
+            backdrop: false // 팝업 주변의 투명한 배경 비활성화
+        })
+
+
         $.post("/your-server-url", { id: id, value : currentValue}, function(response) {
             if (response.success) {
                 element.textContent = currentValue + 1;
                 button.disabled = true; // 버튼 비활성화
+
             } else {
                 alert("지원에 실패했습니다.");
             }
@@ -189,7 +209,7 @@
                                         </div>
                                         <div class="col-md-2 col-sm-2">
                                             <div class="box">
-                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('plan', this)">지원</button>
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('plan', this)" id="planApplyButton">지원</button>
                                             </div>
                                         </div>
                                     </div>
@@ -211,7 +231,7 @@
                                         </div>
                                         <div class="col-md-2">
                                             <div class="box">
-                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('front', this)">지원</button>
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('front', this)" id="frontApplyButton">지원</button>
                                             </div>
                                         </div>
                                     </div>
@@ -233,7 +253,7 @@
                                         </div>
                                         <div class="col-md-2">
                                             <div class="box">
-                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('design', this)">지원</button>
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('design', this)" id="designApplyButton">지원</button>
                                             </div>
                                         </div>
                                     </div>
@@ -255,7 +275,7 @@
                                         </div>
                                         <div class="col-md-2">
                                             <div class="box">
-                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('server', this)">지원</button>
+                                                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" onclick="apply('server', this)" id="serverApplyButton">지원</button>
                                             </div>
                                         </div>
                                     </div>

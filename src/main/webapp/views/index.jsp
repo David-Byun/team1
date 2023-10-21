@@ -41,7 +41,6 @@
     <link rel="manifest" href="/assets/img/favicons/manifest.json">
     <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
-
     <%--jquery와 부트스트랩--%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- ===============================================-->
