@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.Applicant;
+import com.example.demo.dto.Post;
 import com.example.demo.mapper.ApplicantMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,4 +28,14 @@ public class ApplicantService {
         return result;
     }
 
+    //naeun
+    public List<Post> getJoinedPosts(String memberId) throws Exception {
+        List<Post> posts =null;
+        try {
+            posts = applicantMapper.getJoinedPosts(memberId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return posts;
+    }
 }
