@@ -12,7 +12,7 @@
             <div class="col-md-12">
                 <ul class="nav nav-pills flex-column flex-md-row mb-3">
                     <li class="nav-item">
-                        <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> 마이페이지</a>
+                        <a class="nav-link" href="/kb?myPage=${loginmember.memberId}"><i class="bx bx-user me-1"></i> 마이페이지</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/projectHistory?memberId=${loginmember.memberId}"
@@ -20,43 +20,34 @@
                         >
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/kbHistory?memberId=${loginmember.memberId}"
+                        <a class="nav-link active" href="javascript:void(0);"
                         ><i class="bx bx-link-alt me-1"></i> 큽 사용내역</a
                         >
                     </li>
                 </ul>
                 <div class="card mb-4">
-                    <h5 class="card-header">프로필</h5>
+                    <h5 class="card-header">내 프로젝트</h5>
                     <!-- Account -->
                     <div class="card-body">
-                        <div class="d-flex align-items-start align-items-sm-center gap-4">
-                            <img
-                                    src="/assets/img/icons/${loginmember.img}"
-                                    alt="user-avatar"
-                                    class="d-block rounded"
-                                    height="100"
-                                    width="100"
-                                    id="uploadedAvatar"
-                            />
-                            <div class="button-wrapper">
-                                <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
-                                    <span class="d-none d-sm-block">Upload new photo</span>
-                                    <i class="bx bx-upload d-block d-sm-none"></i>
-                                    <input
-                                            type="file"
-                                            id="upload"
-                                            class="account-file-input"
-                                            hidden
-                                            accept="image/png, image/jpeg"
-                                    />
-                                </label>
-                                <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
-                                    <i class="bx bx-reset d-block d-sm-none"></i>
-                                    <span class="d-none d-sm-block">Reset</span>
-                                </button>
 
-                                <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
-                            </div>
+                        <div id="kbmaeList" class="row mx-n2">
+                            <c:forEach var="obj" items="${kbmaelist}">
+                                <div class="px-2 col-sm-6 col-lg-4 col-xxl-4">
+                                    <div class="card card-blog"><img class="card-img img-fluid" src="assets/img/group/${obj.img}" alt="" />
+                                        <div class="card-img-overlay overlay-gradient d-flex flex-column justify-content-between">
+                                            <h5 class="card-title text-white">${obj.name}[${obj.gitaddress}]</h5>
+                                            <div class="d-flex flex-wrap align-items-center justify-content-between">
+                                                <div><span class="uil fs-3 text-300 align-middle uil-users-alt"></span><span class="text-white fs--1 mb-0 d-inline-block">${obj.company}</span></div>
+                                                <a class="badge badge-pill stretched-link ml-2 badge-info" href="/account?memberId=${obj.memberId}">${obj.memo}</a>
+                                                <c:forEach var="innerobj" items="${obj.hashtagList}">
+                                                    <a class="badge badge-pill stretched-link ml-2 badge-danger" href="/account?memberId=${obj.memberId}">${innerobj}</a>
+                                                </c:forEach>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </c:forEach>
                         </div>
                     </div>
                     <hr class="my-0" />
@@ -213,8 +204,6 @@
                         </form>
                     </div>
                     <!-- /Account -->
-                </div>
-                <div class="card">
                 </div>
             </div>
         </div>

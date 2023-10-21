@@ -2,7 +2,10 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.Member;
 import com.example.demo.dto.MemberLoginDto;
+import com.example.demo.dto.Post;
+import com.example.demo.service.ApplicantService;
 import com.example.demo.service.MemberService;
+import com.example.demo.service.PostService;
 import com.sun.mail.imap.protocol.Item;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +24,8 @@ import java.util.List;
 public class MemberController {
 
     private final MemberService memberService;
+    private final PostService postService;
+    private final ApplicantService applicantService;
 
     @PostMapping("/login")
     public String login(Model model,MemberLoginDto memberLoginDto, HttpSession session) {
@@ -62,13 +67,37 @@ public class MemberController {
     };
 
     @GetMapping("/mypage")
-    public String mypage(Model model) throws Exception {
+    public String mypage(Model model, HttpSession session) throws Exception {
+        Member member =(Member) session.getAttribute("loginmember");
+        if (member == null) {
+            model.addAttribute("center", "login");
+            return "index";
+        }
         model.addAttribute("center", "myPage");
         return "index";
     }
     @GetMapping("/projectHistory")
-    public String projectHistory(Model model) throws Exception {
+    public String projectHistory(Model model, HttpSession session) throws Exception {
+        Member member =(Member) session.getAttribute("loginmember");
+        if (member == null) {
+            model.addAttribute("center", "login");
+            return "index";
+        }
+        String memberId = member.getMemberId();
+        List<Post> uploadedPosts = postService.getUploadedPosts(memberId);
+        log.info(uploadedPosts.toString());
+        model.addAttribute("uploadedPosts", uploadedPosts);
         model.addAttribute("center", "projectHistory");
         return "index";
     }
+    @GetMapping("/kbHistory")
+    public String kbHistory(Model model, HttpSession session) throws Exception {
+        if (session == null) {
+            model.addAttribute("center", "login");
+            return "index";
+        }
+        model.addAttribute("center", "projectHistory");
+        return "index";
+    }
+
 }

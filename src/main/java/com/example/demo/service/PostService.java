@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.Member;
 import com.example.demo.dto.Post;
 import com.example.demo.dto.PostDetail;
 import com.example.demo.mapper.PostDetailMapper;
@@ -62,5 +63,10 @@ public class PostService {
     //sunmi
     public Integer getLastPostId() throws Exception {
         return postMapper.getLastPostId();
+    }
+    //naeun
+    public List<Post> getUploadedPosts(String memberId) {
+        List<com.example.demo.dto.Post> posts = postMapper.getUploadedPosts(memberId);
+        return posts;
     }
 }

@@ -59,4 +59,9 @@
         SELECT post_seq.CURRVAL FROM dual
     </select>
 
+    <!--naeun-->
+    <select id="getUploadedPosts" resultType="Post">
+        SELECT * FROM POST WHERE MEMBER_ID = #{memberId};
+    </select>
+
 </mapper>
