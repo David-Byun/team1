@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!--amCharts 관련 CDN-->
 <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
 <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
@@ -7,18 +9,29 @@
 <script src="https://cdn.amcharts.com/lib/4/lang/de_DE.js"></script>
 <script src="https://cdn.amcharts.com/lib/4/geodata/germanyLow.js"></script>
 <script src="https://cdn.amcharts.com/lib/4/fonts/notosans-sc.js"></script>
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
 
 <style>
     #chartdiv {
         width: 100%;
         height: 600px;
     }
-</style>
 
-<!-- Resources -->
-<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    #chartdiv1 {
+        width: 63%;
+        height: 300px;
+    }
+
+    canvas  {
+        margin: auto 0;
+    }
+</style>
 
 <!-- Chart code -->
 <script>
@@ -44,27 +57,6 @@
                 }
             },
             </c:forEach>
-            // {
-            //     name: "member2",
-            //     steps: 31,
-            //     pictureSettings: {
-            //         src: "/assets/img/logos/KBmaestro.png"
-            //     }
-            // },
-            // {
-            //     name: "member3",
-            //     steps: 13,
-            //     pictureSettings: {
-            //         src: "/assets/img/logos/KBmaestro.png"
-            //     }
-            // },
-            // {
-            //     name: "member4",
-            //     steps: 9,
-            //     pictureSettings: {
-            //         src: "/assets/img/logos/KBmaestro.png"
-            //     }
-            // }
         ];
 
 // Create chart
@@ -253,11 +245,63 @@
         series.appear();
         chart.appear(1000, 100);
 
+        // Create root element
+// https://www.amcharts.com/docs/v5/getting-started/#Root_element
+        var root1 = am5.Root.new("chartdiv1");
+
+// Set themes
+// https://www.amcharts.com/docs/v5/concepts/themes/
+        root1.setThemes([
+            am5themes_Animated.new(root1)
+        ]);
+
+// Create chart
+// https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/
+// start and end angle must be set both for chart and series
+        var chart1 = root1.container.children.push(am5percent.PieChart.new(root1, {
+            startAngle: 180,
+            endAngle: 360,
+            layout: root1.verticalLayout,
+            innerRadius: am5.percent(50)
+        }));
+
+// Create series
+// https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Series
+// start and end angle must be set both for chart and series
+        var series1 = chart1.series.push(am5percent.PieSeries.new(root1, {
+            startAngle: 180,
+            endAngle: 360,
+            valueField: "value",
+            categoryField: "category",
+            alignLabels: false
+        }));
+
+        series1.states.create("hidden", {
+            startAngle: 180,
+            endAngle: 180
+        });
+
+        series1.slices.template.setAll({
+            cornerRadius: 5
+        });
+
+        series1.ticks.template.setAll({
+            forceHidden: true
+        });
+
+// Set data
+// https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
+        series1.data.setAll([
+            <c:forEach var="lang" items="${lang}">
+            { value: ${lang.bytes}, category: "${lang.language}" },
+            </c:forEach>
+        ]);
+
+
+
+
     }); // end am5.ready()
 </script>
-
-<!-- HTML -->
-
 
 
 <div class="text-white bg-success" style="width: 100%; max-width: 100%;">
@@ -271,37 +315,58 @@
     <!-- style="margin-left: 16.25rem-->
     <div style="margin-top: 0.9rem;">
         <div class="card body p-3 pt-3">
-            <form>
-                여기내용
-                <input id="title"
-                       class="form-control"
-                       name="title"
-                       placeholder="3-20글자로 적어주세요  예) KB마에스트로"
-                />
+            <div class="mb-7">
+                <h3>
+                    <span class="text-success" style="font-size: 0.8rem;">Git-Hub 연동</span><br/>
+                    <label class="form-label text-700" for="chartdiv">기여도 현황</label><br/>
+                    <span class="text-success"style="font-size: 0.7rem;">
+                            <span class="svg-icon svg-icon-danger svg-icon-2hx">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.89557 13.4982L7.79487 11.2651C7.26967 10.7068 6.38251 10.7068 5.85731 11.2651C5.37559
+                                    11.7772 5.37559 12.5757 5.85731 13.0878L9.74989 17.2257C10.1448 17.6455 10.8118 17.6455 11.2066
+                                    17.2257L18.1427 9.85252C18.6244 9.34044 18.6244 8.54191 18.1427 8.02984C17.6175 7.47154 16.7303
+                                    7.47154 16.2051 8.02984L11.061 13.4982C10.7451 13.834 10.2115 13.834 9.89557 13.4982Z" fill="currentColor"/>
+                                </svg>
+                            </span>
+                        프로젝트 정보에 등록된 GITHUB Repository의 Commit 기반으로 팀원의 기여도를 한 눈에 알아보세요!</span><br/>
+                </h3>
+                <div class="mb-1">
+                    <div id="chartdiv"></div>
+                </div>
+            </div>
+            <div class="mb-7">
+                <h3>
+                    <span class="text-success" style="font-size: 0.8rem;">Git-Hub 연동</span><br/>
+                    <label class="form-label text-700" for="chartdiv">사용 언어 집계</label><br/>
+                    <span class="text-success"style="font-size: 0.7rem;">
+                            <span class="svg-icon svg-icon-danger svg-icon-2hx">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.89557 13.4982L7.79487 11.2651C7.26967 10.7068 6.38251 10.7068 5.85731 11.2651C5.37559
+                                    11.7772 5.37559 12.5757 5.85731 13.0878L9.74989 17.2257C10.1448 17.6455 10.8118 17.6455 11.2066
+                                    17.2257L18.1427 9.85252C18.6244 9.34044 18.6244 8.54191 18.1427 8.02984C17.6175 7.47154 16.7303
+                                    7.47154 16.2051 8.02984L11.061 13.4982C10.7451 13.834 10.2115 13.834 9.89557 13.4982Z" fill="currentColor"/>
+                                </svg>
+                            </span>
+                        프로젝트 정보에 등록된 GITHUB Repository의 코드 분석을 통한 사용 언어 통계를 확인하세요!</span><br/>
+                </h3>
+                <div class="mb-1" style="width: 100%; margin: auto 0; display: flex; justify-content: center; text-align: center; align-items: center;">
+                    <div class="pl-3 bg-success text-white rounded" style="width: 27%; text-align: left; font-weight: bolder;">
+                        <c:forEach var="lang" items="${lang}">
+                            <fmt:formatNumber type="number" pattern="#,###" value="${lang.bytes}" var="formattedBytes"/>
+                            <br/>${lang.language} : ${formattedBytes}
+                        </c:forEach>
+                    </div>
+                    <div id="chartdiv1"></div>
+                </div>
+            </div>
 
-                <div id="chartdiv"></div>
+
                 <c:forEach var="recent" items="${recent}">
                     <br/>${recent.date}
                     <br/>${recent.author}
                     <br/>${recent.message}
                     <br/>---------------
                 </c:forEach>
-
-
-
-                <c:forEach var="lang" items="${lang}">
-                    <br/>${lang.bytes}
-                    <br/>${lang.language}
-                    <br/>---------------
-                </c:forEach>
-
-                <c:forEach var="branch" items="${branch}">
-                    <br/>${branch.branch}
-                    <br/>${branch.contributions}
-                    <br/>---------------
-                </c:forEach>
-
-
 
             </form>
         </div>
