@@ -4,6 +4,7 @@ import com.example.demo.dto.Member;
 import com.example.demo.dto.MemberLoginDto;
 import com.example.demo.dto.Post;
 import com.example.demo.service.ApplicantService;
+import com.example.demo.dto.SearchKbmae;
 import com.example.demo.service.MemberService;
 import com.example.demo.service.PostService;
 import com.sun.mail.imap.protocol.Item;
