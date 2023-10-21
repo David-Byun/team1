@@ -60,8 +60,12 @@
     </select>
 
     <!--naeun-->
-    <select id="getUploadedPosts" resultType="Post">
-        SELECT * FROM POST WHERE MEMBER_ID = #{memberId};
+    <select id="getUploadedPosts" parameterType="String"  resultType="Post">
+        SELECT * FROM POST WHERE MEMBER_ID = #{memberId}
+    </select>
+    <!--naeun-->
+    <select id="getJoinedPosts" parameterType="String"  resultType="Post">
+        SELECT * FROM APPLICANT WHERE MEMBER_ID = #{memberId}
     </select>
 
 </mapper>

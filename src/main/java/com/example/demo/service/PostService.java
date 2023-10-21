@@ -65,8 +65,23 @@ public class PostService {
         return postMapper.getLastPostId();
     }
     //naeun
-    public List<Post> getUploadedPosts(String memberId) {
-        List<com.example.demo.dto.Post> posts = postMapper.getUploadedPosts(memberId);
+    public List<Post> getUploadedPosts(String memberId) throws Exception {
+        List<Post> posts =null;
+        try {
+            posts = postMapper.getUploadedPosts(memberId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return posts;
+    }
+    //naeun
+    public List<Post> getJoinedPosts(String memberId) throws Exception {
+        List<Post> posts =null;
+        try {
+            posts = postMapper.getJoinedPosts(memberId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return posts;
     }
 }

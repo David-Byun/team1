@@ -74,7 +74,7 @@ public class MemberController {
             return "index";
         }
         model.addAttribute("center", "myPage");
-        return "index";
+        return "redirect:/mypage?memberId=" + member.getMemberId();
     }
     @GetMapping("/projectHistory")
     public String projectHistory(Model model, HttpSession session) throws Exception {
@@ -85,8 +85,9 @@ public class MemberController {
         }
         String memberId = member.getMemberId();
         List<Post> uploadedPosts = postService.getUploadedPosts(memberId);
-        log.info(uploadedPosts.toString());
+        List<Post> joinedPosts = postService.getJoinedPosts(memberId);
         model.addAttribute("uploadedPosts", uploadedPosts);
+        model.addAttribute("joinedPosts", joinedPosts);
         model.addAttribute("center", "projectHistory");
         return "index";
     }
@@ -96,7 +97,7 @@ public class MemberController {
             model.addAttribute("center", "login");
             return "index";
         }
-        model.addAttribute("center", "projectHistory");
+        model.addAttribute("center", "kbHistory");
         return "index";
     }
 
