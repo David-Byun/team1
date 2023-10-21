@@ -14,4 +14,8 @@ public interface PostMapper extends DemoMapper<Integer, Post> {
     Integer getLastPostId() throws Exception;
     //sunmi
     List<Integer> findTagNoList(int projectId);
+    //naeun
+    List<Post> getUploadedPosts(String memberId);
+    //naeun
+    List<Post> getJoinedPosts(String memberId);
 }
