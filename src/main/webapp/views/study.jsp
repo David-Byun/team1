@@ -189,10 +189,10 @@
                 <a href="#">
                     <div>위치</div>
                     <select class="form-select" aria-label="Default select example">
-                        <option selected>스터디실을 선택해주세요</option>
-                        <option value="1">마포구 합정</option>
-                        <option value="2">성동구 성수</option>
-                        <option value="3">영등포구 여의도</option>
+                        <option selected>스터디 장소 선택</option>
+                        <option value="1">서울</option>
+                        <option value="2">경기</option>
+                        <option value="3">인천</option>
                     </select>
                 </a>
             </div>
@@ -205,13 +205,13 @@
             <div class="search_input__end_date">
                 <a href="#" onclick="buildCalendar(); openPopup()">
                     <div>날짜</div>
-                    <input type="datetime" placeholder="날짜 추가" readonly id="calendar">
+                    <input type="datetime" placeholder="회의 날짜" readonly id="calendar">
                 </a>
             </div>
             <div>
                 <a href="#">
                     <div>인원</div>
-                    <input type="number" placeholder="게스트 추가">
+                    <input type="number" placeholder="회의 참여 인원">
                 </a>
             </div>
             <div>
@@ -239,77 +239,74 @@
 </header>
 
 <section class="padding80 margin50">
+    <div><b class="font32">KB금융그룹 이용 가능 회의실</b></div>
     <ul class="items quarter img70 cities">
         <a href="#">
-            <li><img src="https://a0.muscache.com/im/pictures/71e23854-a3c7-491c-b715-6e86233a293f.jpg?im_q=medq&im_w=720"
+            <li><img src="https://wimg.mk.co.kr/meet/neds/2021/11/image_readtop_2021_1042511_16359180324837406.jpg" style="width:90px; height: 90px"
                      alt="">
-                <span><span class="font_bold">KB국민은행 신관</span><span>차로 30분 거리</span></span>
+                <span><span class="font_bold">KB국민은행 신관</span><span>서울특별시 영등포구 국제금융로8길 26</span></span>
             </li>
         </a>
         <a href="#">
-            <li><img src="https://a0.muscache.com/im/pictures/8b318783-723f-4584-9b9b-0eb2c8b6078e.jpg?im_q=medq&im_w=240"
-                     alt="">
-                <span><span class="font_bold">KB국민은행 본관</span><span>차로 1시간 거리</span></span>
+            <li><img src="https://assets.website-files.com/600568bc9a3057a175f0ae01/605446dbe6e16f420ba78cf4_3.%20%EB%A6%AC%ED%94%84%ED%8A%B8%20%EB%AA%A8%EB%8B%88%ED%84%B0%20%EC%84%A4%EC%B9%98%20%EC%82%AC%EB%A1%80%20%EA%B5%AD%EB%AF%BC%EC%9D%80%ED%96%89.png"
+                     alt="" style="width:90px; height: 90px">
+                <span><span class="font_bold">KB국민은행 본관</span><span>서울특별시 영등포구 국제금융로8길 30</span></span>
             </li>
         </a>
         <a href="#">
-            <li><img src="https://a0.muscache.com/im/pictures/76e5f1c6-a788-418c-a28b-f0ee29cffd41.jpg?im_q=medq&im_w=240"
+            <li><img src="https://t1.daumcdn.net/cfile/tistory/99A7C73F5A66C71026" style="width:90px; height: 90px"
                      alt="">
-                <span><span class="font_bold">KB손해보험 본점</span><span>차로 3.5시간 거리</span></span>
+                <span><span class="font_bold">KB손해보험 본점</span><span>서울특별시 강남구 테헤란로 117 </span></span>
             </li>
         </a>
         <a href="#">
-            <li><img src="https://a0.muscache.com/im/pictures/ac2086c9-df0d-4085-94c0-94fe3fb94862.jpg?im_q=medq&im_w=240"
+            <li><img src="https://tower.fki.or.kr/assets/images/main/11-tower-3F-Bamboo.png" style="width:90px; height: 90px"
                      alt="">
-                <span><span class="font_bold">한국경제인연합회</span><span>차로 30분 거리</span></span>
+                <span><span class="font_bold">한국경제인연합회</span><span>서울 특별시 영등포구 여의대로 24 FKI타워</span></span>
             </li>
         </a>
         <a href="#">
-            <li><img src="https://a0.muscache.com/im/pictures/8340bd19-ee32-4669-8b10-a8ac7e7735d4.jpg?im_q=medq&im_w=240"
-                     alt="">
-                <span><span class="font_bold">KB손해보험</span><span>차로 2시간 거리</span></span>
+            <li><img src="https://scsgozneamae10236445.cdn.ntruss.com/data2/content/image/2018/11/20/.cache/512/201811200804211.jpg" style="width:90px; height: 90px" alt="">
+                <span><span class="font_bold">KB국민카드 본점</span><span>서울특별시 종로구 새문안로3길 30 대우빌딩</span></span>
             </li>
         </a>
         <a href="#">
-            <li><img src="https://a0.muscache.com/im/pictures/7c424b7e-0f02-4282-93cf-c5fc5e5e157d.jpg?im_q=medq&im_w=240"
-                     alt="">
-                <span><span class="font_bold">KB국민카드 본사</span><span>차로 45분 거리</span></span>
+            <li><img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi.pinimg.com%2F736x%2Fca%2F84%2F47%2Fca8447b2dcc66c306626fb26344c342d.jpg&type=sc960_832"
+                     alt="" style="width:90px; height: 90px">
+                <span><span class="font_bold">KB저축은행 본점</span><span>서울특별시 송파구 송파대로 260</span></span>
             </li>
         </a>
         <a href="#">
-            <li><img src="https://a0.muscache.com/im/pictures/560c06e1-a396-4414-9e38-4fbe8e9f04c4.jpg?im_q=medq&im_w=240"
+            <li><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA0MjFfMjgw%2FMDAxNjgyMDYyNzY0NjYw.NFc5GIlb16z890z8juXxne-9xUsvBoBDYJYWGE9Sq9Mg.Jd36SK5YC-vYo8mIzGCqXWe3GENQyXBdaZTL0HhwxMEg.JPEG.odaroom%2F02%2529_10F_PT%25B7%25EB_%25281%2529_%25BB%25E8%25C1%25A6re.jpg&type=sc960_832" style="width:90px; height: 90px"
                      alt="">
-                <span><span class="font_bold">KB국민카드 IT센터</span><span>차로 45분 거리</span></span>
+                <span><span class="font_bold">KB자산운용 본점</span><span>서울특별시 영등포구 국제금융로 10 Three IFC</span></span>
             </li>
         </a>
         <a href="#">
-            <li><img src="https://a0.muscache.com/im/pictures/847cfb7f-788d-42dc-9148-f375348dde76.jpg?im_q=medq&im_w=240"
+            <li><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMThfMjg4%2FMDAxNjk3NTkzMjUzMDg1.8TJVu1shHERV-tXPSaRW3N6VLIRUKm4D1o0jIsObfNQg.uCCXB1o9LgjUnXfiu1hGfC6f74y_d7-Ij3yM-ZZTjxcg.JPEG.5880404%2F20231016_165441.jpg&type=sc960_832" style="width:90px; height: 90px"
                      alt="">
-                <span><span class="font_bold">KB저축은행</span><span>차로 1시간 거리</span></span>
+                <span><span class="font_bold">KB증권 본점</span><span>서울 영등포구 여의나루로</span></span>
             </li>
         </a>
     </ul>
 </section>
 
 <section class="padding80 margin50">
-    <div><b class="font32">검색 시간 이용가능 스터디룸</b></div>
+    <div><b class="font32">근처 스터디 카페</b></div>
     <ul class="items quarter">
-        <a href="#">
-            <li><img src="https://a0.muscache.com/im/pictures/a0316ecb-e49b-4b3a-b6b6-c2876b820e8c.jpg?im_w=480"
-                     width="100%"><b class="font18">스타벅스</b></li>
-        </a>
-        <a href="#">
-            <li><img src="https://a0.muscache.com/im/pictures/ff69ac49-64e7-4f4a-ae2b-ee01163d0790.jpg?im_w=480"
-                     width="100%"><b class="font18">알렌시아 스터디룸</b></li>
-        </a>
-        <a href="#">
-            <li><img src="https://a0.muscache.com/im/pictures/ce6814ba-ed53-4d6e-b8f8-c0bbcf821011.jpg?im_w=480"
-                     width="100%"><b class="font18">룸카페</b></li>
-        </a>
-        <a href="#">
-            <li><img src="https://a0.muscache.com/im/pictures/34b9d53a-8952-47f8-876d-bb927ea487b2.jpg?im_w=480"
-                     width="100%"><b class="font18">스터디카페</b></li>
-        </a>
+
+            <li><p class="font18">초심</p><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MDNfNDMg%2FMDAxNjgzMTIwNjg4Nzgz.OIY8WDG4w_4tG7n9VgAjUg82F67vFQeo2Rj41B9qirEg.dDhg48s5lwdjwU-Hlj5S5UQBmA8fn97JAmxam6z6pb8g.JPEG.top_ki%2F2-9.jpg&type=sc960_832"
+                     style="width: 260.75px; height: 260.75px;"></li>
+
+        <li><p class="font18">르하임</p><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMDhfMTI3%2FMDAxNjc4MjE0NjMzMzYx.rOa0leNINWLzUmcUK-39xSxs43WLJFFQmGtWUdeX9X8g.9PrvxnncsxC51qBJ_IZCZhOitgoTVqr_Xmtmz3w2_jAg.JPEG.jy780486%2F%25B8%25A3%25C7%25CF%25C0%25D3%25BD%25BA%25C5%25CD%25B5%25F0%25C4%25AB%25C6%25E4_%25C1%25C2%25B5%25BF%25C1%25A115.jpg&type=sc960_832"
+                 style="width: 260.75px; height: 260.75px;"></li>
+
+        <li><p class="font18">멘토즈</p><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MTRfMTk4%2FMDAxNjgzOTk5OTg5MTEx.4_YvMPqGQP3h8vDjNlEEmhZ2uXok1xHG3i8A-2Fiiqog.37aEZey7U1CreNfnl4ij-Po4Jt3r7A0KpLvwXzyZVnwg.JPEG.assist5723%2FKakaoTalk_20230512_125322966_07.jpg&type=sc960_832"
+                 style="width: 260.75px; height: 260.75px;"></li>
+
+        <li><p class="font18">화이트펜슬</p><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA2MDFfMjc4%2FMDAxNjg1NjAxMzYwNDIx.hf1my2Yg1Gv7bPzmofj9lMFAeYow8lTWhPvqxDJGAp0g.FngYhsVX0Sr6wmBkxYzwV4nFxXYldqKv8ZB0D6AYYsIg.PNG.tobesmart111%2Fimage.png&type=sc960_832"
+                 style="width: 260.75px; height: 260.75px;"></li>
+
     </ul>
 </section>
 

@@ -4,6 +4,10 @@ spring:
       prefix: /views/
       suffix: .jsp
 
+webhook:
+  slack:
+    url: https://hooks.slack.com/services/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
+
 server:
   port: 80
   servlet:

@@ -11,10 +11,10 @@
 
     <!--프로퍼티는  dTO에서 선언된값 column은 SQL에서 날아온 값(as로 변경했으면 그 값) 두 값이 같아도 생략불가, 생략시 null-->
     <resultMap id="ResultMap" type="Member">
-        <id property="memberId" column="member_id"/>
+        <id property="member_id" column="member_id"/>
         <id property="password" column="password"/>
         <id property="name" column="name"/>
-        <id property="gitaddress" column="gitaddress"/>
+        <id property="nickname" column="nickname"/>
         <id property="point" column="point"/>
         <id property="company" column="company"/>
         <id property="memo" column="memo"/>
@@ -24,7 +24,7 @@
     </resultMap>
 
     <select id="getMemberList" resultMap="ResultMap"> <!-- resultType="Member"은 위에 선언되었으므로 생략가능  -->
-        SELECT member_id, password, name,gitaddress,point,company,memo,img,rdate
+        SELECT member_id, password, name,nickname,point,company,memo,img,rdate
         FROM Member
         ORDER BY member_id desc
     </select>
@@ -32,13 +32,13 @@
     <select id="getSkillList" resultType="String">
         SELECT b.HASHTAG as hashtagList
         FROM Member a,
-            (
-            select C.member_id, c.hashtag_id,d.HASHTAG
-            FROM skill C,HASHTAG D
-            WHERE C.hashtag_id =D.hashtag_id
-            ) b
+             (
+                 select C.member_id, c.hashtag_id,d.HASHTAG
+                 FROM skill C,HASHTAG D
+                 WHERE C.hashtag_id =D.hashtag_id
+             ) b
         where b.member_id = a.member_id
-        and b.member_id = #{memberId}
+          and b.member_id = #{member_id}
         order by a.member_id desc
     </select>
 </mapper>
