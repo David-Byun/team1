@@ -101,12 +101,24 @@
         });
         button.classList.remove('btn-outline-primary');
         button.classList.add('btn-success'); // Add the btn-success class to the clicked button
-        Swal.fire({
-            title : "지원 성공",
-            text : '해당 포지션에 지원하셨습니다!',
-            backdrop: false // 팝업 주변의 투명한 배경 비활성화
+        // 서버로 데이터 전송
+        const data = {
+            title: '프로젝트 지원',
+            body: '당신의 프로젝트에 지원한 1인이 있습니다.'
+        };
+        $.ajax({
+            type: "POST",
+            url: "/api/notification",
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            success: function(response) {
+                Swal.fire({
+                    title : "지원 성공",
+                    text : '해당 포지션에 지원하셨습니다!',
+                    backdrop: false // 팝업 주변의 투명한 배경 비활성화
+                });
+            }
         })
-
 
         $.post("/your-server-url", { id: id, value : currentValue}, function(response) {
             if (response.success) {
