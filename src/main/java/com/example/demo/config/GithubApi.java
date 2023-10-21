@@ -21,7 +21,7 @@ import java.util.Date;
 @Component
 public class GithubApi {
     GitHub github;
-    String token = "";
+    String token = " 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";
 
     public Object getOverview (String repository) throws IOException {
         try {

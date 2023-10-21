@@ -20,5 +20,4 @@ class GithubApiTest {
         JSONArray result = (JSONArray) githubApi.getOverview(myId);
         log.info(result.toJSONString());
         }
-
 }
