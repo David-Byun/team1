@@ -127,13 +127,9 @@
               <button class="btn d-grid w-100" type="submit" style="background-color: #31A397; color: white">로그인</button>
             </div>
           </form>
-
-          <p class="text-center">
-            <span>서비스를 이용하고 싶으면?</span>
-            <a href="auth-register-basic.html">
-              <span style="color:#2FA69A">가입하기</span>
-            </a>
-          </p>
+          <div class="mb-3">
+            <a href="/certificateLogin" class="btn d-grid w-100" type="button" style="background-color: #FACA4A; color: white">인증서 로그인</a>
+          </div>
         </div>
       </div>
       <!-- /Register -->
