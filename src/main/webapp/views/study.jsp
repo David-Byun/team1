@@ -239,7 +239,7 @@
 </header>
 
 <section class="padding80 margin50">
-    <div><b class="font32">KB금융그룹 이용 가능 회의실</b></div>
+    <div><b style="font-size: 20px; color: #2F96B4">KB금융그룹 이용 가능 회의실</b></div>
     <ul class="items quarter img70 cities">
         <a href="#">
             <li><img src="https://wimg.mk.co.kr/meet/neds/2021/11/image_readtop_2021_1042511_16359180324837406.jpg" style="width:90px; height: 90px"
@@ -292,20 +292,20 @@
 </section>
 
 <section class="padding80 margin50">
-    <div><b class="font32">근처 스터디 카페</b></div>
+    <div><b class="font_bold "style="font-size: 20px; color: #2F96B4" >근처 스터디 카페</b></div>
     <ul class="items quarter">
 
-            <li><p class="font18">초심</p><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MDNfNDMg%2FMDAxNjgzMTIwNjg4Nzgz.OIY8WDG4w_4tG7n9VgAjUg82F67vFQeo2Rj41B9qirEg.dDhg48s5lwdjwU-Hlj5S5UQBmA8fn97JAmxam6z6pb8g.JPEG.top_ki%2F2-9.jpg&type=sc960_832"
-                     style="width: 260.75px; height: 260.75px;"></li>
+            <li><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MDNfNDMg%2FMDAxNjgzMTIwNjg4Nzgz.OIY8WDG4w_4tG7n9VgAjUg82F67vFQeo2Rj41B9qirEg.dDhg48s5lwdjwU-Hlj5S5UQBmA8fn97JAmxam6z6pb8g.JPEG.top_ki%2F2-9.jpg&type=sc960_832"
+                     style="width: 260.75px; height: 260.75px;"><p class="font_bold" style="margin-top: 10px">상호명 : 초심</p><p class="font_bold" style="margin-top:0">서울특별시 성동구 상수역 2호점</p></li>
 
-        <li><p class="font18">르하임</p><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMDhfMTI3%2FMDAxNjc4MjE0NjMzMzYx.rOa0leNINWLzUmcUK-39xSxs43WLJFFQmGtWUdeX9X8g.9PrvxnncsxC51qBJ_IZCZhOitgoTVqr_Xmtmz3w2_jAg.JPEG.jy780486%2F%25B8%25A3%25C7%25CF%25C0%25D3%25BD%25BA%25C5%25CD%25B5%25F0%25C4%25AB%25C6%25E4_%25C1%25C2%25B5%25BF%25C1%25A115.jpg&type=sc960_832"
-                 style="width: 260.75px; height: 260.75px;"></li>
+        <li><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMDhfMTI3%2FMDAxNjc4MjE0NjMzMzYx.rOa0leNINWLzUmcUK-39xSxs43WLJFFQmGtWUdeX9X8g.9PrvxnncsxC51qBJ_IZCZhOitgoTVqr_Xmtmz3w2_jAg.JPEG.jy780486%2F%25B8%25A3%25C7%25CF%25C0%25D3%25BD%25BA%25C5%25CD%25B5%25F0%25C4%25AB%25C6%25E4_%25C1%25C2%25B5%25BF%25C1%25A115.jpg&type=sc960_832"
+                 style="width: 260.75px; height: 260.75px;"><p class="font_bold" style="margin-top: 10px">상호명 : 르하임</p><p class="font_bold" style="margin-top:0">서울특별시 노원구 노원역 10호점</p></li>
 
-        <li><p class="font18">멘토즈</p><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MTRfMTk4%2FMDAxNjgzOTk5OTg5MTEx.4_YvMPqGQP3h8vDjNlEEmhZ2uXok1xHG3i8A-2Fiiqog.37aEZey7U1CreNfnl4ij-Po4Jt3r7A0KpLvwXzyZVnwg.JPEG.assist5723%2FKakaoTalk_20230512_125322966_07.jpg&type=sc960_832"
-                 style="width: 260.75px; height: 260.75px;"></li>
+        <li><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MTRfMTk4%2FMDAxNjgzOTk5OTg5MTEx.4_YvMPqGQP3h8vDjNlEEmhZ2uXok1xHG3i8A-2Fiiqog.37aEZey7U1CreNfnl4ij-Po4Jt3r7A0KpLvwXzyZVnwg.JPEG.assist5723%2FKakaoTalk_20230512_125322966_07.jpg&type=sc960_832"
+                 style="width: 260.75px; height: 260.75px;"><p class="font_bold" style="margin-top: 10px">상호명 : 멘토즈</p><p class="font_bold" style="margin-top:0">서울시 강남구 역삼동 32-23</p></li>
 
-        <li><p class="font18">화이트펜슬</p><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA2MDFfMjc4%2FMDAxNjg1NjAxMzYwNDIx.hf1my2Yg1Gv7bPzmofj9lMFAeYow8lTWhPvqxDJGAp0g.FngYhsVX0Sr6wmBkxYzwV4nFxXYldqKv8ZB0D6AYYsIg.PNG.tobesmart111%2Fimage.png&type=sc960_832"
-                 style="width: 260.75px; height: 260.75px;"></li>
+        <li><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA2MDFfMjc4%2FMDAxNjg1NjAxMzYwNDIx.hf1my2Yg1Gv7bPzmofj9lMFAeYow8lTWhPvqxDJGAp0g.FngYhsVX0Sr6wmBkxYzwV4nFxXYldqKv8ZB0D6AYYsIg.PNG.tobesmart111%2Fimage.png&type=sc960_832"
+                 style="width: 260.75px; height: 260.75px;"><p class="font_bold" style="margin-top: 10px">상호명 : 화이트펜슬</p><p class="font_bold" style="margin-top:0">서울시 강남구 역삼동 40</p></li>
 
     </ul>
 </section>
