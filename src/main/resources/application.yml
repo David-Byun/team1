@@ -6,7 +6,7 @@ spring:
 
 webhook:
   slack:
-    url: https://hooks.slack.com/services/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
+    url: https://hooks.slack.com/services/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
 
 server:
   port: 80
