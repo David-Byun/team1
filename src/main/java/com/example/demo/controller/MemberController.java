@@ -44,15 +44,17 @@ public class MemberController {
     }
 
     @RequestMapping("/kbmae")
-    public String kbmae(Model model, HttpSession session) throws Exception {
-
+    public String kbmae(Model model, HttpSession session,SearchKbmae searchKbmae) throws Exception {
+        log.info("searchKbmae={}",searchKbmae.toString());
         List<Member> mlist = null;
+        if(searchKbmae.equals("") || searchKbmae == null){
         mlist = memberService.getMemberList();
+        }else{
+        mlist = memberService.getFindKbmae(searchKbmae);
+        }
         log.info("mlist={}", mlist);
 
         Member member = (Member) session.getAttribute("loginmember"); //세션에 담긴 로그인 정보
-/*        List<Member> rlist = null; //추천 멤버 리스트
-        rlist = memberService.getRecoemendMemberList(member.getMemberId()); //로그인한 내 아이디를 파라미터로 던짐*/
 
         List<Post> myPosts = null; //내가 PM인 프로젝트 리스트
 
@@ -65,19 +67,32 @@ public class MemberController {
         log.info("HASH={}",myPosts.toString());
 
         model.addAttribute("kbmaelist", mlist);
-/*        model.addAttribute("recomendkbmaelist", rlist);*/
         model.addAttribute("myPosts", myPosts);
         model.addAttribute("center","kbmae");
         return "index";
     };
 
-   @GetMapping("/kbmae/findimpl")
-    public String findimpl(Model model, SearchKbmae searchKbmae) throws Exception {
+   @RequestMapping("/kbmae/findimpl")
+    public String findimpl(Model model, SearchKbmae searchKbmae, HttpSession session) throws Exception {
+
         List<Member> findmlist = null;
-       findmlist = memberService.getFindKbmae(searchKbmae);
+        findmlist = memberService.getFindKbmae(searchKbmae);
         log.info("mlist={}", findmlist);
 
+        Member member = (Member) session.getAttribute("loginmember"); //세션에 담긴 로그인 정보
+
+        List<Post> myPosts = null; //내가 PM인 프로젝트 리스트
+
+       //로그인 했을 경우에만 내 프로젝트가 띄워지도록
+       if(member != null) {
+           myPosts = memberService.getMyPostList(member.getMemberId()); //로그인한 내 아이디를 파라미터로 던짐
+       }else {
+           myPosts = memberService.getMyPostList("");
+       }
+       log.info("HASH={}",myPosts.toString());
+
         model.addAttribute("kbmaelist", findmlist);
+        model.addAttribute("myPosts", myPosts);
         model.addAttribute("center","kbmae");
         return "index";
     };

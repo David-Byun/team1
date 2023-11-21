@@ -8,9 +8,18 @@
 font-family: 'Poppins', sans-serif;
 }
 
+.card:hover .kbmaename .skill {
+    margin-bottom:10px;
+}
+
+.container{
+    margin-bottom:20px;
+}
+
+
 .container .card{
 position: relative;
-width: 320px;
+/*width: 400px;*/
 height: 450px;
 background: #232323;
 border-radius: 20px;
@@ -91,7 +100,7 @@ color: #fff;
 margin: 0;
 }
 
-.container .card .contentBx .size, .container .card .contentBx .color {
+.container .card .contentBx .skill, .container .card .contentBx .color {
 display: flex;
 justify-content: center;
 align-items: center;
@@ -102,7 +111,7 @@ padding-top: 0;
 padding-bottom: 0;
 }
 
-.container .card:hover .contentBx .size{
+.container .card:hover .contentBx .skill{
 opacity: 1;
 visibility: visible;
 transition-delay: 0.5s;
@@ -114,7 +123,7 @@ visibility: visible;
 transition-delay: 0.6s;
 }
 
-.container .card .contentBx .size h3, .container .card .contentBx .color h3{
+.container .card .contentBx .skill h3, .container .card .contentBx .color h3{
 color: #fff;
 font-weight: 300;
 font-size: 14px;
@@ -123,7 +132,7 @@ letter-spacing: 2px;
 margin-right: 10px;
 }
 
-.container .card .contentBx .size span{
+.container .card .contentBx .skill span{
 width: 50px;
 height: 26px;
 text-align: center;
@@ -139,7 +148,7 @@ border-radius: 4px;
 cursor: pointer;
 }
 
-.container .card .contentBx .size span:hover{
+.container .card .contentBx .skill span:hover{
 background: #9bdc28;
 }
 
@@ -188,7 +197,7 @@ transition-delay: 0.75s;
 </style>
 
 <header class="padding80 font_weight600" style="height: 180px">
-    <form action="/kbmae/findimpl" method="get">
+    <form action="/kbmae">
     <div id="logo">
     </div>
     <div class="search_input_box">
@@ -219,7 +228,7 @@ transition-delay: 0.75s;
     <c:choose>
         <c:when test="${loginmember!=null}">
                 <div><b class="font32">내 프로젝트</b></div><br>
-                <div id="kbmaeList"<%-- class="row mx-n2"--%> class="col">
+                <div id="mypost"<%-- class="row mx-n2"--%> class="col">
                     <c:forEach var="obj" items="${myPosts}">
                         <div class="px-2 col-sm-6 col-lg-4 col-xxl-4">
                             <a href="/page">
@@ -252,25 +261,20 @@ transition-delay: 0.75s;
     </div>
         <div id="kbmaeList" class="row mx-n2">
         <c:forEach var="obj" items="${kbmaelist}">
-            <div class="container px-2 col-sm-6 col-lg-4 col-xxl-4">
+            <div class="container px-5 col-sm-1 col-lg-3 col-xxl-4">
                 <div class="card">
                     <div class="imgBx">
                         <img src="assets/img/group/${obj.img}">
                     </div>
                     <div class="contentBx">
-                        <h2>${obj.name}</h2>
-                        <div class="size">
+                        <h2 class="kbmaename">${obj.name}</h2><br>
+                        <div class="skill">
                             <h3>Skill</h3>
                             <c:forEach var="innerobj" items="${obj.hashtagList}">
                                 <span>${innerobj}</span>
                             </c:forEach>
-                        </div>
-                        <div class="color">
-                            <h3>Color :</h3>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
+                        </div><br>
+                        <h2 class="git">${obj.gitaddress}</h2>
                         <a href="#">연락하기</a>
                     </div>
                 </div>

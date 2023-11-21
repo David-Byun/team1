@@ -50,8 +50,15 @@
                 FROM skill C, HASHTAG D
                 WHERE C.hashtag_id =D.hashtag_id
             ) b
+        <choose>
+        <when test="searchKbmae != null">
         where b.member_id = a.member_id
           AND UPPER(b.HASHTAG) like (UPPER('%'||#{searchKbmae}||'%'))
+        </when>
+            <otherwise>
+                WHERE 1 = 1
+            </otherwise>
+        </choose>
         order by a.member_id desc
     </select>
 
