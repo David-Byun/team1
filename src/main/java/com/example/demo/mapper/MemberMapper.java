@@ -16,5 +16,7 @@ public interface MemberMapper extends DemoMapper<Integer, Member> {
 
     List<Member> getSkillList();
     List<Member> getFindKbmae(SearchKbmae searchKbmae);
+    List<Member> getRecoemendMemberList(String memberId);
+    List<Post> getMyPostList(String memberId);
 
 }

@@ -20,7 +20,7 @@ logging:
     root: info
 
 spring.datasource:
-  username: TEAM01
+  username: team01
   password: 111111
   driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
   url: jdbc:log4jdbc:oracle:thin:@49.50.174.248:1521/xe

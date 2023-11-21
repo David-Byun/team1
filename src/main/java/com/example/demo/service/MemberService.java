@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.Member;
+import com.example.demo.dto.Post;
 import com.example.demo.dto.SearchKbmae;
 import com.example.demo.mapper.MemberMapper;
 import com.github.pagehelper.Page;
@@ -27,5 +28,13 @@ public class MemberService {
 
     public List<Member> getFindKbmae(SearchKbmae searchKbmae) throws Exception {
         return memberMapper.getFindKbmae(searchKbmae);
+    }
+
+    public List<Member> getRecoemendMemberList(String memberId) throws Exception {
+        return memberMapper.getRecoemendMemberList(memberId);
+    }
+
+    public List<Post> getMyPostList(String memberId) throws Exception {
+        return memberMapper.getMyPostList(memberId);
     }
 }
