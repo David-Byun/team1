@@ -21,9 +21,10 @@ font-family: 'Poppins', sans-serif;
 position: relative;
 /*width: 400px;*/
 height: 450px;
-background: #232323;
+background: #232323; /*카드 색깔*/
 border-radius: 20px;
 overflow: hidden;
+/*background-image: url("/static/assets/img/group/cartBackImg.png");*/
 }
 
 .container .card:before{
@@ -33,7 +34,7 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background: #9bdc28;
+background: #9bdc28; /*반원 색깔*/
 clip-path: circle(150px at 80% 20%);
 transition: 0.5s ease-in-out;
 }
@@ -255,14 +256,14 @@ transition-delay: 0.75s;
                 </div>
         </c:when>
     </c:choose>
-
     <div class="row mx-n2" style="padding: 20px; font-size: xx-large;">
         BEST 큽마에
     </div>
-        <div id="kbmaeList" class="row mx-n2">
+        <img src="assets/img/group/cardBackImg.png">
+        <div id="kbmaeList" class="row mx-n2" style="background-image: url('/static/assets/img/group/cardBackImg.png')">
         <c:forEach var="obj" items="${kbmaelist}">
-            <div class="container px-5 col-sm-1 col-lg-3 col-xxl-4">
-                <div class="card">
+            <div class="container px-5 col-sm-1 col-lg-3 col-xxl-4" style="background-image: url('/static/assets/img/group/cardBackImg.png')">
+                <div class="card" style="background-image: url('/static/assets/img/group/cardBackImg.png')">
                     <div class="imgBx">
                         <img src="assets/img/group/${obj.img}">
                     </div>
