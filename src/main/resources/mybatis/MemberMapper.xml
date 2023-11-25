@@ -103,7 +103,7 @@
     </select>
 <!--    리절트타입을 멤버로 해도 최종적으로 post DTO에도 해당 프로퍼티를 추가해 줘야 에러가 안남 ;-->
     <select id="getKBmae" resultType="member" parameterType="Map">
-        SELECT DISTINCT L.PROJECT_ID, L.Title, K.MEMBER_ID, K.NAME, K.HASHTAG
+        SELECT DISTINCT L.PROJECT_ID, L.Title, K.MEMBER_ID, K.NAME, K.HASHTAG, K.IMG AS img,K.MEMO AS memo,K.COMPANY AS company
         FROM
         (SELECT a.PROJECT_ID, a.TITLE, a.MEMBER_ID, b.HASHTAG_ID
         FROM post a Left outer join
@@ -116,10 +116,10 @@
         WHERE A.member_id = #{memberId}) L
 
         LEFT OUTER JOIN
-        (select C.member_id, C.NAME, C.hashtag_id,D.HASHTAG
+        (select C.member_id, C.NAME, C.hashtag_id,D.HASHTAG, C.IMG,C.MEMO,C.COMPANY
         FROM HASHTAG D,
         (
-        SELECT G.MEMBER_ID, G.NAME, F.hashtag_id
+        SELECT G.MEMBER_ID, G.NAME, G.IMG,G.MEMO,G.COMPANY,F.hashtag_id
         FROM skill F, MEMBER G
         WHERE G.MEMBER_ID = F.MEMBER_ID
         ) C
