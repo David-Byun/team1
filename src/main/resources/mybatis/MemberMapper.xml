@@ -85,6 +85,7 @@
     <select id="getMyPostList" resultMap="PostResultMap" parameterType="string">
         SELECT a.project_id       as projectId
              , a.title             as title
+             , a.content             as content
              , a.member_id         as memberId
              , b.name as name
              , a.img               as img
