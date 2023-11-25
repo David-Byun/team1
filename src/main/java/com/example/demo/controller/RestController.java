@@ -1,13 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.Applicant;
-import com.example.demo.dto.Post;
-import com.example.demo.dto.PostDetail;
-import com.example.demo.dto.PostSkilltag;
-import com.example.demo.service.ApplicantService;
-import com.example.demo.service.PostDetailService;
-import com.example.demo.service.PostService;
-import com.example.demo.service.PostSkilltagService;
+import com.example.demo.dto.*;
+import com.example.demo.service.*;
 import com.example.demo.util.FileUpDownUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +30,9 @@ public class RestController {
 
     @Autowired
     ApplicantService applicantService;
+
+    @Autowired
+    MemberService memberService;
 
     @RequestMapping("/postaddimpl")
     public String postaddimpl(Post post, String ref_link, String pdate, String subject) throws Exception {

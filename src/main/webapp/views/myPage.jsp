@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <div class="d-flex align-items-start align-items-sm-center gap-4">
                         <img
-                                src="/assets/img/icons/${loginmember.img}"
+                                src="assets/img/group/${loginmember.img}"
                                 alt="user-avatar"
                                 class="d-block rounded"
                                 height="100"
@@ -38,27 +38,21 @@
                                 <span class="d-none d-sm-block">Reset</span>
                             </button>
 
-                            <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                            <p class="text-muted mb-0"> JPG, GIF or PNG 형태 파일 가능. 최대 파일 size는 800K입니다.</p>
                         </div>
                     </div>
                     <!-- read only 끝 -->
                 </div>
                 <hr class="my-0" />
                 <div class="card-body" >
-                    <form id="formAccountSettings" method="POST" onsubmit="return false">
+                    <form id="form1" method="post" >
+                        <input id="memberId"
+                               type="hidden"
+                               name="memberId"
+                               value="${loginmember.memberId}"
+                        />
                         <div class="row" style="padding-bottom: 50px">
-                            <h3><label class="form-label text-700" for="gitaddress">참고 사이트</label></h3>
-                            <div class="mb-1">
-                                <span class="text-muted float-end" style="font-size: 0.8rem;">
-                                    <span class="svg-icon svg-icon-success svg-icon-2hx">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                            <rect x="11" y="14" width="7" height="2" rx="1" transform="rotate(-90 11 14)" fill="currentColor"/>
-                                            <rect x="11" y="17" width="2" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        </svg>
-                                    </span>깃, 블로그 등 나의 능력을 확인할 수 있는 사이트를 적어주세요!
-                                </span>
-                            </div>
+                            <h3><label class="form-label text-700" for="gitaddress">Git 계정</label></h3><img src="C:\Spring\final\src\main\resources\static\assets\img\logos\github.png">
                             <input id="gitaddress"
                                    class="form-control"
                                    name="gitaddress"
@@ -84,9 +78,10 @@
                                    value="${loginmember.memo}"
                             />
                         </div >
-                        <div class="row" style="float: right;margin: 5%">
-                            <button type="submit" class="btn btn-primary me-2">Save changes</button>
-                            <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+                        <div class="row" style="float: right;">
+                            <button type="submit"  onclick="goUpdate(); return false;"
+                                    class="btn btn-primary me-2">저장
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -98,6 +93,25 @@
 </div>
 <!-- Content wrapper -->
 <!-- Core JS -->
+<script>
+    function goUpdate(){
+        var formData = $("#form1").serialize();
+
+        $.ajax({
+            cache : false,
+            url : "/memberUpdateImpl",
+            type : 'POST',
+            data : formData,
+            success : function(data) {
+                var jsonObj = JSON.parse(data);
+            }, // success
+
+            error : function(xhr, status) {
+                alert(xhr + " : " + status);
+            }
+        }); // $.ajax */
+    }
+</script>
 <!-- build:js assets/vendor/js/core.js -->
 <script src="../assets/vendor/libs/popper/popper.js"></script>
 <script src="../assets/vendor/js/bootstrap.js"></script>

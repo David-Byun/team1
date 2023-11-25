@@ -108,7 +108,6 @@ CREATE TABLE answer (
 );
 
 CREATE TABLE skill (
-                       member_skill_id INT,
                        member_id VARCHAR(30),
                        hashtag_id INT
 );

@@ -1,11 +1,13 @@
 package com.example.demo.dto;
 
 import lombok.Data;
+import lombok.Getter;
 
 import java.util.Date;
 import java.util.List;
 
 @Data
+@Getter
 public class Member {
     private String member_id;
     private String memberId;
@@ -25,4 +27,11 @@ public class Member {
     private String position;
     private List<String> hashtagList;
     private List<String> kbmae;
+
+
+    public Member(String memberId, String gitaddress, String memo) {
+        this.memberId = memberId;
+        this.gitaddress = gitaddress;
+        this.memo = memo;
+    }
 }

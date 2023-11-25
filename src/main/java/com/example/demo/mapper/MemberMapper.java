@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 public interface MemberMapper extends DemoMapper<Integer, Member> {
     Member findMemberById(String memberId);
-
+    void updateMember(Member member);
     List<Member> getMemberList();
 
     List<Member> getSkillList();

@@ -25,6 +25,9 @@ public class MemberService {
     public List<Member> getMemberList() throws Exception {
         return memberMapper.getMemberList();
     }
+    public void update(Member member) throws Exception {
+        memberMapper.updateMember(  member);
+    }
 
     public List<Member> getFindKbmae(SearchKbmae searchKbmae) throws Exception {
         return memberMapper.getFindKbmae(searchKbmae);

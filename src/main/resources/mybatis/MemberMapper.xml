@@ -4,6 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.MemberMapper">
 
+    <update id="updateMember" parameterType="Member">
+        UPDATE Member
+        SET gitaddress= #{gitaddress},
+            memo = #{memo}
+        WHERE member_id= #{memberId}
+    </update>
+
     <select id="findMemberById" parameterType="String" resultType="Member">
         SELECT *
         FROM Member
@@ -143,4 +150,13 @@
         ORDER BY L.project_id, K.MEMBER_ID
     </select>
 
+    <!--naeun-->
+    <update id="update" parameterType="Member">
+        UPDATE MEMBER
+        SET
+            GITADDRESS = #{gitaddress},
+            MEMO = #{memo}
+        WHERE
+            MEMBER_ID = #{memberId}
+    </update>
 </mapper>

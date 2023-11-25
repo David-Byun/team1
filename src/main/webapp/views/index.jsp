@@ -258,7 +258,7 @@
                         <c:choose>
                             <c:when test="${loginmember!=null}">
                                 <a class="nav-link pt-3" href="#" id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img class="avatar avatar-xl" src="/assets/img/icons/${loginmember.img}" alt="회원이미지"/>
+                                    <img class="avatar avatar-xl" src="assets/img/group/${loginmember.img}" alt="회원이미지"/>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right py-0 px-3" aria-labelledby="navbarDropdownUser" style="width: 200px;">
                                     <div class="bg-white rounded-soft py-2">
