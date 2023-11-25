@@ -308,7 +308,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right py-0 px-3" aria-labelledby="navbarDropdownUser">
                                     <div class="bg-white rounded-soft py-2">
-                                        <a class="dropdown-item font-weight-bold text-success" href="/register"><span>회원가입</span></a>
+                                        <a class="dropdown-item font-weight-bold text-success" href="https://ai-chatpdf-david.streamlit.app/" target="_blank"><span>자기소개서 확인</span></a>
                                         <a class="dropdown-item font-weight-bold" href="/login">로그인</a>
                                     </div>
                                 </div>
@@ -336,7 +336,7 @@
 
 <footer style="bottom:0;margin: auto">
     <div class="d-flex justify-content-center bg-200 mb-2">
-        <img src="assets/img/icons/row.png" alt="img"/>
+        <img src="/assets/img/icons/row.png" alt="img"/>
     </div>
 </footer>
 
