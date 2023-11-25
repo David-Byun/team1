@@ -514,13 +514,40 @@
         </div>
     </form>
 </header>
+<div class="e" class="row mx-n2" style="padding: 20px; font-size: xx-large;">
+    <h1>KB Maestro</h1>
+</div>
+<div id="kbmaeList" class="row mx-n2">
+    <c:forEach var="obj" items="${kbmaelist}">
+        <div class="container px-5 col-sm-1 col-lg-3 col-xxl-4">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="assets/img/group/${obj.img}">
+                </div>
+                <div class="contentBx">
+                    <h2 class="kbmaename">${obj.name}<h6>(${obj.company})</h6></h2>
+                    <h2 class="kbmaename">${obj.memo}</h2><br>
+                    <div class="skill">
+                        <h3>Skill</h3>
+                        <c:forEach var="innerobj" items="${obj.hashtagList}">
+                            <span>${innerobj}</span>
+                        </c:forEach>
+                    </div>
+                    <br>
+                    <h2 class="git">${obj.gitaddress}</h2>
+                    <a href="">연락하기</a>
+                </div>
+            </div>
+        </div>
+    </c:forEach>
+</div>
 
 <div class="content" style="margin-top: 0rem; padding:1rem;">
     <%--로그인 했을경우 내 프로젝트를 보여주며 해당 프로젝트에 필요한 스킬을 보유한 kb마에들을 보여준다--%>
     <c:choose>
         <c:when test="${loginmember!=null}">
             <hr>
-            <div><b class="font32 e"><h1 style="color:#7B69EF; background:white;">추천! Maestro</h1></b></div>
+            <div><b class="font32 e"><h1 style="color:#7B69EF; background:white;">진행중인 프로젝트에 추천 큽마에!</h1></b></div>
             <br>
             <c:forEach var="obj" items="${myPosts}">
                 <div id="mypost" class="row">
@@ -614,31 +641,4 @@
         </c:when>
     </c:choose>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:700|Pinyon+Script' rel='stylesheet' type='text/css'>
-    <div class="e" class="row mx-n2" style="padding: 20px; font-size: xx-large;">
-        <h1>KB Maestro</h1>
-    </div>
-    <div id="kbmaeList" class="row mx-n2">
-        <c:forEach var="obj" items="${kbmaelist}">
-            <div class="container px-5 col-sm-1 col-lg-3 col-xxl-4">
-                <div class="card">
-                    <div class="imgBx">
-                        <img src="assets/img/group/${obj.img}">
-                    </div>
-                    <div class="contentBx">
-                        <h2 class="kbmaename">${obj.name}<h6>(${obj.company})</h6></h2>
-                        <h2 class="kbmaename">${obj.memo}</h2><br>
-                        <div class="skill">
-                            <h3>Skill</h3>
-                            <c:forEach var="innerobj" items="${obj.hashtagList}">
-                                <span>${innerobj}</span>
-                            </c:forEach>
-                        </div>
-                        <br>
-                        <h2 class="git">${obj.gitaddress}</h2>
-                        <a href="">연락하기</a>
-                    </div>
-                </div>
-            </div>
-        </c:forEach>
-    </div>
 </div>
