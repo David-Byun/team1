@@ -625,7 +625,8 @@
                         <img src="assets/img/group/${obj.img}">
                     </div>
                     <div class="contentBx">
-                        <h2 class="kbmaename">${obj.name}</h2><br>
+                        <h2 class="kbmaename">${obj.name}<h6>(${obj.company})</h6></h2>
+                        <h2 class="kbmaename">${obj.memo}</h2><br>
                         <div class="skill">
                             <h3>Skill</h3>
                             <c:forEach var="innerobj" items="${obj.hashtagList}">
