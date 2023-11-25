@@ -20,6 +20,10 @@ public class Post {
     private String content;
     private String img;
     private List<String> hashtag;
+    //seung jin
+    private String name;
+    private List<String> wantedhashtag;
+    private List<String> kbmae;
     //sunmi
     private List<Integer> tagNo;
 

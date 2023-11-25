@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.MemberMapper">
+
     <select id="findMemberById" parameterType="String" resultType="Member">
         SELECT *
         FROM Member
@@ -49,8 +50,15 @@
                 FROM skill C, HASHTAG D
                 WHERE C.hashtag_id =D.hashtag_id
             ) b
+        <choose>
+        <when test="searchKbmae != null">
         where b.member_id = a.member_id
-          AND UPPER(B.HASHTAG) like (UPPER('%'||#{searchKbmae}||'%'))
+          AND UPPER(b.HASHTAG) like (UPPER('%'||#{searchKbmae}||'%'))
+        </when>
+            <otherwise>
+                WHERE 1 = 1
+            </otherwise>
+        </choose>
         order by a.member_id desc
     </select>
 
@@ -62,4 +70,76 @@
     <select id="getJoinedPosts" parameterType="String"  resultType="Post">
         SELECT * FROM APPLICANT WHERE MEMBER_ID = #{memberId}
     </select>
+
+    <resultMap id="PostResultMap" type="Post">
+        <id property="projectId" column="projectId"/>
+        <id property="title" column="title"/>
+        <id property="memberId" column="memberId"/>
+        <id property="name" column="name"/>
+        <id property="img" column="img"/>
+        <id property="content" column="content"/>
+        <collection property="wantedhashtag" column="projectId" select="getPostSkill"/>
+        <collection property="kbmae" column="{projectId = projectId, memberId = memberId}" select="getKBmae"/>
+    </resultMap>
+
+    <select id="getMyPostList" resultMap="PostResultMap" parameterType="string">
+        SELECT a.project_id       as projectId
+             , a.title             as title
+             , a.member_id         as memberId
+             , b.name as name
+             , a.img               as img
+        FROM post a LEFT OUTER JOIN member b
+        on a.member_id = b.MEMBER_ID
+        <choose>
+            <when test="member_id != null">
+                WHERE a.member_id = #{memberId}
+            </when>
+            <otherwise>
+                WHERE a.member_id = 1
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="getPostSkill" resultType="string">
+        SELECT b.hashtag AS wantedhashtag
+        FROM post a
+                 LEFT OUTER JOIN (
+            SELECT c.PROJECT_ID AS projectId, d.hashtag, c.HASHTAG_ID
+            FROM post_skilltag c
+                     JOIN hashtag d ON c.HASHTAG_ID = d.HASHTAG_ID
+        ) b ON a.PROJECT_ID = b.projectId
+        where b.projectId = #{projectId}
+    </select>
+<!--    리절트타입을 멤버로 해도 최종적으로 post DTO에도 해당 프로퍼티를 추가해 줘야 에러가 안남 ;-->
+    <select id="getKBmae" resultType="member" parameterType="Map">
+        SELECT DISTINCT L.PROJECT_ID, L.Title, K.MEMBER_ID, K.NAME, K.HASHTAG, K.IMG AS img,K.MEMO AS memo,K.COMPANY AS company
+        FROM
+        (SELECT a.PROJECT_ID, a.TITLE, a.MEMBER_ID, b.HASHTAG_ID
+        FROM post a Left outer join
+        (
+        select c.PROJECT_ID, d.hashtag, c.HASHTAG_ID
+        from post_skilltag c, hashtag d
+        where c.HASHTAG_ID = d.HASHTAG_ID
+        ) b
+        on a.project_id = b.project_id
+        WHERE A.member_id = #{memberId}) L
+
+        LEFT OUTER JOIN
+        (select C.member_id, C.NAME, C.hashtag_id,D.HASHTAG, C.IMG,C.MEMO,C.COMPANY
+        FROM HASHTAG D,
+        (
+        SELECT G.MEMBER_ID, G.NAME, G.IMG,G.MEMO,G.COMPANY,F.hashtag_id
+        FROM skill F, MEMBER G
+        WHERE G.MEMBER_ID = F.MEMBER_ID
+        ) C
+        WHERE C.hashtag_id =D.hashtag_id
+        AND C.member_id <![CDATA[<>]]> #{memberId}) K
+
+        ON K.hashtag_id = L.hashtag_id
+        WHERE K.hashtag_id is not null
+        AND L.PROJECT_ID = #{projectId}
+        OR K.hashtag_id <![CDATA[<>]]> ''
+        ORDER BY L.project_id, K.MEMBER_ID
+    </select>
+
 </mapper>
