@@ -41,7 +41,7 @@
         order by a.member_id desc
     </select>
 
-<select id="getFindKbmae" resultMap="ResultMap" parameterType="SearchKbmae">
+    <select id="getFindKbmae" resultMap="ResultMap" parameterType="SearchKbmae">
         SELECT distinct(A.member_id) AS member_id, A.password AS password, A.name AS name, A.point AS point
                       , A.company AS company, A.memo AS memo, A.img AS img, A.rdate AS rdate
         FROM Member a,

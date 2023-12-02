@@ -351,10 +351,10 @@
                         프로젝트 정보에 등록된 GITHUB Repository의 코드 분석을 통한 사용 언어 통계를 확인하세요!</span><br/>
                 </h3>
                 <div class="mb-1" style="width: 100%; margin: auto 0; display: flex; justify-content: center; text-align: center; align-items: center;">
-                    <div class="pl-3 bg-success text-white rounded" style="width: 27%; text-align: left; font-weight: bolder;">
+                    <div class="pl-3 pb-4 rounded" style="width: 27%; text-align: left; font-weight: bolder;background-color: rgba(213,178,251,0.36); color: #362580;">
                         <c:forEach var="lang" items="${lang}">
                             <fmt:formatNumber type="number" pattern="#,###" value="${lang.bytes}" var="formattedBytes"/>
-                            <br/>${lang.language} : ${formattedBytes}
+                            <br/>${lang.language} : ${formattedBytes}Bytes
                         </c:forEach>
                     </div>
                     <div id="chartdiv1"></div>
@@ -363,7 +363,7 @@
             <div class="mb-7" style="margin: auto 0;">
                 <h3>
                     <span class="text-success" style="font-size: 0.8rem;">Git-Hub 연동</span><br/>
-                    <label class="form-label text-700" for="chartdiv">사용 언어 집계</label><br/>
+                    <label class="form-label text-700" for="chartdiv">최근 업데이트 사항</label><br/>
                     <span class="text-success"style="font-size: 0.7rem;">
                             <span class="svg-icon svg-icon-danger svg-icon-2hx">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -373,23 +373,40 @@
                                     7.47154 16.2051 8.02984L11.061 13.4982C10.7451 13.834 10.2115 13.834 9.89557 13.4982Z" fill="currentColor"/>
                                 </svg>
                             </span>
-                        프로젝트 정보에 등록된 GITHUB Repository의 코드 분석을 통한 사용 언어 통계를 확인하세요!</span><br/>
+                        프로젝트 정보에 등록된 GITHUB Repository를 기반으로 프로젝트 최근 업데이트 사항을 확인하세요!</span><br/>
                 </h3>
-                <div class="mb-1" style="width: 70%; margin: auto 0;">
-                    <c:forEach var="recent" items="${recent}">
-                        <div style="display: flex; justify-content: center;">
-                            <div style="width: 60%;" >
-                                ${recent.author}
-                                <br/>${recent.message}
+                <div class="mb-1" style="width: 100%; margin: auto 0;">
+                    <div class="list-group ml-5" style="width: 80%; margin: auto 0;">
+                        <c:forEach var="recent" items="${recent}" varStatus="loop">
+                            <div class="list-group-item list-group-item-action
+         ${loop.index % 2 == 0 ? 'list-group-item-success' : 'list-group-item-warning'}
+         flex-column align-items-start" href="#">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">${recent.author}</h5>
+                                    <small class="text-muted">
+                                        <span class="badge ${loop.index % 2 == 0 ? 'badge-soft-warning' : 'badge-soft-success'} badge-pill">${recent.date}</span>
+                                    </small>
+                                </div>
+                                <p class="mb-1">${recent.message}</p>
+                                <small class="text-muted fw-bolder font-weight-extra-bold"></small>
                             </div>
-                            <div style="width: 10%;">
-                                ${recent.date}
-                             </div>
+                        </c:forEach>
+                    </div>
+                </div>
+
+                <div id="review" class="row mx-n2 p-5">
+                    <c:forEach var="recent" items="${recent}" varStatus="loop">
+                        <div class="col-sm-6 col-lg-4 col-xxl-4">
+                            <div class="card-body alert alert-success" role="alert" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%;">
+                                <h4 class="alert-heading font-weight-semi-bold">${recent.author}</h4>
+                                <p>${recent.date}</p>
+                                <hr>
+                                <p class="mb-0">${recent.message}</p>
+                            </div>
                         </div>
                     </c:forEach>
                 </div>
             </div>
-            </form>
         </div>
     </div>
 </div>

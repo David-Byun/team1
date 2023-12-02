@@ -337,7 +337,7 @@
 
 <footer>
     <div class="d-flex justify-content-center bg-200 mb-2">
-        <img src="assets/img/icons/row.png" alt="img"/>
+        <img src="/assets/img/icons/row.png" alt="img"/>
     </div>
 </footer>
 
